@@ -93,6 +93,10 @@ During development you can link the plugin folder straight into Stream Deck (thi
 npm run build && npm run link     # undo: npm run unlink
 ```
 
+## License
+
+[MIT](LICENSE). Do what you like with it, just keep the copyright notice.
+
 <div align="center">
 <br>
 <sub>Made for lazy people, by a lazy person. Sam says hi. 🦥</sub>
