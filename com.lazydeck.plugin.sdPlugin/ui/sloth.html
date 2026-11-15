@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}.hint code{color:#F2B544;word-break:break-all}</style>
+</head>
+<body>
+<div class="hint">Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.</div>
+<div class="hint">Alarm aus jedem Skript auslösen:<br><code>curl "http://127.0.0.1:47321/alert?level=error&amp;title=Build%20rot&amp;source=CI"</code><br><br>Mit Link für „Ansehen“:<br><code>curl -X POST http://127.0.0.1:47321/alert -d "{\"title\":\"Review wartet\",\"url\":\"https://github.com\"}"</code><br><br>Zurücknehmen: <code>curl http://127.0.0.1:47321/clear</code></div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+# Builds the plugin for every version tag and publishes it as a GitHub release.
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install
+        run: npm ci --no-audit --no-fund
+
+      - name: Test
+        run: npm test
+
+      - name: Pack
+        run: npm run pack:ci
+
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.ref_name }}
+        run: |
+          set -e
+          VERSION="${TAG#v}"
+          FILE="lazy-deck-$VERSION.streamDeckPlugin"
+          cp dist/com.lazydeck.plugin.streamDeckPlugin "$FILE"
+          NOTES=".github/release-notes/$VERSION.md"
+          if [ ! -f "$NOTES" ]; then
+            NOTES=$(mktemp)
+            printf 'Download **%s** and double-click it. Stream Deck installs the plugin along with its profiles.\n' "$FILE" > "$NOTES"
+          fi
+          gh release create "$TAG" "$FILE" --title "Lazy Deck $VERSION" --notes-file "$NOTES" --verify-tag

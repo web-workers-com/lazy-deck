@@ -1,0 +1,19 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": ".build",
+    "sourceMap": false,
+    "noEmit": false
+  },
+  "include": [
+    "src/render/**/*",
+    "src/alerts.ts",
+    "src/roles.ts",
+    "src/steam.ts",
+    "src/system.ts",
+    "src/server.ts",
+    "src/pomodoro.ts",
+    "src/catalog.ts",
+    "src/home.ts"
+  ]
+}

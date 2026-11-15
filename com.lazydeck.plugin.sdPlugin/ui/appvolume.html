@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="App"><sdpi-select setting="app" default="master"><option value="master">Gesamt (alles, was rauskommt)</option><option value="fg">Spiel / App im Vordergrund</option><option value="discord">Discord</option><option value="spotify">Spotify</option><option value="browser">Browser (Chrome, Edge, Firefox …)</option><option value="teams">Microsoft Teams</option><option value="zoom">Zoom</option><option value="slack">Slack</option><option value="custom">Eigene App (Prozessname)</option></sdpi-select></sdpi-item>
+<sdpi-item label="Taste"><sdpi-select setting="mode" default="down"><option value="down">Leiser</option><option value="up">Lauter</option><option value="mute">Stumm an/aus</option></sdpi-select></sdpi-item>
+<sdpi-item label="Prozessname"><sdpi-textfield setting="process" placeholder="nur bei Eigene App, z. B. vlc"></sdpi-textfield></sdpi-item>
+<div class="hint">Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.</div>
+</body>
+</html>

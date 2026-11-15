@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Gerät A"><sdpi-select setting="a" datasource="outputs" hot-reload loading="Lade Geräte …"></sdpi-select></sdpi-item>
+<sdpi-item label="Gerät B"><sdpi-select setting="b" datasource="outputs" hot-reload loading="Lade Geräte …"></sdpi-select></sdpi-item>
+<div class="hint">Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.</div>
+</body>
+</html>

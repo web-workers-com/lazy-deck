@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Zeigt"><sdpi-select setting="mode" default="notifications"><option value="notifications">Ungelesene GitHub-Mitteilungen</option><option value="reviews">GitHub-Reviews, die auf dich warten</option></sdpi-select></sdpi-item>
+<div class="hint">Nutzt die GitHub-CLI <b>gh</b> (auch in WSL), mit der du schon angemeldet bist. Alle 2 Minuten wird nachgesehen; neue Review-Anfragen lösen einen Alarm aus.</div>
+</body>
+</html>

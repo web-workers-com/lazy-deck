@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Woran"><sdpi-select setting="mode" default="water"><option value="water">Trinken</option><option value="move">Bewegen</option></sdpi-select></sdpi-item>
+<sdpi-item label="Alle"><sdpi-select setting="minutes" default=""><option value="">Standard (60 / 45 min)</option><option value="30">30 Minuten</option><option value="45">45 Minuten</option><option value="60">1 Stunde</option><option value="90">1,5 Stunden</option><option value="120">2 Stunden</option></sdpi-select></sdpi-item>
+<div class="hint">Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.</div>
+</body>
+</html>

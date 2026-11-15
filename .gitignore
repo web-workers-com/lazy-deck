@@ -1,0 +1,9 @@
+node_modules/
+dist/
+*.streamDeckPlugin
+com.lazydeck.plugin.sdPlugin/bin/
+com.lazydeck.plugin.sdPlugin/logs/
+.build/
+.DS_Store
+*.tsbuildinfo
+.env.deploy

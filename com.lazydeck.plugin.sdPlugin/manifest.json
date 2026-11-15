@@ -1,0 +1,2134 @@
+{
+	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
+	"Name": "Lazy Deck",
+	"Version": "0.5.1.0",
+	"Author": "Lazy Deck",
+	"Description": "Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.",
+	"Category": "Lazy Deck",
+	"CategoryIcon": "imgs/plugin/category-icon",
+	"Icon": "imgs/plugin/marketplace",
+	"URL": "https://lazy-deck.com",
+	"CodePath": "bin/plugin.js",
+	"UUID": "com.lazydeck.plugin",
+	"SDKVersion": 3,
+	"Software": {
+		"MinimumVersion": "7.1"
+	},
+	"OS": [
+		{
+			"Platform": "windows",
+			"MinimumVersion": "10"
+		},
+		{
+			"Platform": "mac",
+			"MinimumVersion": "12"
+		}
+	],
+	"Nodejs": {
+		"Version": "20"
+	},
+	"Actions": [
+		{
+			"UUID": "com.lazydeck.plugin.sloth",
+			"Name": "Sam",
+			"Tooltip": "Schläft, solange alles ruhig ist. Wacht auf und pulsiert, wenn etwas auf dich wartet. Drücken holt den Alarm aufs ganze Deck.",
+			"Icon": "imgs/actions/sloth/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/sloth.html",
+			"UserTitleEnabled": false,
+			"DisableAutomaticStates": true,
+			"States": [
+				{
+					"Image": "imgs/actions/sloth/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.test",
+			"Name": "Alarm testen",
+			"Tooltip": "Löst einen Beispiel-Alarm aus, damit du siehst, wie das Deck reagiert.",
+			"Icon": "imgs/actions/test/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/test.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/test/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.alert",
+			"Name": "Alarm-Taste",
+			"Tooltip": "Teil des Alarm-Profils.",
+			"Icon": "imgs/actions/sloth/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"SupportedInMultiActions": false,
+			"States": [
+				{
+					"Image": "imgs/actions/sloth/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.mic",
+			"Name": "Mikrofon",
+			"Tooltip": "Schaltet das Mikrofon des Systems stumm, für alle Apps gleichzeitig: Discord, Teams, Zoom, OBS. Die Taste zeigt den echten Zustand.",
+			"Icon": "imgs/actions/mic/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/mic/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.output",
+			"Name": "Ausgabe wechseln",
+			"Tooltip": "Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.",
+			"Icon": "imgs/actions/output/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/output.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/output/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media",
+			"Name": "Musik",
+			"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern.",
+			"Icon": "imgs/actions/media/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/media.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.playpause",
+			"Name": "Play / Pause",
+			"Tooltip": "Startet oder pausiert die Musik: Spotify, YouTube, Browser und die meisten Player. Läuft etwas, hat Sam die Augen offen.",
+			"Icon": "imgs/actions/media.playpause/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.playpause/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.previous",
+			"Name": "Zurück",
+			"Tooltip": "Vorheriger Titel.",
+			"Icon": "imgs/actions/media.previous/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.previous/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.next",
+			"Name": "Weiter",
+			"Tooltip": "Nächster Titel.",
+			"Icon": "imgs/actions/media.next/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.next/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.volumedown",
+			"Name": "Leiser",
+			"Tooltip": "Macht alles leiser und zeigt, wo die Lautstärke steht.",
+			"Icon": "imgs/actions/media.volumedown/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.volumedown/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.volumeup",
+			"Name": "Lauter",
+			"Tooltip": "Macht alles lauter und zeigt, wo die Lautstärke steht.",
+			"Icon": "imgs/actions/media.volumeup/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.volumeup/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.media.mute",
+			"Name": "Lautstärke / Ton aus",
+			"Tooltip": "Zeigt die Lautstärke als Schild am Ast. Drücken schaltet den Ton aus und wieder an.",
+			"Icon": "imgs/actions/media.mute/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/media.mute/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.nowplaying",
+			"Name": "Jetzt läuft",
+			"Tooltip": "Zeigt Cover und Titel von dem, was gerade spielt (Spotify, YouTube, Browser …). Drücken: Play/Pause.",
+			"Icon": "imgs/actions/nowplaying/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/nowplaying/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.radio",
+			"Name": "Radio",
+			"Tooltip": "Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.",
+			"Icon": "imgs/actions/radio/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/radio.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/radio/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appvolume",
+			"Name": "App-Lautstärke",
+			"Tooltip": "Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.",
+			"Icon": "imgs/actions/appvolume/icon",
+			"Controllers": [
+				"Keypad",
+				"Encoder"
+			],
+			"Encoder": {
+				"layout": "$B1",
+				"TriggerDescription": {
+					"Rotate": "Lautstärke",
+					"Push": "Stumm"
+				}
+			},
+			"PropertyInspectorPath": "ui/appvolume.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appvolume/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appvolume.fgdown",
+			"Name": "Spiel leiser",
+			"Tooltip": "Macht nur das Spiel (oder die App im Vordergrund) leiser, Discord und Musik bleiben gleich.",
+			"Icon": "imgs/actions/appvolume.fgdown/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appvolume.fgdown/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appvolume.fgup",
+			"Name": "Spiel lauter",
+			"Tooltip": "Macht nur das Spiel (oder die App im Vordergrund) lauter.",
+			"Icon": "imgs/actions/appvolume.fgup/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appvolume.fgup/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appvolume.spotifymute",
+			"Name": "Spotify stumm",
+			"Tooltip": "Schaltet nur Spotify stumm und wieder an.",
+			"Icon": "imgs/actions/appvolume.spotifymute/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appvolume.spotifymute/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appmic",
+			"Name": "App-Mikro",
+			"Tooltip": "Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand.",
+			"Icon": "imgs/actions/appmic/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/appmic.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appmic/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appmic.teams",
+			"Name": "Teams Mikro",
+			"Tooltip": "Schaltet nur das Mikro in Microsoft Teams stumm.",
+			"Icon": "imgs/actions/appmic.teams/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appmic.teams/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appmic.zoom",
+			"Name": "Zoom Mikro",
+			"Tooltip": "Schaltet nur das Mikro in Zoom stumm.",
+			"Icon": "imgs/actions/appmic.zoom/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appmic.zoom/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.appmic.browser",
+			"Name": "Meet Mikro (Browser)",
+			"Tooltip": "Schaltet das Mikro im Browser stumm, z. B. bei Google Meet oder Jitsi.",
+			"Icon": "imgs/actions/appmic.browser/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/appmic.browser/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.discord",
+			"Name": "Discord",
+			"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist.",
+			"Icon": "imgs/actions/discord/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/discord.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/discord/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.discord.mute",
+			"Name": "Discord Mikro",
+			"Tooltip": "Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist. Die Taste zeigt den echten Zustand.",
+			"Icon": "imgs/actions/discord.mute/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/discord.mute/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.discord.deafen",
+			"Name": "Discord taub",
+			"Tooltip": "Discord hört und sendet nichts mehr: Ton und Mikro zusammen aus.",
+			"Icon": "imgs/actions/discord.deafen/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/discord.deafen/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.discord.open",
+			"Name": "Discord öffnen",
+			"Tooltip": "Öffnet Discord.",
+			"Icon": "imgs/actions/discord.open/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/discord.open/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam",
+			"Name": "Steam",
+			"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture.",
+			"Icon": "imgs/actions/steam/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/steam.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam.last",
+			"Name": "Zuletzt gespielt",
+			"Tooltip": "Startet dein zuletzt gespieltes Steam-Spiel.",
+			"Icon": "imgs/actions/steam.last/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam.last/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam.friends",
+			"Name": "Steam Freunde",
+			"Tooltip": "Öffnet deine Freundesliste in Steam.",
+			"Icon": "imgs/actions/steam.friends/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam.friends/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam.library",
+			"Name": "Steam Bibliothek",
+			"Tooltip": "Öffnet deine Steam-Bibliothek.",
+			"Icon": "imgs/actions/steam.library/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam.library/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam.bigpicture",
+			"Name": "Steam Big Picture",
+			"Tooltip": "Startet Steam im Big-Picture-Modus, für Fernseher und Controller.",
+			"Icon": "imgs/actions/steam.bigpicture/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam.bigpicture/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steam.store",
+			"Name": "Steam Shop",
+			"Tooltip": "Öffnet den Steam-Shop.",
+			"Icon": "imgs/actions/steam.store/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steam.store/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.steamdownloads",
+			"Name": "Steam-Downloads",
+			"Tooltip": "Wie weit Steam mit dem Laden ist. Ist ein großer Download fertig, sagt Sam Bescheid, auch ohne diese Taste.",
+			"Icon": "imgs/actions/steamdownloads/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/steamdownloads/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.gamebar",
+			"Name": "Gaming",
+			"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen.",
+			"Icon": "imgs/actions/gamebar/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/gamebar.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamebar/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.gamebar.clip",
+			"Name": "Letzte 30 s speichern",
+			"Tooltip": "Letzte 30 s speichern über die Xbox Game Bar von Windows.",
+			"Icon": "imgs/actions/gamebar.clip/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamebar.clip/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.gamebar.record",
+			"Name": "Aufnahme an/aus",
+			"Tooltip": "Aufnahme an/aus über die Xbox Game Bar von Windows.",
+			"Icon": "imgs/actions/gamebar.record/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamebar.record/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.gamebar.shot",
+			"Name": "Spiel-Screenshot",
+			"Tooltip": "Spiel-Screenshot über die Xbox Game Bar von Windows.",
+			"Icon": "imgs/actions/gamebar.shot/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamebar.shot/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.gamebar.open",
+			"Name": "Game Bar öffnen",
+			"Tooltip": "Game Bar öffnen über die Xbox Game Bar von Windows.",
+			"Icon": "imgs/actions/gamebar.open/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/gamebar.open/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.brightness",
+			"Name": "Helligkeit",
+			"Tooltip": "Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen.",
+			"Icon": "imgs/actions/brightness/icon",
+			"Controllers": [
+				"Keypad",
+				"Encoder"
+			],
+			"Encoder": {
+				"layout": "$B1",
+				"TriggerDescription": {
+					"Rotate": "Helligkeit"
+				}
+			},
+			"PropertyInspectorPath": "ui/brightness.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/brightness/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.brightness.down",
+			"Name": "Dunkler",
+			"Tooltip": "Alle Bildschirme dunkler, auch externe Monitore.",
+			"Icon": "imgs/actions/brightness.down/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/brightness.down/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.brightness.up",
+			"Name": "Heller",
+			"Tooltip": "Alle Bildschirme heller, auch externe Monitore.",
+			"Icon": "imgs/actions/brightness.up/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/brightness.up/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows",
+			"Name": "Windows",
+			"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager.",
+			"Icon": "imgs/actions/windows/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/windows.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.screenshot",
+			"Name": "Screenshot (Ausschnitt)",
+			"Tooltip": "Screenshot (Ausschnitt).",
+			"Icon": "imgs/actions/windows.screenshot/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.screenshot/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.lock",
+			"Name": "Bildschirm sperren",
+			"Tooltip": "Bildschirm sperren.",
+			"Icon": "imgs/actions/windows.lock/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.lock/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.monitoroff",
+			"Name": "Bildschirm aus",
+			"Tooltip": "Bildschirm aus.",
+			"Icon": "imgs/actions/windows.monitoroff/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.monitoroff/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.sleep",
+			"Name": "Energiesparen",
+			"Tooltip": "Energiesparen. Zur Sicherheit zweimal drücken.",
+			"Icon": "imgs/actions/windows.sleep/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.sleep/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.darkmode",
+			"Name": "Dark Mode umschalten",
+			"Tooltip": "Dark Mode umschalten.",
+			"Icon": "imgs/actions/windows.darkmode/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.darkmode/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.recyclebin",
+			"Name": "Papierkorb leeren",
+			"Tooltip": "Papierkorb leeren. Zur Sicherheit zweimal drücken.",
+			"Icon": "imgs/actions/windows.recyclebin/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.recyclebin/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.desktop",
+			"Name": "Desktop zeigen",
+			"Tooltip": "Desktop zeigen.",
+			"Icon": "imgs/actions/windows.desktop/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.desktop/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.settings",
+			"Name": "Einstellungen",
+			"Tooltip": "Einstellungen.",
+			"Icon": "imgs/actions/windows.settings/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.settings/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.windows.taskmanager",
+			"Name": "Task-Manager",
+			"Tooltip": "Task-Manager.",
+			"Icon": "imgs/actions/windows.taskmanager/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/windows.taskmanager/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window",
+			"Name": "Fenster",
+			"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren.",
+			"Icon": "imgs/actions/window/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/window.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.snapleft",
+			"Name": "Links andocken",
+			"Tooltip": "Links andocken.",
+			"Icon": "imgs/actions/window.snapleft/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.snapleft/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.snapright",
+			"Name": "Rechts andocken",
+			"Tooltip": "Rechts andocken.",
+			"Icon": "imgs/actions/window.snapright/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.snapright/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.maximize",
+			"Name": "Maximieren",
+			"Tooltip": "Maximieren.",
+			"Icon": "imgs/actions/window.maximize/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.maximize/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.minimize",
+			"Name": "Minimieren",
+			"Tooltip": "Minimieren.",
+			"Icon": "imgs/actions/window.minimize/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.minimize/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.vdleft",
+			"Name": "Virtueller Desktop links",
+			"Tooltip": "Virtueller Desktop links.",
+			"Icon": "imgs/actions/window.vdleft/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.vdleft/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.vdright",
+			"Name": "Virtueller Desktop rechts",
+			"Tooltip": "Virtueller Desktop rechts.",
+			"Icon": "imgs/actions/window.vdright/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.vdright/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.taskview",
+			"Name": "Aufgabenansicht",
+			"Tooltip": "Aufgabenansicht.",
+			"Icon": "imgs/actions/window.taskview/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.taskview/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.window.project",
+			"Name": "Projizieren (2. Bildschirm)",
+			"Tooltip": "Projizieren (2. Bildschirm).",
+			"Icon": "imgs/actions/window.project/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/window.project/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.awake",
+			"Name": "Wach bleiben",
+			"Tooltip": "Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme.",
+			"Icon": "imgs/actions/awake/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/awake.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/awake/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.sleeptimer",
+			"Name": "Ausschalt-Timer",
+			"Tooltip": "PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid.",
+			"Icon": "imgs/actions/sleeptimer/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/sleeptimer.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/sleeptimer/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.clock",
+			"Name": "Uhr",
+			"Tooltip": "Uhrzeit, Wochentag, Datum und Kalenderwoche.",
+			"Icon": "imgs/actions/clock/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/clock/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.weather",
+			"Name": "Wetter",
+			"Tooltip": "Wetter für deinen Ort, ohne Einrichtung. Der Ort kommt aus deiner IP-Adresse (ipwho.is), das Wetter von Open-Meteo.",
+			"Icon": "imgs/actions/weather/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/weather/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.timer",
+			"Name": "Timer",
+			"Tooltip": "Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.",
+			"Icon": "imgs/actions/timer/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/timer.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/timer/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.stopwatch",
+			"Name": "Stoppuhr",
+			"Tooltip": "Drücken startet/stoppt, halten setzt zurück.",
+			"Icon": "imgs/actions/stopwatch/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/stopwatch/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.countdown",
+			"Name": "Countdown",
+			"Tooltip": "Wie lange noch bis Feierabend oder Wochenende.",
+			"Icon": "imgs/actions/countdown/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/countdown.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/countdown/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.countdown.feierabend",
+			"Name": "Bis Feierabend",
+			"Tooltip": "Wie lange noch bis Feierabend (17:00, einstellbar).",
+			"Icon": "imgs/actions/countdown.feierabend/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/countdown.feierabend/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.countdown.weekend",
+			"Name": "Bis Wochenende",
+			"Tooltip": "Wie lange noch bis Freitag Feierabend.",
+			"Icon": "imgs/actions/countdown.weekend/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/countdown.weekend/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.reminder",
+			"Name": "Erinnerung",
+			"Tooltip": "Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.",
+			"Icon": "imgs/actions/reminder/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/reminder.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/reminder/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.reminder.water",
+			"Name": "Trinken",
+			"Tooltip": "Erinnert dich jede Stunde ans Trinken. Drücken heißt erledigt.",
+			"Icon": "imgs/actions/reminder.water/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/reminder.water/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.reminder.move",
+			"Name": "Bewegen",
+			"Tooltip": "Erinnert dich alle 45 Minuten, dich zu bewegen. Drücken heißt erledigt.",
+			"Icon": "imgs/actions/reminder.move/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/reminder.move/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.internet",
+			"Name": "Internet",
+			"Tooltip": "Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.",
+			"Icon": "imgs/actions/internet/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/internet/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.wifi",
+			"Name": "WLAN",
+			"Tooltip": "WLAN-Name und Signalstärke.",
+			"Icon": "imgs/actions/wifi/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/wifi/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.battery",
+			"Name": "Akku",
+			"Tooltip": "Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.",
+			"Icon": "imgs/actions/battery/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/battery/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps",
+			"Name": "App starten",
+			"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Teams, OBS, Explorer, Terminal, Editor.",
+			"Icon": "imgs/actions/apps/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/apps.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.spotify",
+			"Name": "Spotify starten",
+			"Tooltip": "Startet Spotify mit einem Druck.",
+			"Icon": "imgs/actions/apps.spotify/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.spotify/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.discord",
+			"Name": "Discord starten",
+			"Tooltip": "Startet Discord mit einem Druck.",
+			"Icon": "imgs/actions/apps.discord/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.discord/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.steam",
+			"Name": "Steam starten",
+			"Tooltip": "Startet Steam mit einem Druck.",
+			"Icon": "imgs/actions/apps.steam/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.steam/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.whatsapp",
+			"Name": "WhatsApp starten",
+			"Tooltip": "Startet WhatsApp mit einem Druck.",
+			"Icon": "imgs/actions/apps.whatsapp/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.whatsapp/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.teams",
+			"Name": "Microsoft Teams starten",
+			"Tooltip": "Startet Microsoft Teams mit einem Druck.",
+			"Icon": "imgs/actions/apps.teams/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.teams/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.obs",
+			"Name": "OBS Studio starten",
+			"Tooltip": "Startet OBS Studio mit einem Druck.",
+			"Icon": "imgs/actions/apps.obs/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.obs/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.explorer",
+			"Name": "Explorer starten",
+			"Tooltip": "Startet Explorer mit einem Druck.",
+			"Icon": "imgs/actions/apps.explorer/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.explorer/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.terminal",
+			"Name": "Terminal starten",
+			"Tooltip": "Startet Terminal mit einem Druck.",
+			"Icon": "imgs/actions/apps.terminal/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.terminal/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.notepad",
+			"Name": "Editor starten",
+			"Tooltip": "Startet Editor mit einem Druck.",
+			"Icon": "imgs/actions/apps.notepad/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.notepad/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website",
+			"Name": "Webseite",
+			"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Prime Video, Disney+, Claude, Google Maps, DeepL.",
+			"Icon": "imgs/actions/website/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/website.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.youtube",
+			"Name": "YouTube öffnen",
+			"Tooltip": "Öffnet YouTube im Browser.",
+			"Icon": "imgs/actions/website.youtube/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.youtube/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.netflix",
+			"Name": "Netflix öffnen",
+			"Tooltip": "Öffnet Netflix im Browser.",
+			"Icon": "imgs/actions/website.netflix/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.netflix/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.twitch",
+			"Name": "Twitch öffnen",
+			"Tooltip": "Öffnet Twitch im Browser.",
+			"Icon": "imgs/actions/website.twitch/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.twitch/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.gmail",
+			"Name": "Gmail öffnen",
+			"Tooltip": "Öffnet Gmail im Browser.",
+			"Icon": "imgs/actions/website.gmail/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.gmail/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.whatsappweb",
+			"Name": "WhatsApp Web öffnen",
+			"Tooltip": "Öffnet WhatsApp Web im Browser.",
+			"Icon": "imgs/actions/website.whatsappweb/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.whatsappweb/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.prime",
+			"Name": "Prime Video öffnen",
+			"Tooltip": "Öffnet Prime Video im Browser.",
+			"Icon": "imgs/actions/website.prime/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.prime/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.disney",
+			"Name": "Disney+ öffnen",
+			"Tooltip": "Öffnet Disney+ im Browser.",
+			"Icon": "imgs/actions/website.disney/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.disney/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.claude",
+			"Name": "Claude öffnen",
+			"Tooltip": "Öffnet Claude im Browser.",
+			"Icon": "imgs/actions/website.claude/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.claude/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.maps",
+			"Name": "Google Maps öffnen",
+			"Tooltip": "Öffnet Google Maps im Browser.",
+			"Icon": "imgs/actions/website.maps/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.maps/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.deepl",
+			"Name": "DeepL Übersetzer öffnen",
+			"Tooltip": "Öffnet DeepL Übersetzer im Browser.",
+			"Icon": "imgs/actions/website.deepl/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.deepl/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder",
+			"Name": "Ordner",
+			"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner.",
+			"Icon": "imgs/actions/folder/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/folder.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.downloads",
+			"Name": "Ordner Downloads",
+			"Tooltip": "Öffnet den Ordner Downloads.",
+			"Icon": "imgs/actions/folder.downloads/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.downloads/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.documents",
+			"Name": "Ordner Dokumente",
+			"Tooltip": "Öffnet den Ordner Dokumente.",
+			"Icon": "imgs/actions/folder.documents/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.documents/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.pictures",
+			"Name": "Ordner Bilder",
+			"Tooltip": "Öffnet den Ordner Bilder.",
+			"Icon": "imgs/actions/folder.pictures/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.pictures/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.desktop",
+			"Name": "Ordner Desktop",
+			"Tooltip": "Öffnet den Ordner Desktop.",
+			"Icon": "imgs/actions/folder.desktop/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.desktop/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.music",
+			"Name": "Ordner Musik",
+			"Tooltip": "Öffnet den Ordner Musik.",
+			"Icon": "imgs/actions/folder.music/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.music/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.videos",
+			"Name": "Ordner Videos",
+			"Tooltip": "Öffnet den Ordner Videos.",
+			"Icon": "imgs/actions/folder.videos/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.videos/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.folder.home",
+			"Name": "Ordner Benutzerordner",
+			"Tooltip": "Öffnet den Ordner Benutzerordner.",
+			"Icon": "imgs/actions/folder.home/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/folder.home/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools",
+			"Name": "Werkzeuge",
+			"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort.",
+			"Icon": "imgs/actions/tools/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/tools.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.clipboard",
+			"Name": "Zwischenablage-Verlauf",
+			"Tooltip": "Zwischenablage-Verlauf.",
+			"Icon": "imgs/actions/tools.clipboard/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.clipboard/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.emoji",
+			"Name": "Emoji-Auswahl",
+			"Tooltip": "Emoji-Auswahl.",
+			"Icon": "imgs/actions/tools.emoji/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.emoji/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.notifications",
+			"Name": "Windows-Mitteilungen (Infocenter)",
+			"Tooltip": "Windows-Mitteilungen (Infocenter).",
+			"Icon": "imgs/actions/tools.notifications/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.notifications/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.calculator",
+			"Name": "Rechner",
+			"Tooltip": "Rechner.",
+			"Icon": "imgs/actions/tools.calculator/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.calculator/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.pastedate",
+			"Name": "Heutiges Datum einfügen",
+			"Tooltip": "Heutiges Datum einfügen.",
+			"Icon": "imgs/actions/tools.pastedate/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.pastedate/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.tools.password",
+			"Name": "Passwort erzeugen (in die Zwischenablage)",
+			"Tooltip": "Passwort erzeugen (in die Zwischenablage).",
+			"Icon": "imgs/actions/tools.password/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/tools.password/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.chance",
+			"Name": "Münze & Würfel",
+			"Tooltip": "Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will.",
+			"Icon": "imgs/actions/chance/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"PropertyInspectorPath": "ui/chance.html",
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/chance/key",
+					"ShowTitle": false
+				}
+			],
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.chance.coin",
+			"Name": "Münzwurf",
+			"Tooltip": "Kopf oder Zahl. Kopf zeigt Sam.",
+			"Icon": "imgs/actions/chance.coin/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/chance.coin/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.chance.dice",
+			"Name": "Würfel",
+			"Tooltip": "Würfelt eine Zahl von 1 bis 6.",
+			"Icon": "imgs/actions/chance.dice/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/chance.dice/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.system",
+			"Name": "System",
+			"Tooltip": "CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.",
+			"Icon": "imgs/actions/system/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/system/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.pomodoro",
+			"Name": "Pomodoro",
+			"Tooltip": "25 Minuten Fokus, 5 Minuten Pause. Drücken: Start/Pause, halten: zurücksetzen. Sam sagt Bescheid, wenn die Zeit um ist.",
+			"Icon": "imgs/actions/pomodoro/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/pomodoro/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.github",
+			"Name": "GitHub",
+			"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus.",
+			"Icon": "imgs/actions/github/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/github/key",
+					"ShowTitle": false
+				}
+			],
+			"PropertyInspectorPath": "ui/github.html",
+			"VisibleInActionsList": false
+		},
+		{
+			"UUID": "com.lazydeck.plugin.github.notifications",
+			"Name": "GitHub-Mitteilungen",
+			"Tooltip": "Ungelesene GitHub-Mitteilungen. Nutzt die gh-CLI, mit der du angemeldet bist.",
+			"Icon": "imgs/actions/github.notifications/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/github.notifications/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.github.reviews",
+			"Name": "GitHub-Reviews",
+			"Tooltip": "Reviews, die auf dich warten. Neue lösen einen Alarm aus.",
+			"Icon": "imgs/actions/github.reviews/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/github.reviews/key",
+					"ShowTitle": false
+				}
+			]
+		}
+	],
+	"Profiles": [
+		{
+			"Name": "Lazy Deck",
+			"DeviceType": 0,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Alarm",
+			"DeviceType": 0,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Mini",
+			"DeviceType": 1,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Mini Alarm",
+			"DeviceType": 1,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck XL",
+			"DeviceType": 2,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck XL Alarm",
+			"DeviceType": 2,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Mobile",
+			"DeviceType": 3,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Mobile Alarm",
+			"DeviceType": 3,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Plus",
+			"DeviceType": 7,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Plus Alarm",
+			"DeviceType": 7,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Neo",
+			"DeviceType": 9,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Neo Alarm",
+			"DeviceType": 9,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Studio",
+			"DeviceType": 10,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Studio Alarm",
+			"DeviceType": 10,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Virtual",
+			"DeviceType": 11,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Virtual Alarm",
+			"DeviceType": 11,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Galleon",
+			"DeviceType": 12,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Galleon Alarm",
+			"DeviceType": 12,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Plus XL",
+			"DeviceType": 13,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		},
+		{
+			"Name": "Lazy Deck Plus XL Alarm",
+			"DeviceType": 13,
+			"Readonly": false,
+			"DontAutoSwitchWhenInstalled": true,
+			"AutoInstall": true
+		}
+	]
+}

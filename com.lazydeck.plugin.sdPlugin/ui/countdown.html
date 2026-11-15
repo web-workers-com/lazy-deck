@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Bis"><sdpi-select setting="mode" default="feierabend"><option value="feierabend">Feierabend</option><option value="weekend">Wochenende (Freitag)</option></sdpi-select></sdpi-item>
+<sdpi-item label="Uhrzeit"><sdpi-textfield setting="time" placeholder="17:00" default="17:00"></sdpi-textfield></sdpi-item>
+<div class="hint">Wie lange noch bis Feierabend oder Wochenende.</div>
+</body>
+</html>

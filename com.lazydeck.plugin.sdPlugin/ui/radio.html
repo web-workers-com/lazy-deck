@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Sender"><sdpi-select setting="station" default="1live"><option value="1live">1LIVE</option><option value="swr3">SWR3</option><option value="antenne">Antenne Bayern</option><option value="bayern3">Bayern 3</option><option value="ndr2">NDR 2</option><option value="wdr2">WDR 2</option><option value="hr3">hr3</option><option value="bigfm">bigFM</option><option value="radioeins">radioeins</option><option value="rockantenne">Rock Antenne</option><option value="bob">Radio Bob</option><option value="80s">80s80s</option><option value="iloveradio">I Love Radio</option><option value="chillout">Chillout (Antenne)</option><option value="dlf">Deutschlandfunk</option><option value="custom">Eigener Sender (Stream-Link)</option></sdpi-select></sdpi-item>
+<sdpi-item label="Stream-Link"><sdpi-textfield setting="url" placeholder="nur bei Eigener Sender: https://…"></sdpi-textfield></sdpi-item>
+<sdpi-item label="Name"><sdpi-textfield setting="name" placeholder="Mein Sender"></sdpi-textfield></sdpi-item>
+<div class="hint">Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.</div>
+</body>
+</html>
