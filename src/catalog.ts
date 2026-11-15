@@ -104,7 +104,7 @@ export const GROUPS: Group[] = [
 	{
 		uuid: "website",
 		name: "Webseite",
-		tooltip: "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Prime Video, Disney+, Claude, Google Maps, DeepL.",
+		tooltip: "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL.",
 		setting: "site",
 		choices: [
 			{ id: "youtube", name: "YouTube", label: "YouTube", tile: { text: "YT", bg: "#FF0033", fg: "#FFFFFF" }, target: "https://www.youtube.com", logo: "youtube" },
@@ -115,6 +115,9 @@ export const GROUPS: Group[] = [
 			{ id: "prime", name: "Prime Video", label: "Prime Video", tile: { text: "P", bg: "#00A8E1", fg: "#FFFFFF" }, target: "https://www.primevideo.com", logo: "primevideo" },
 			{ id: "disney", name: "Disney+", label: "Disney+", tile: { text: "D+", bg: "#0E3D8C", fg: "#FFFFFF" }, target: "https://www.disneyplus.com" },
 			{ id: "claude", name: "Claude", label: "Claude", tile: { text: "C", bg: "#D97757", fg: "#FFFFFF" }, target: "https://claude.ai", logo: "claude" },
+			{ id: "chatgpt", name: "ChatGPT", label: "ChatGPT", tile: { text: "GPT", bg: "#10A37F", fg: "#FFFFFF" }, target: "https://chatgpt.com" },
+			{ id: "gemini", name: "Gemini", label: "Gemini", tile: { text: "G", bg: "#8E75B2", fg: "#FFFFFF" }, target: "https://gemini.google.com", logo: "googlegemini" },
+			{ id: "grok", name: "Grok", label: "Grok", tile: { text: "Grok", bg: "#000000", fg: "#FFFFFF" }, target: "https://grok.com" },
 			{ id: "maps", name: "Google Maps", label: "Karte", tile: { text: "Ma", bg: "#34A853", fg: "#FFFFFF" }, target: "https://maps.google.com", logo: "googlemaps" },
 			{ id: "deepl", name: "DeepL Übersetzer", label: "Übersetzen", tile: { text: "DL", bg: "#0F2B46", fg: "#FFFFFF" }, target: "https://www.deepl.com/translator", logo: "deepl" },
 		],
