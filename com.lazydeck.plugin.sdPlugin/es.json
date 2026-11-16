@@ -304,7 +304,7 @@
 	},
 	"com.lazydeck.plugin.apps": {
 		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Abrir Spotify",
@@ -345,6 +345,18 @@
 	"com.lazydeck.plugin.apps.telegram": {
 		"Name": "Abrir Telegram",
 		"Tooltip": "Abre Telegram con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.wechat": {
+		"Name": "Abrir WeChat",
+		"Tooltip": "Abre WeChat con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.line": {
+		"Name": "Abrir LINE",
+		"Tooltip": "Abre LINE con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.kakaotalk": {
+		"Name": "Abrir KakaoTalk",
+		"Tooltip": "Abre KakaoTalk con una pulsación."
 	},
 	"com.lazydeck.plugin.website": {
 		"Name": "Webseite",
@@ -673,6 +685,7 @@
 		"Internet": "Internet",
 		"Internet weg": "Sin internet",
 		"Kabel oder aus": "cable o nada",
+		"KakaoTalk": "KakaoTalk",
 		"Karte": "Mapa",
 		"kein Akku": "sin batería",
 		"Kein Spiel": "Sin juego",
@@ -696,6 +709,7 @@
 		"Leiser": "Bajar",
 		"Letzte 30 s speichern": "Guardar últimos 30 s",
 		"Letzte Meldung": "Último aviso",
+		"LINE": "LINE",
 		"Links": "Izquierda",
 		"Links andocken": "Ajustar a la izquierda",
 		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "Lanza al momento una alarma de ejemplo y cambia al perfil de alarma.",
@@ -843,6 +857,7 @@
 		"Wartet auf dich (Honig)": "Esperándote (miel)",
 		"Was": "Qué",
 		"WDR 2": "WDR 2",
+		"WeChat": "WeChat",
 		"Weiter": "Siguiente",
 		"Weiter geht's": "Seguimos",
 		"Wetter": "Tiempo",

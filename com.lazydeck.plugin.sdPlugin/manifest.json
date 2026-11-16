@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
 	"Name": "Lazy Deck",
-	"Version": "0.6.0.0",
+	"Version": "0.6.1.0",
 	"Author": "Lazy Deck",
 	"Description": "Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.",
 	"Category": "Lazy Deck",
@@ -1276,7 +1276,7 @@
 		{
 			"UUID": "com.lazydeck.plugin.apps",
 			"Name": "App starten",
-			"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor.",
+			"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor.",
 			"Icon": "imgs/actions/apps/icon",
 			"Controllers": [
 				"Keypad"
@@ -1447,6 +1447,54 @@
 			"States": [
 				{
 					"Image": "imgs/actions/apps.telegram/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.wechat",
+			"Name": "WeChat starten",
+			"Tooltip": "Startet WeChat mit einem Druck.",
+			"Icon": "imgs/actions/apps.wechat/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.wechat/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.line",
+			"Name": "LINE starten",
+			"Tooltip": "Startet LINE mit einem Druck.",
+			"Icon": "imgs/actions/apps.line/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.line/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.apps.kakaotalk",
+			"Name": "KakaoTalk starten",
+			"Tooltip": "Startet KakaoTalk mit einem Druck.",
+			"Icon": "imgs/actions/apps.kakaotalk/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.kakaotalk/key",
 					"ShowTitle": false
 				}
 			]

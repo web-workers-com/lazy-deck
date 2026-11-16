@@ -304,7 +304,7 @@
 	},
 	"com.lazydeck.plugin.apps": {
 		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Spotify starten",
@@ -345,6 +345,18 @@
 	"com.lazydeck.plugin.apps.telegram": {
 		"Name": "Telegram starten",
 		"Tooltip": "Startet Telegram mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.wechat": {
+		"Name": "WeChat starten",
+		"Tooltip": "Startet WeChat mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.line": {
+		"Name": "LINE starten",
+		"Tooltip": "Startet LINE mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.kakaotalk": {
+		"Name": "KakaoTalk starten",
+		"Tooltip": "Startet KakaoTalk mit einem Druck."
 	},
 	"com.lazydeck.plugin.website": {
 		"Name": "Webseite",

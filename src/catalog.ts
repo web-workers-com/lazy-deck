@@ -87,7 +87,7 @@ export const GROUPS: Group[] = [
 	{
 		uuid: "apps",
 		name: "App starten",
-		tooltip: "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor.",
+		tooltip: "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor.",
 		setting: "app",
 		choices: [
 			{ id: "spotify", name: "Spotify", label: "Spotify", tile: { text: "Sp", bg: "#1DB954" }, target: "spotify:", logo: "spotify" },
@@ -95,6 +95,9 @@ export const GROUPS: Group[] = [
 			{ id: "steam", name: "Steam", label: "Steam", tile: { text: "St", bg: "#1B2838", fg: "#FFFFFF" }, target: "steam://open/main", logo: "steam" },
 			{ id: "whatsapp", name: "WhatsApp", label: "WhatsApp", tile: { text: "Wa", bg: "#25D366" }, target: "whatsapp:", logo: "whatsapp" },
 			{ id: "telegram", name: "Telegram", label: "Telegram", tile: { text: "Tg", bg: "#26A5E4", fg: "#FFFFFF" }, target: "tg://", logo: "telegram" },
+			{ id: "wechat", name: "WeChat", label: "WeChat", tile: { text: "We", bg: "#07C160", fg: "#FFFFFF" }, target: "weixin://", logo: "wechat" },
+			{ id: "line", name: "LINE", label: "LINE", tile: { text: "LINE", bg: "#06C755", fg: "#FFFFFF" }, target: "line://", logo: "line" },
+			{ id: "kakaotalk", name: "KakaoTalk", label: "KakaoTalk", tile: { text: "Ka", bg: "#FFCD00", fg: "#3C1E1E" }, target: "kakaotalk://", logo: "kakaotalk" },
 			{ id: "teams", name: "Microsoft Teams", label: "Teams", tile: { text: "Te", bg: "#5B5FC7", fg: "#FFFFFF" }, target: "msteams:" },
 			{ id: "obs", name: "OBS Studio", label: "OBS", tile: { text: "OBS", bg: "#302E31", fg: "#FFFFFF" }, target: "obs", logo: "obsstudio" },
 			{ id: "explorer", name: "Explorer", label: "Explorer", icon: "folder", target: "explorer" },

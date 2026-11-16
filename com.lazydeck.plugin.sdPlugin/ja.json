@@ -304,7 +304,7 @@
 	},
 	"com.lazydeck.plugin.apps": {
 		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Spotify を起動",
@@ -345,6 +345,18 @@
 	"com.lazydeck.plugin.apps.telegram": {
 		"Name": "Telegram を起動",
 		"Tooltip": "ワンプッシュで Telegram を起動します。"
+	},
+	"com.lazydeck.plugin.apps.wechat": {
+		"Name": "WeChat を起動",
+		"Tooltip": "ワンプッシュで WeChat を起動します。"
+	},
+	"com.lazydeck.plugin.apps.line": {
+		"Name": "LINE を起動",
+		"Tooltip": "ワンプッシュで LINE を起動します。"
+	},
+	"com.lazydeck.plugin.apps.kakaotalk": {
+		"Name": "KakaoTalk を起動",
+		"Tooltip": "ワンプッシュで KakaoTalk を起動します。"
 	},
 	"com.lazydeck.plugin.website": {
 		"Name": "Webseite",
@@ -673,6 +685,7 @@
 		"Internet": "ネット",
 		"Internet weg": "ネット切断",
 		"Kabel oder aus": "有線かオフ",
+		"KakaoTalk": "KakaoTalk",
 		"Karte": "地図",
 		"kein Akku": "電池なし",
 		"Kein Spiel": "ゲームなし",
@@ -696,6 +709,7 @@
 		"Leiser": "小さく",
 		"Letzte 30 s speichern": "直前の 30 秒を保存",
 		"Letzte Meldung": "最新のメッセージ",
+		"LINE": "LINE",
 		"Links": "左へ",
 		"Links andocken": "左にスナップ",
 		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "すぐにサンプルのアラームを出して、アラーム用プロファイルに切り替えます。",
@@ -843,6 +857,7 @@
 		"Wartet auf dich (Honig)": "あなた待ち（ハニー）",
 		"Was": "種類",
 		"WDR 2": "WDR 2",
+		"WeChat": "WeChat",
 		"Weiter": "次へ",
 		"Weiter geht's": "さあ、再開",
 		"Wetter": "天気",

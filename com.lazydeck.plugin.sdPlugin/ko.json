@@ -304,7 +304,7 @@
 	},
 	"com.lazydeck.plugin.apps": {
 		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Spotify 실행",
@@ -345,6 +345,18 @@
 	"com.lazydeck.plugin.apps.telegram": {
 		"Name": "Telegram 실행",
 		"Tooltip": "한 번 눌러 Telegram을 실행해요."
+	},
+	"com.lazydeck.plugin.apps.wechat": {
+		"Name": "WeChat 실행",
+		"Tooltip": "한 번 눌러 WeChat을 실행해요."
+	},
+	"com.lazydeck.plugin.apps.line": {
+		"Name": "LINE 실행",
+		"Tooltip": "한 번 눌러 LINE을 실행해요."
+	},
+	"com.lazydeck.plugin.apps.kakaotalk": {
+		"Name": "카카오톡 실행",
+		"Tooltip": "한 번 눌러 카카오톡을 실행해요."
 	},
 	"com.lazydeck.plugin.website": {
 		"Name": "Webseite",
@@ -673,6 +685,7 @@
 		"Internet": "인터넷",
 		"Internet weg": "인터넷 끊김",
 		"Kabel oder aus": "유선/꺼짐",
+		"KakaoTalk": "카카오톡",
 		"Karte": "지도",
 		"kein Akku": "배터리 없음",
 		"Kein Spiel": "게임 없음",
@@ -696,6 +709,7 @@
 		"Leiser": "작게",
 		"Letzte 30 s speichern": "최근 30초 저장",
 		"Letzte Meldung": "최근 메시지",
+		"LINE": "LINE",
 		"Links": "왼쪽",
 		"Links andocken": "왼쪽에 맞추기",
 		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "예시 알림을 바로 띄우고 알림 프로필로 전환해요.",
@@ -843,6 +857,7 @@
 		"Wartet auf dich (Honig)": "대기 중 (허니)",
 		"Was": "무엇",
 		"WDR 2": "WDR 2",
+		"WeChat": "WeChat",
 		"Weiter": "다음",
 		"Weiter geht's": "다시 시작해요",
 		"Wetter": "날씨",

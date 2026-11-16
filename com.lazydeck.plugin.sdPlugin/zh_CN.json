@@ -304,7 +304,7 @@
 	},
 	"com.lazydeck.plugin.apps": {
 		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "启动 Spotify",
@@ -345,6 +345,18 @@
 	"com.lazydeck.plugin.apps.telegram": {
 		"Name": "启动 Telegram",
 		"Tooltip": "一键启动 Telegram。"
+	},
+	"com.lazydeck.plugin.apps.wechat": {
+		"Name": "启动 WeChat",
+		"Tooltip": "一键启动 WeChat。"
+	},
+	"com.lazydeck.plugin.apps.line": {
+		"Name": "启动 LINE",
+		"Tooltip": "一键启动 LINE。"
+	},
+	"com.lazydeck.plugin.apps.kakaotalk": {
+		"Name": "启动 KakaoTalk",
+		"Tooltip": "一键启动 KakaoTalk。"
 	},
 	"com.lazydeck.plugin.website": {
 		"Name": "Webseite",
@@ -673,6 +685,7 @@
 		"Internet": "网络",
 		"Internet weg": "网络断了",
 		"Kabel oder aus": "有线或关闭",
+		"KakaoTalk": "KakaoTalk",
 		"Karte": "地图",
 		"kein Akku": "无电池",
 		"Kein Spiel": "没有游戏",
@@ -696,6 +709,7 @@
 		"Leiser": "调小",
 		"Letzte 30 s speichern": "保存最后 30 秒",
 		"Letzte Meldung": "最新消息",
+		"LINE": "LINE",
 		"Links": "靠左",
 		"Links andocken": "靠左贴靠",
 		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "立即触发一个示例提醒，并切换到提醒配置文件。",
@@ -843,6 +857,7 @@
 		"Wartet auf dich (Honig)": "等你处理（蜂蜜色）",
 		"Was": "选择",
 		"WDR 2": "WDR 2",
+		"WeChat": "WeChat",
 		"Weiter": "下一首",
 		"Weiter geht's": "继续吧",
 		"Wetter": "天气",
