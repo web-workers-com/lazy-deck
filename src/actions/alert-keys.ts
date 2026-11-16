@@ -5,16 +5,18 @@ import streamDeck, {
 	type DidReceiveSettingsEvent,
 	type KeyAction,
 	type KeyDownEvent,
+	type NeoInfobarAction,
 	type WillAppearEvent,
 	type WillDisappearEvent,
 } from "@elgato/streamdeck";
 
 import type { Level } from "../alerts.js";
 import { explain } from "../explain.js";
+import { infobarImage } from "../render/infobar.js";
 import { slothKey, testKey } from "../render/keys.js";
 import { alertKey, alertScene, type Item } from "../render/scene.js";
 import { roleAt } from "../roles.js";
-import { alertLeft, center, explainState } from "../runtime.js";
+import { alertLeft, center, explainState, pomodoro } from "../runtime.js";
 import { openExternal } from "../system.js";
 import { Ticker } from "./ticker.js";
 
@@ -23,19 +25,27 @@ import { Ticker } from "./ticker.js";
 export class SlothAction extends SingletonAction {
 	#ticker = new Ticker(250, (_key, t) => slothKey({ alert: center.current, t }));
 
+	#infobar = new Infobar();
+
 	constructor() {
 		super();
-		center.on("change", () => this.#ticker.invalidate());
+		center.on("change", () => {
+			this.#ticker.invalidate();
+			this.#infobar.invalidate();
+		});
 	}
 
 	override onWillAppear(ev: WillAppearEvent): void {
 		if (ev.action.isKey()) {
 			this.#ticker.add(ev.action);
+		} else if (ev.action.isNeoInfobar()) {
+			this.#infobar.add(ev.action);
 		}
 	}
 
 	override onWillDisappear(ev: WillDisappearEvent): void {
 		this.#ticker.remove(ev.action.id);
+		this.#infobar.remove(ev.action.id);
 	}
 
 	override async onKeyDown(ev: KeyDownEvent): Promise<void> {
@@ -48,6 +58,70 @@ export class SlothAction extends SingletonAction {
 				{ level: "wait", title: "Hallo!", source: "Lazy Deck", detail: "So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste." },
 				{ immediate: true },
 			);
+		}
+	}
+}
+
+/**
+ * Sam on the info bar of a Stream Deck Neo (Stream Deck 7.6+): one pixmap
+ * filling the bar, repainted on a timer and only sent when it changed.
+ */
+class Infobar {
+	#bars = new Map<string, NeoInfobarAction<any>>();
+	#sent = new Map<string, string>();
+	#timer: NodeJS.Timeout | undefined;
+
+	add(bar: NeoInfobarAction<any>): void {
+		this.#bars.set(bar.id, bar);
+		this.#sent.delete(bar.id);
+		bar
+			.setFeedbackLayout("layouts/infobar.json")
+			.then(() => {
+				this.#sent.delete(bar.id);
+				this.tick();
+			})
+			.catch((error: Error) => streamDeck.logger.warn(`infobar layout: ${error.message}`));
+		this.#timer ??= setInterval(() => this.tick(), 500);
+	}
+
+	remove(id: string): void {
+		this.#bars.delete(id);
+		this.#sent.delete(id);
+		if (this.#bars.size === 0 && this.#timer) {
+			clearInterval(this.#timer);
+			this.#timer = undefined;
+		}
+	}
+
+	invalidate(): void {
+		this.#sent.clear();
+		this.tick();
+	}
+
+	tick(): void {
+		if (this.#bars.size === 0) {
+			return;
+		}
+		let image: string;
+		try {
+			image = infobarImage({
+				alert: center.current,
+				t: Date.now() / 1000,
+				pomodoro:
+					pomodoro.phase === "idle"
+						? undefined
+						: { phase: pomodoro.phase, left: pomodoro.left(), progress: pomodoro.progress(), paused: pomodoro.pausedLeft !== undefined },
+			});
+		} catch (error) {
+			streamDeck.logger.error(`paint infobar: ${(error as Error).stack}`);
+			return;
+		}
+		for (const bar of this.#bars.values()) {
+			if (this.#sent.get(bar.id) === image) {
+				continue;
+			}
+			this.#sent.set(bar.id, image);
+			bar.setFeedback({ canvas: image }).catch((error: Error) => streamDeck.logger.warn(`infobar: ${error.message}`));
 		}
 	}
 }

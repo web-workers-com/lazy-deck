@@ -7,6 +7,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import sharp from "sharp";
 
 import { alertKey, alertScene, PITCH } from "../.build/render/scene.js";
+import { infobarImage } from "../.build/render/infobar.js";
 import { slothKey, testKey } from "../.build/render/keys.js";
 
 const [columns = 5, rows = 3] = process.argv.slice(2).map(Number);
@@ -48,3 +49,19 @@ const composites = await Promise.all(singles.map(async (uri, i) => ({ input: awa
 const file = new URL("keys.png", out);
 await sharp({ create: { width: singles.length * PITCH + 14, height: 152, channels: 4, background: "#0B0E0A" } }).composite(composites).png().toFile(file.pathname);
 console.log(file.pathname);
+
+// Stream Deck Neo info bar: calm, focus timer, waiting, error, snoozed.
+const bars = [
+	infobarImage({ alert: undefined, t: 1, now }),
+	infobarImage({ alert: undefined, t: 1, now, pomodoro: { phase: "focus", left: 18 * 60_000 + 42_000, progress: 0.25, paused: false } }),
+	infobarImage({ alert: { ...base, level: "wait", title: "Review wartet", source: "GitHub · PR #42", stage: 1 }, t: 1.4, now }),
+	infobarImage({ alert: { ...base, level: "error", title: "Build rot", source: "CI · GitHub", stage: 2 }, t: 0.8, now }),
+	infobarImage({ alert: { ...base, level: "wait", title: "Review wartet", stage: 1, snoozedUntil: now + 4 * 60_000 }, t: 1, now }),
+];
+const barPng = (uri) => sharp(Buffer.from(uri.split(",")[1], "base64")).resize(464, 100).png().toBuffer();
+const barFile = new URL("infobar.png", out);
+await sharp({ create: { width: 492, height: bars.length * 114 + 14, channels: 4, background: "#0B0E0A" } })
+	.composite(await Promise.all(bars.map(async (uri, i) => ({ input: await barPng(uri), left: 14, top: 14 + i * 114 }))))
+	.png()
+	.toFile(barFile.pathname);
+console.log(barFile.pathname);

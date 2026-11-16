@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
 	"Name": "Lazy Deck",
-	"Version": "0.5.2.0",
+	"Version": "0.5.3.0",
 	"Author": "Lazy Deck",
 	"Description": "Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.",
 	"Category": "Lazy Deck",
@@ -12,7 +12,7 @@
 	"UUID": "com.lazydeck.plugin",
 	"SDKVersion": 3,
 	"Software": {
-		"MinimumVersion": "7.1"
+		"MinimumVersion": "7.6"
 	},
 	"OS": [
 		{
@@ -31,10 +31,11 @@
 		{
 			"UUID": "com.lazydeck.plugin.sloth",
 			"Name": "Sam",
-			"Tooltip": "Schläft, solange alles ruhig ist. Wacht auf und pulsiert, wenn etwas auf dich wartet. Drücken holt den Alarm aufs ganze Deck.",
+			"Tooltip": "Schläft, solange alles ruhig ist. Wacht auf und pulsiert, wenn etwas auf dich wartet. Drücken holt den Alarm aufs ganze Deck. Passt auch in die Infobar des Stream Deck Neo.",
 			"Icon": "imgs/actions/sloth/icon",
 			"Controllers": [
-				"Keypad"
+				"Keypad",
+				"Neo"
 			],
 			"PropertyInspectorPath": "ui/sloth.html",
 			"UserTitleEnabled": false,

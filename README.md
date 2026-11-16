@@ -152,14 +152,14 @@ Every command is its own key: drag it in, done. Only where there's a real choice
 
 ## Every Stream Deck, every size
 
-Every model comes with a ready-made profile, alarm profile included. Sam always fills the whole deck, from 6 to 36 keys.
+Every model comes with a ready-made profile, alarm profile included. Sam always fills the whole deck, from 6 to 36 keys. On the Stream Deck Neo, Sam also lives in the info bar: the time, the focus timer, or the alert that is waiting for you.
 
 <img src=".github/assets/devices.png" alt="Supported devices: Stream Deck Mini, +, Neo, Galleon 100 SD, Stream Deck, Mobile, XL, Studio, Virtual Stream Deck, + XL" width="100%">
 
 ## Install
 
 1. Download `lazy-deck-<version>.streamDeckPlugin` from the [latest release](../../releases/latest).
-2. Double-click it. Stream Deck installs the plugin along with the **Lazy Deck** profile and its alarm profile.
+2. Double-click it. Stream Deck installs the plugin along with the **Lazy Deck** profile and its alarm profile. Requires Stream Deck 7.6 or newer.
 3. Pick the **Lazy Deck** profile and press the alarm test key to meet Sam.
 
 Heads-up: the key names inside Stream Deck are German for now (the website speaks eight languages).

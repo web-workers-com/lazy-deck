@@ -3,6 +3,7 @@ import { test } from "node:test";
 
 import { roleAt, KEY_GRID } from "../.build/roles.js";
 import { alertKey, alertScene } from "../.build/render/scene.js";
+import { infobarImage } from "../.build/render/infobar.js";
 import { slothKey, testKey } from "../.build/render/keys.js";
 import { gameKey, iconKey, musicKey } from "../.build/render/apps.js";
 import { text, textWidth } from "../.build/render/svg.js";
@@ -67,5 +68,21 @@ test("still keys change far less often than the sloth, so they are rarely resent
 test("single keys render", () => {
 	for (const uri of [slothKey({ alert: undefined, t: 1 }), testKey("error"), musicKey(1), iconKey("mic", "Mikro an"), gameKey("Hades", undefined), gameKey(undefined, undefined)]) {
 		assert.doesNotMatch(decode(uri), /NaN|undefined/);
+	}
+});
+
+test("the Neo info bar renders every state at 232 x 50", () => {
+	const base = { id: 1, stage: 1, createdAt: 0 };
+	const states = [
+		{ alert: undefined },
+		{ alert: undefined, pomodoro: { phase: "focus", left: 90_000, progress: 0.9, paused: true } },
+		{ alert: { ...base, level: "wait", title: "Ein sehr langer Titel für eine Meldung, der nie passt", source: "GitHub" } },
+		{ alert: { ...base, level: "error", title: "Build rot" } },
+		{ alert: { ...base, level: "wait", title: "x", snoozedUntil: 120_000 } },
+	];
+	for (const s of states) {
+		const svg = decode(infobarImage({ ...s, t: 1.3, now: 60_000 }));
+		assert.match(svg, /^<svg[^>]*viewBox="0 0 232 50"[\s\S]*<\/svg>$/);
+		assert.doesNotMatch(svg, /NaN|undefined/);
 	}
 });

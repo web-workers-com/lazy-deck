@@ -112,7 +112,8 @@ const DEVICES = [
 	{ suffix: " XL", type: 2, model: "20GAT9901", size: [8, 4], layout: XL },
 	{ suffix: " Mobile", type: 3, model: "VSD/WiFi", size: [5, 3], layout: MK2 },
 	{ suffix: " Plus", type: 7, model: "20GBD9901", size: [4, 2], layout: SMALL, dials: DIALS },
-	{ suffix: " Neo", type: 9, model: "20GBJ9901", size: [4, 2], layout: SMALL },
+	// The Neo's info bar sits at "1,0" of its own controller (as in Elgato's default Neo profile).
+	{ suffix: " Neo", type: 9, model: "20GBJ9901", size: [4, 2], layout: SMALL, infobar: SLOTH },
 	{ suffix: " Studio", type: 10, model: "20GBO9901", size: [16, 2], layout: [[...XL[0], ...XL[1]], [...XL[2], ...XL[3]]], dials: [DIAL_MASTER, DIAL_GAME] },
 	{ suffix: " Virtual", type: 11, model: "UI Stream Deck", size: [8, 8], layout: XL },
 	{ suffix: " Galleon", type: 12, model: "GRETSCH", size: [3, 4], layout: [[SLOTH, CLOCK, MIC], [PREV, PLAY, NEXT], [OUTPUT, DISCORD_MIC, DISCORD_DEAF], [GAME, CLIP, LOCK]], dials: [DIAL_MASTER, DIAL_GAME] },
@@ -122,7 +123,11 @@ const DEVICES = [
 const profiles = DEVICES.flatMap((d) => {
 	const [columns, rows] = d.size;
 	const dials = (list) => Object.fromEntries((list ?? []).map((entry, i) => [`${i},0`, entry]));
-	const controllers = (actions, encoders = {}) => [{ Type: "Keypad", Actions: actions }, ...(d.dials ? [{ Type: "Encoder", Actions: encoders }] : [])];
+	const controllers = (actions, encoders = {}) => [
+		{ Type: "Keypad", Actions: actions },
+		...(d.dials ? [{ Type: "Encoder", Actions: encoders }] : []),
+		...(d.infobar ? [{ Type: "Neo", Actions: { "1,0": d.infobar } }] : []),
+	];
 	return [
 		{ name: `Lazy Deck${d.suffix}`, type: d.type, model: d.model, controllers: controllers(grid(d.layout), dials(d.dials)) },
 		{
