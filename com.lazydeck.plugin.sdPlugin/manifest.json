@@ -1,7 +1,7 @@
 {
 	"$schema": "https://schemas.elgato.com/streamdeck/plugins/manifest.json",
 	"Name": "Lazy Deck",
-	"Version": "0.5.3.0",
+	"Version": "0.5.4.0",
 	"Author": "Lazy Deck",
 	"Description": "Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.",
 	"Category": "Lazy Deck",
@@ -1276,7 +1276,7 @@
 		{
 			"UUID": "com.lazydeck.plugin.apps",
 			"Name": "App starten",
-			"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Teams, OBS, Explorer, Terminal, Editor.",
+			"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor.",
 			"Icon": "imgs/actions/apps/icon",
 			"Controllers": [
 				"Keypad"
@@ -1436,9 +1436,25 @@
 			]
 		},
 		{
+			"UUID": "com.lazydeck.plugin.apps.telegram",
+			"Name": "Telegram starten",
+			"Tooltip": "Startet Telegram mit einem Druck.",
+			"Icon": "imgs/actions/apps.telegram/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/apps.telegram/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
 			"UUID": "com.lazydeck.plugin.website",
 			"Name": "Webseite",
-			"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL.",
+			"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL.",
 			"Icon": "imgs/actions/website/icon",
 			"Controllers": [
 				"Keypad"
@@ -1657,6 +1673,22 @@
 			"States": [
 				{
 					"Image": "imgs/actions/website.grok/key",
+					"ShowTitle": false
+				}
+			]
+		},
+		{
+			"UUID": "com.lazydeck.plugin.website.telegramweb",
+			"Name": "Telegram Web öffnen",
+			"Tooltip": "Öffnet Telegram Web im Browser.",
+			"Icon": "imgs/actions/website.telegramweb/icon",
+			"Controllers": [
+				"Keypad"
+			],
+			"UserTitleEnabled": false,
+			"States": [
+				{
+					"Image": "imgs/actions/website.telegramweb/key",
 					"ShowTitle": false
 				}
 			]

@@ -1,6 +1,6 @@
 {
   "name": "lazy-deck",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "Lazy Deck: a Stream Deck plugin with a sloth that takes over the whole deck when something needs you.",
   "license": "MIT",
   "type": "module",

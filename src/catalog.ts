@@ -87,13 +87,14 @@ export const GROUPS: Group[] = [
 	{
 		uuid: "apps",
 		name: "App starten",
-		tooltip: "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Teams, OBS, Explorer, Terminal, Editor.",
+		tooltip: "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor.",
 		setting: "app",
 		choices: [
 			{ id: "spotify", name: "Spotify", label: "Spotify", tile: { text: "Sp", bg: "#1DB954" }, target: "spotify:", logo: "spotify" },
 			{ id: "discord", name: "Discord", label: "Discord", tile: { text: "Di", bg: "#5865F2", fg: "#FFFFFF" }, target: "discord:", logo: "discord" },
 			{ id: "steam", name: "Steam", label: "Steam", tile: { text: "St", bg: "#1B2838", fg: "#FFFFFF" }, target: "steam://open/main", logo: "steam" },
 			{ id: "whatsapp", name: "WhatsApp", label: "WhatsApp", tile: { text: "Wa", bg: "#25D366" }, target: "whatsapp:", logo: "whatsapp" },
+			{ id: "telegram", name: "Telegram", label: "Telegram", tile: { text: "Tg", bg: "#26A5E4", fg: "#FFFFFF" }, target: "tg://", logo: "telegram" },
 			{ id: "teams", name: "Microsoft Teams", label: "Teams", tile: { text: "Te", bg: "#5B5FC7", fg: "#FFFFFF" }, target: "msteams:" },
 			{ id: "obs", name: "OBS Studio", label: "OBS", tile: { text: "OBS", bg: "#302E31", fg: "#FFFFFF" }, target: "obs", logo: "obsstudio" },
 			{ id: "explorer", name: "Explorer", label: "Explorer", icon: "folder", target: "explorer" },
@@ -104,7 +105,7 @@ export const GROUPS: Group[] = [
 	{
 		uuid: "website",
 		name: "Webseite",
-		tooltip: "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL.",
+		tooltip: "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL.",
 		setting: "site",
 		choices: [
 			{ id: "youtube", name: "YouTube", label: "YouTube", tile: { text: "YT", bg: "#FF0033", fg: "#FFFFFF" }, target: "https://www.youtube.com", logo: "youtube" },
@@ -112,6 +113,7 @@ export const GROUPS: Group[] = [
 			{ id: "twitch", name: "Twitch", label: "Twitch", tile: { text: "Tw", bg: "#9146FF", fg: "#FFFFFF" }, target: "https://www.twitch.tv", logo: "twitch" },
 			{ id: "gmail", name: "Gmail", label: "Gmail", tile: { text: "M", bg: "#FFFFFF", fg: "#EA4335" }, target: "https://mail.google.com", logo: "gmail" },
 			{ id: "whatsappweb", name: "WhatsApp Web", label: "WhatsApp", tile: { text: "Wa", bg: "#25D366" }, target: "https://web.whatsapp.com", logo: "whatsapp" },
+			{ id: "telegramweb", name: "Telegram Web", label: "Telegram", tile: { text: "Tg", bg: "#26A5E4", fg: "#FFFFFF" }, target: "https://web.telegram.org", logo: "telegram" },
 			{ id: "prime", name: "Prime Video", label: "Prime Video", tile: { text: "P", bg: "#00A8E1", fg: "#FFFFFF" }, target: "https://www.primevideo.com", logo: "primevideo" },
 			{ id: "disney", name: "Disney+", label: "Disney+", tile: { text: "D+", bg: "#0E3D8C", fg: "#FFFFFF" }, target: "https://www.disneyplus.com" },
 			{ id: "claude", name: "Claude", label: "Claude", tile: { text: "C", bg: "#D97757", fg: "#FFFFFF" }, target: "https://claude.ai", logo: "claude" },
