@@ -1,6 +1,6 @@
 {
   "name": "lazy-deck",
-  "version": "0.5.4",
+  "version": "0.6.0",
   "description": "Lazy Deck: a Stream Deck plugin with a sloth that takes over the whole deck when something needs you.",
   "license": "MIT",
   "type": "module",
@@ -10,7 +10,7 @@
   },
   "scripts": {
     "prebuild-scripts": "tsc -p tsconfig.scripts.json",
-    "icons": "npm run prebuild-scripts && node scripts/generate-manifest.mjs && node scripts/generate-icons.mjs",
+    "icons": "npm run prebuild-scripts && node scripts/generate-manifest.mjs && node scripts/i18n-strings.mjs && node scripts/generate-locales.mjs && node scripts/generate-icons.mjs",
     "profiles": "npm run prebuild-scripts && node scripts/generate-profiles.mjs",
     "build": "npm run icons && npm run profiles && rollup -c",
     "watch": "rollup -c -w --watch.onEnd=\"streamdeck restart com.lazydeck.plugin\"",
@@ -21,7 +21,8 @@
     "link": "node scripts/dev-link.mjs",
     "unlink": "node scripts/dev-link.mjs --unlink",
     "preview": "npm run prebuild-scripts && node scripts/preview.mjs",
-    "pack:ci": "rollup -c && node scripts/pack.mjs"
+    "pack:ci": "rollup -c && node scripts/pack.mjs",
+    "store": "npm run prebuild-scripts && node scripts/store-media.mjs"
   },
   "dependencies": {
     "@elgato/streamdeck": "^3.0.4",

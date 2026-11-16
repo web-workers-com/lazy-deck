@@ -19,6 +19,8 @@ const page = (body) => `<!DOCTYPE html>
 <head>
 <meta charset="utf-8" />
 <title>Lazy Deck</title>
+<script src="./libs/locales.js"></script>
+<script src="./libs/i18n.js"></script>
 <script src="./libs/sdpi-components.js"></script>
 <style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
 </head>

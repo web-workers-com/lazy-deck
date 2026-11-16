@@ -1,0 +1,872 @@
+{
+	"Name": "Lazy Deck",
+	"Description": "押す手間は少なく、成果はもっと多く。Stream Deck に住むナマケモノが、あなたの出番になるとデッキ全体でお知らせ。音楽、Discord、Steam の便利キーも付いています。設定は不要です。",
+	"Category": "Lazy Deck",
+	"com.lazydeck.plugin.sloth": {
+		"Name": "Sam",
+		"Tooltip": "何もないあいだは寝ています。あなたを待っているものがあると目を覚まして脈打ちます。押すとアラームがデッキ全体に広がります。"
+	},
+	"com.lazydeck.plugin.test": {
+		"Name": "アラームをテスト",
+		"Tooltip": "サンプルのアラームを出して、デッキがどう反応するか確かめられます。"
+	},
+	"com.lazydeck.plugin.alert": {
+		"Name": "Alarm-Taste",
+		"Tooltip": "Teil des Alarm-Profils."
+	},
+	"com.lazydeck.plugin.mic": {
+		"Name": "マイク",
+		"Tooltip": "システムのマイクを、Discord、Teams、Zoom、OBS など全アプリでまとめてミュートします。キーには実際の状態が表示されます。"
+	},
+	"com.lazydeck.plugin.output": {
+		"Name": "出力を切り替え",
+		"Tooltip": "ヘッドホン、スピーカー、モニターのあいだで音の出力先を切り替えます。仮想デバイス（Voicemod、Loopback など）はスキップ。ちょうど 2 つを選ぶこともできます。"
+	},
+	"com.lazydeck.plugin.media": {
+		"Name": "ミュージック",
+		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+	},
+	"com.lazydeck.plugin.media.playpause": {
+		"Name": "再生 / 一時停止",
+		"Tooltip": "Spotify、YouTube、ブラウザーなど、ほとんどのプレーヤーで音楽を再生・一時停止します。再生中は Sam が目を開けています。"
+	},
+	"com.lazydeck.plugin.media.previous": {
+		"Name": "前へ",
+		"Tooltip": "前の曲へ。"
+	},
+	"com.lazydeck.plugin.media.next": {
+		"Name": "次へ",
+		"Tooltip": "次の曲へ。"
+	},
+	"com.lazydeck.plugin.media.volumedown": {
+		"Name": "音量を下げる",
+		"Tooltip": "全体の音量を下げて、今の音量を表示します。"
+	},
+	"com.lazydeck.plugin.media.volumeup": {
+		"Name": "音量を上げる",
+		"Tooltip": "全体の音量を上げて、今の音量を表示します。"
+	},
+	"com.lazydeck.plugin.media.mute": {
+		"Name": "音量 / ミュート",
+		"Tooltip": "音量を枝にかかった看板で表示します。押すとミュートとその解除を切り替えます。"
+	},
+	"com.lazydeck.plugin.nowplaying": {
+		"Name": "再生中",
+		"Tooltip": "今流れているもの（Spotify、YouTube、ブラウザーなど）のジャケットと曲名を表示します。押すと再生 / 一時停止。"
+	},
+	"com.lazydeck.plugin.radio": {
+		"Name": "ラジオ",
+		"Tooltip": "ラジオ局を流します。押せばオン、もう一度押せばオフ。インストールもアカウントも不要です。"
+	},
+	"com.lazydeck.plugin.appvolume": {
+		"Name": "アプリ音量",
+		"Tooltip": "前面のゲーム、Discord、Spotify、ブラウザーなど、1 つのアプリだけ音量を上げ下げ・ミュートします。全体をまとめて操作することも。ダイヤルなら回して押すだけ。"
+	},
+	"com.lazydeck.plugin.appvolume.fgdown": {
+		"Name": "ゲーム音量を下げる",
+		"Tooltip": "ゲーム（または前面のアプリ）だけ音量を下げます。Discord と音楽はそのままです。"
+	},
+	"com.lazydeck.plugin.appvolume.fgup": {
+		"Name": "ゲーム音量を上げる",
+		"Tooltip": "ゲーム（または前面のアプリ）だけ音量を上げます。"
+	},
+	"com.lazydeck.plugin.appvolume.spotifymute": {
+		"Name": "Spotify ミュート",
+		"Tooltip": "Spotify だけをミュート・解除します。"
+	},
+	"com.lazydeck.plugin.appmic": {
+		"Name": "アプリのマイク",
+		"Tooltip": "Teams、Zoom、ブラウザーの Meet など、1 つのアプリだけマイクをミュートします。ほかのアプリには声が届いたまま。キーには実際の状態が表示されます。"
+	},
+	"com.lazydeck.plugin.appmic.teams": {
+		"Name": "Teams マイク",
+		"Tooltip": "Microsoft Teams のマイクだけをミュートします。"
+	},
+	"com.lazydeck.plugin.appmic.zoom": {
+		"Name": "Zoom マイク",
+		"Tooltip": "Zoom のマイクだけをミュートします。"
+	},
+	"com.lazydeck.plugin.appmic.browser": {
+		"Name": "Meet マイク（ブラウザー）",
+		"Tooltip": "Google Meet や Jitsi など、ブラウザーのマイクをミュートします。"
+	},
+	"com.lazydeck.plugin.discord": {
+		"Name": "Discord",
+		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+	},
+	"com.lazydeck.plugin.discord.mute": {
+		"Name": "Discord マイク",
+		"Tooltip": "Discord で選んでいるマイクに関係なく、Discord だけをミュートします。キーには実際の状態が表示されます。"
+	},
+	"com.lazydeck.plugin.discord.deafen": {
+		"Name": "Discord スピーカーミュート",
+		"Tooltip": "Discord で何も聞こえず、何も送られなくなります。音とマイクをまとめてオフ。"
+	},
+	"com.lazydeck.plugin.discord.open": {
+		"Name": "Discord を開く",
+		"Tooltip": "Discord を開きます。"
+	},
+	"com.lazydeck.plugin.steam": {
+		"Name": "Steam",
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+	},
+	"com.lazydeck.plugin.steam.last": {
+		"Name": "最近プレイしたゲーム",
+		"Tooltip": "最後に遊んだ Steam のゲームを起動します。"
+	},
+	"com.lazydeck.plugin.steam.friends": {
+		"Name": "Steam フレンド",
+		"Tooltip": "Steam のフレンドリストを開きます。"
+	},
+	"com.lazydeck.plugin.steam.library": {
+		"Name": "Steam ライブラリ",
+		"Tooltip": "Steam のライブラリを開きます。"
+	},
+	"com.lazydeck.plugin.steam.bigpicture": {
+		"Name": "Steam Big Picture",
+		"Tooltip": "テレビやコントローラー向けの Big Picture モードで Steam を起動します。"
+	},
+	"com.lazydeck.plugin.steam.store": {
+		"Name": "Steam ストア",
+		"Tooltip": "Steam ストアを開きます。"
+	},
+	"com.lazydeck.plugin.steamdownloads": {
+		"Name": "Steam ダウンロード",
+		"Tooltip": "Steam のダウンロードの進み具合。大きなダウンロードが終わると、このキーがなくても Sam が知らせます。"
+	},
+	"com.lazydeck.plugin.gamebar": {
+		"Name": "Gaming",
+		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+	},
+	"com.lazydeck.plugin.gamebar.clip": {
+		"Name": "直前の 30 秒を保存",
+		"Tooltip": "Windows の Xbox Game Bar で直前の 30 秒を保存します。"
+	},
+	"com.lazydeck.plugin.gamebar.record": {
+		"Name": "録画オン / オフ",
+		"Tooltip": "Windows の Xbox Game Bar で録画をオン / オフします。"
+	},
+	"com.lazydeck.plugin.gamebar.shot": {
+		"Name": "ゲームのスクショ",
+		"Tooltip": "Windows の Xbox Game Bar でゲームのスクリーンショットを撮ります。"
+	},
+	"com.lazydeck.plugin.gamebar.open": {
+		"Name": "Game Bar を開く",
+		"Tooltip": "Windows の Xbox Game Bar を開きます。"
+	},
+	"com.lazydeck.plugin.brightness": {
+		"Name": "明るさ",
+		"Tooltip": "画面を明るく・暗くします。外部モニターも対応（Twinkle Tray と同じく DDC/CI 経由）。ダイヤルなら回すだけ。"
+	},
+	"com.lazydeck.plugin.brightness.down": {
+		"Name": "暗く",
+		"Tooltip": "外部モニターも含め、すべての画面を暗くします。"
+	},
+	"com.lazydeck.plugin.brightness.up": {
+		"Name": "明るく",
+		"Tooltip": "外部モニターも含め、すべての画面を明るくします。"
+	},
+	"com.lazydeck.plugin.windows": {
+		"Name": "Windows",
+		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+	},
+	"com.lazydeck.plugin.windows.screenshot": {
+		"Name": "スクショ（範囲指定）",
+		"Tooltip": "範囲を選んでスクリーンショットを撮ります。"
+	},
+	"com.lazydeck.plugin.windows.lock": {
+		"Name": "画面をロック",
+		"Tooltip": "画面をロックします。"
+	},
+	"com.lazydeck.plugin.windows.monitoroff": {
+		"Name": "画面オフ",
+		"Tooltip": "画面をオフにします。"
+	},
+	"com.lazydeck.plugin.windows.sleep": {
+		"Name": "スリープ",
+		"Tooltip": "PC をスリープにします。念のため 2 回押してください。"
+	},
+	"com.lazydeck.plugin.windows.darkmode": {
+		"Name": "ダークモード切り替え",
+		"Tooltip": "ダークモードを切り替えます。"
+	},
+	"com.lazydeck.plugin.windows.recyclebin": {
+		"Name": "ごみ箱を空にする",
+		"Tooltip": "ごみ箱を空にします。念のため 2 回押してください。"
+	},
+	"com.lazydeck.plugin.windows.desktop": {
+		"Name": "デスクトップを表示",
+		"Tooltip": "デスクトップを表示します。"
+	},
+	"com.lazydeck.plugin.windows.settings": {
+		"Name": "設定",
+		"Tooltip": "Windows の設定を開きます。"
+	},
+	"com.lazydeck.plugin.windows.taskmanager": {
+		"Name": "タスク マネージャー",
+		"Tooltip": "タスク マネージャーを開きます。"
+	},
+	"com.lazydeck.plugin.window": {
+		"Name": "Fenster",
+		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+	},
+	"com.lazydeck.plugin.window.snapleft": {
+		"Name": "左にスナップ",
+		"Tooltip": "ウィンドウを左にスナップします。"
+	},
+	"com.lazydeck.plugin.window.snapright": {
+		"Name": "右にスナップ",
+		"Tooltip": "ウィンドウを右にスナップします。"
+	},
+	"com.lazydeck.plugin.window.maximize": {
+		"Name": "最大化",
+		"Tooltip": "ウィンドウを最大化します。"
+	},
+	"com.lazydeck.plugin.window.minimize": {
+		"Name": "最小化",
+		"Tooltip": "ウィンドウを最小化します。"
+	},
+	"com.lazydeck.plugin.window.vdleft": {
+		"Name": "左の仮想デスクトップ",
+		"Tooltip": "左の仮想デスクトップへ移ります。"
+	},
+	"com.lazydeck.plugin.window.vdright": {
+		"Name": "右の仮想デスクトップ",
+		"Tooltip": "右の仮想デスクトップへ移ります。"
+	},
+	"com.lazydeck.plugin.window.taskview": {
+		"Name": "タスク ビュー",
+		"Tooltip": "タスク ビューを開きます。"
+	},
+	"com.lazydeck.plugin.window.project": {
+		"Name": "表示切り替え（2 画面目）",
+		"Tooltip": "2 画面目への表示方法を切り替えます。"
+	},
+	"com.lazydeck.plugin.awake": {
+		"Name": "起きたまま",
+		"Tooltip": "キーがオンのあいだ、PC も画面もスリープしません。ダウンロード、プレゼン、映画のときに。"
+	},
+	"com.lazydeck.plugin.sleeptimer": {
+		"Name": "オフタイマー",
+		"Tooltip": "30、60、90 分後に PC をシャットダウンまたはスリープ。夜に映画を見るときなどに。もう一度押すと 30 分延長、長押しでキャンセル。1 分前に Sam が知らせます。"
+	},
+	"com.lazydeck.plugin.clock": {
+		"Name": "時計",
+		"Tooltip": "時刻、曜日、日付、週番号を表示します。"
+	},
+	"com.lazydeck.plugin.weather": {
+		"Name": "天気",
+		"Tooltip": "設定なしで、今いる場所の天気を表示します。場所は IP アドレス（ipwho.is）から、天気は Open-Meteo から取得します。"
+	},
+	"com.lazydeck.plugin.timer": {
+		"Name": "タイマー",
+		"Tooltip": "キッチンタイマー：押してスタート / 一時停止、長押しでリセット。時間になると Sam が知らせます。"
+	},
+	"com.lazydeck.plugin.stopwatch": {
+		"Name": "ストップウォッチ",
+		"Tooltip": "押してスタート / ストップ、長押しでリセット。"
+	},
+	"com.lazydeck.plugin.countdown": {
+		"Name": "Countdown",
+		"Tooltip": "定時や週末まであとどれくらいかを表示します。"
+	},
+	"com.lazydeck.plugin.countdown.feierabend": {
+		"Name": "定時まで",
+		"Tooltip": "定時（17:00、変更可）まであとどれくらいか表示します。"
+	},
+	"com.lazydeck.plugin.countdown.weekend": {
+		"Name": "週末まで",
+		"Tooltip": "金曜の定時まであとどれくらいか表示します。"
+	},
+	"com.lazydeck.plugin.reminder": {
+		"Name": "リマインダー",
+		"Tooltip": "水分補給や体を動かすことを定期的にお知らせします。押せば完了です。"
+	},
+	"com.lazydeck.plugin.reminder.water": {
+		"Name": "水分補給",
+		"Tooltip": "1 時間ごとに水分補給をお知らせします。押せば完了です。"
+	},
+	"com.lazydeck.plugin.reminder.move": {
+		"Name": "体を動かす",
+		"Tooltip": "45 分ごとに体を動かすようお知らせします。押せば完了です。"
+	},
+	"com.lazydeck.plugin.internet": {
+		"Name": "インターネット",
+		"Tooltip": "インターネットの応答の速さを表示します。30 秒つながらないと、Sam が知らせます。"
+	},
+	"com.lazydeck.plugin.wifi": {
+		"Name": "Wi-Fi",
+		"Tooltip": "Wi-Fi の名前と電波の強さを表示します。"
+	},
+	"com.lazydeck.plugin.battery": {
+		"Name": "バッテリー",
+		"Tooltip": "バッテリー残量と充電中かどうか（ノート PC）。デスクトップ PC では電源接続を表示します。"
+	},
+	"com.lazydeck.plugin.apps": {
+		"Name": "App starten",
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+	},
+	"com.lazydeck.plugin.apps.spotify": {
+		"Name": "Spotify を起動",
+		"Tooltip": "ワンプッシュで Spotify を起動します。"
+	},
+	"com.lazydeck.plugin.apps.discord": {
+		"Name": "Discord を起動",
+		"Tooltip": "ワンプッシュで Discord を起動します。"
+	},
+	"com.lazydeck.plugin.apps.steam": {
+		"Name": "Steam を起動",
+		"Tooltip": "ワンプッシュで Steam を起動します。"
+	},
+	"com.lazydeck.plugin.apps.whatsapp": {
+		"Name": "WhatsApp を起動",
+		"Tooltip": "ワンプッシュで WhatsApp を起動します。"
+	},
+	"com.lazydeck.plugin.apps.teams": {
+		"Name": "Microsoft Teams を起動",
+		"Tooltip": "ワンプッシュで Microsoft Teams を起動します。"
+	},
+	"com.lazydeck.plugin.apps.obs": {
+		"Name": "OBS Studio を起動",
+		"Tooltip": "ワンプッシュで OBS Studio を起動します。"
+	},
+	"com.lazydeck.plugin.apps.explorer": {
+		"Name": "エクスプローラーを起動",
+		"Tooltip": "ワンプッシュでエクスプローラーを起動します。"
+	},
+	"com.lazydeck.plugin.apps.terminal": {
+		"Name": "ターミナルを起動",
+		"Tooltip": "ワンプッシュでターミナルを起動します。"
+	},
+	"com.lazydeck.plugin.apps.notepad": {
+		"Name": "メモ帳を起動",
+		"Tooltip": "ワンプッシュでメモ帳を起動します。"
+	},
+	"com.lazydeck.plugin.apps.telegram": {
+		"Name": "Telegram を起動",
+		"Tooltip": "ワンプッシュで Telegram を起動します。"
+	},
+	"com.lazydeck.plugin.website": {
+		"Name": "Webseite",
+		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+	},
+	"com.lazydeck.plugin.website.youtube": {
+		"Name": "YouTube を開く",
+		"Tooltip": "ブラウザーで YouTube を開きます。"
+	},
+	"com.lazydeck.plugin.website.netflix": {
+		"Name": "Netflix を開く",
+		"Tooltip": "ブラウザーで Netflix を開きます。"
+	},
+	"com.lazydeck.plugin.website.twitch": {
+		"Name": "Twitch を開く",
+		"Tooltip": "ブラウザーで Twitch を開きます。"
+	},
+	"com.lazydeck.plugin.website.gmail": {
+		"Name": "Gmail を開く",
+		"Tooltip": "ブラウザーで Gmail を開きます。"
+	},
+	"com.lazydeck.plugin.website.whatsappweb": {
+		"Name": "WhatsApp Web を開く",
+		"Tooltip": "ブラウザーで WhatsApp Web を開きます。"
+	},
+	"com.lazydeck.plugin.website.prime": {
+		"Name": "Prime Video を開く",
+		"Tooltip": "ブラウザーで Prime Video を開きます。"
+	},
+	"com.lazydeck.plugin.website.disney": {
+		"Name": "Disney+ を開く",
+		"Tooltip": "ブラウザーで Disney+ を開きます。"
+	},
+	"com.lazydeck.plugin.website.claude": {
+		"Name": "Claude を開く",
+		"Tooltip": "ブラウザーで Claude を開きます。"
+	},
+	"com.lazydeck.plugin.website.maps": {
+		"Name": "Google Maps を開く",
+		"Tooltip": "ブラウザーで Google Maps を開きます。"
+	},
+	"com.lazydeck.plugin.website.deepl": {
+		"Name": "DeepL 翻訳を開く",
+		"Tooltip": "ブラウザーで DeepL 翻訳を開きます。"
+	},
+	"com.lazydeck.plugin.website.chatgpt": {
+		"Name": "ChatGPT を開く",
+		"Tooltip": "ブラウザーで ChatGPT を開きます。"
+	},
+	"com.lazydeck.plugin.website.gemini": {
+		"Name": "Gemini を開く",
+		"Tooltip": "ブラウザーで Gemini を開きます。"
+	},
+	"com.lazydeck.plugin.website.grok": {
+		"Name": "Grok を開く",
+		"Tooltip": "ブラウザーで Grok を開きます。"
+	},
+	"com.lazydeck.plugin.website.telegramweb": {
+		"Name": "Telegram Web を開く",
+		"Tooltip": "ブラウザーで Telegram Web を開きます。"
+	},
+	"com.lazydeck.plugin.folder": {
+		"Name": "Ordner",
+		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+	},
+	"com.lazydeck.plugin.folder.downloads": {
+		"Name": "ダウンロード フォルダー",
+		"Tooltip": "ダウンロード フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.documents": {
+		"Name": "ドキュメント フォルダー",
+		"Tooltip": "ドキュメント フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.pictures": {
+		"Name": "ピクチャ フォルダー",
+		"Tooltip": "ピクチャ フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.desktop": {
+		"Name": "デスクトップ フォルダー",
+		"Tooltip": "デスクトップ フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.music": {
+		"Name": "ミュージック フォルダー",
+		"Tooltip": "ミュージック フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.videos": {
+		"Name": "ビデオ フォルダー",
+		"Tooltip": "ビデオ フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.folder.home": {
+		"Name": "ユーザー フォルダー",
+		"Tooltip": "ユーザー フォルダーを開きます。"
+	},
+	"com.lazydeck.plugin.tools": {
+		"Name": "Werkzeuge",
+		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+	},
+	"com.lazydeck.plugin.tools.clipboard": {
+		"Name": "クリップボード履歴",
+		"Tooltip": "クリップボードの履歴を開きます。"
+	},
+	"com.lazydeck.plugin.tools.emoji": {
+		"Name": "絵文字パネル",
+		"Tooltip": "絵文字パネルを開きます。"
+	},
+	"com.lazydeck.plugin.tools.notifications": {
+		"Name": "Windows の通知（通知センター）",
+		"Tooltip": "Windows の通知センターを開きます。"
+	},
+	"com.lazydeck.plugin.tools.calculator": {
+		"Name": "電卓",
+		"Tooltip": "電卓を開きます。"
+	},
+	"com.lazydeck.plugin.tools.pastedate": {
+		"Name": "今日の日付を貼り付け",
+		"Tooltip": "今日の日付を貼り付けます。"
+	},
+	"com.lazydeck.plugin.tools.password": {
+		"Name": "パスワード生成（クリップボードへ）",
+		"Tooltip": "パスワードを生成してクリップボードにコピーします。"
+	},
+	"com.lazydeck.plugin.chance": {
+		"Name": "Münze & Würfel",
+		"Tooltip": "コイントス（表は Sam）またはサイコロ。自分で決めたくないことは全部おまかせ。"
+	},
+	"com.lazydeck.plugin.chance.coin": {
+		"Name": "コイントス",
+		"Tooltip": "表か裏か。表には Sam が描かれています。"
+	},
+	"com.lazydeck.plugin.chance.dice": {
+		"Name": "サイコロ",
+		"Tooltip": "1 から 6 の数字をランダムに出します。"
+	},
+	"com.lazydeck.plugin.system": {
+		"Name": "システム",
+		"Tooltip": "CPU とメモリーを表示します。押すとタスク マネージャーが開きます。"
+	},
+	"com.lazydeck.plugin.pomodoro": {
+		"Name": "Pomodoro",
+		"Tooltip": "25 分集中して 5 分休憩。押してスタート / 一時停止、長押しでリセット。時間になると Sam が知らせます。"
+	},
+	"com.lazydeck.plugin.github": {
+		"Name": "GitHub",
+		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+	},
+	"com.lazydeck.plugin.github.notifications": {
+		"Name": "GitHub の通知",
+		"Tooltip": "GitHub の未読通知。ログイン済みの gh-CLI を使います。"
+	},
+	"com.lazydeck.plugin.github.reviews": {
+		"Name": "GitHub のレビュー",
+		"Tooltip": "あなたを待っているレビュー。新しいものが来るとアラームが鳴ります。"
+	},
+	"Localization": {
+		"{d}.{m}. · KW {w}": "{m}/{d}・第{w}週",
+		"{day} {d}.{m}. · alles ruhig": "{m}/{d}({day})・平穏",
+		"{h}:{mm} h": "{h}:{mm}",
+		"{n} min": "{n}分",
+		"{n} min um": "{n}分経過",
+		"{n} Reviews warten": "レビュー{n}件待ち",
+		"{n} Tage": "{n}日",
+		"{name} ist fertig": "{name} 完了",
+		"{name} still": "{name} 無音",
+		"{name} stumm": "{name} ミュート",
+		"1 Minute": "1 分",
+		"1 Stunde": "1 時間",
+		"1,5 Stunden": "1.5 時間",
+		"10 Minuten": "10 分",
+		"15 Minuten": "15 分",
+		"1LIVE": "1LIVE",
+		"2 Stunden": "2 時間",
+		"20 Minuten": "20 分",
+		"25 Minuten geschafft. 5 Minuten durchatmen.": "25 分おつかれさま。5 分ひと息つこう。",
+		"3 Minuten": "3 分",
+		"30 Minuten": "30 分",
+		"4 Stunden": "4 時間",
+		"45 Minuten": "45 分",
+		"5 Minuten": "5 分",
+		"80s80s": "80s80s",
+		"Ablage": "コピー履歴",
+		"Akku": "電池",
+		"Akku lädt": "充電中",
+		"Aktion": "アクション",
+		"Alarm aus jedem Skript auslösen:": "どんなスクリプトからでもアラームを出せます：",
+		"Alle": "間隔",
+		"Alle Fenster": "タスクビュー",
+		"alles aktuell": "最新です",
+		"Alles ruhig": "異常なし",
+		"an": "オン",
+		"angehalten": "停止中",
+		"Ansehen": "見る",
+		"Antenne Bayern": "Antenne Bayern",
+		"App": "アプリ",
+		"Art": "種類",
+		"Aufgabenansicht": "タスク ビュー",
+		"Aufnahme": "録画",
+		"Aufnahme an/aus": "録画オン / オフ",
+		"Aufstehen, strecken, einmal durchatmen.": "立ち上がって、伸びをして、深呼吸しよう。",
+		"aus in {time}": "{time}後オフ",
+		"Ausschalt-Timer": "オフタイマー",
+		"Automatisch (alle echten Geräte)": "自動（実デバイスすべて）",
+		"Bayern 3": "Bayern 3",
+		"Benutzerordner": "ユーザー フォルダー",
+		"Bewegen": "運動",
+		"Bewölkt": "曇り",
+		"Bibliothek": "ライブラリ",
+		"Big Picture": "Big Picture",
+		"bigFM": "bigFM",
+		"Bilder": "ピクチャ",
+		"Bildschirm aus": "画面オフ",
+		"Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen.": "画面を明るく・暗くします。外部モニターにも対応（Twinkle Tray と同じく DDC/CI 経由）。ダイヤルなら回すだけ。",
+		"Bildschirm sperren": "画面をロック",
+		"Bis": "終了時刻",
+		"bis Feierabend": "定時まで",
+		"bis ich wieder drücke": "もう一度押すまで",
+		"bis Wochenende": "週末まで",
+		"Browser": "ブラウザー",
+		"Browser (Chrome, Edge, Firefox …)": "ブラウザー（Chrome、Edge、Firefox など）",
+		"ChatGPT": "ChatGPT",
+		"Chillout (Antenne)": "Chillout (Antenne)",
+		"Claude": "Claude",
+		"Clip!": "クリップ！",
+		"Dann": "その後",
+		"Dark Mode umschalten": "ダークモード切り替え",
+		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "何もないあいだ、ナマケモノは寝ています。アラームが来ると目を覚まして脈打ちます。待ち状態のアラームは 2 分後に、エラーはすぐにデッキ全体に広がります。押すとすぐにアラームをデッキに表示します。",
+		"Datum": "日付",
+		"Dauer": "時間",
+		"DeepL Übersetzer": "DeepL 翻訳",
+		"Dein Timer ist abgelaufen.": "タイマーが終わりました。",
+		"denkt …": "考え中…",
+		"Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme.": "キーがオンのあいだ、PC と画面はスリープしません。ダウンロード、プレゼン、映画のときに。",
+		"Desktop": "デスクトップ",
+		"Desktop ←": "デスク ←",
+		"Desktop →": "デスク →",
+		"Desktop zeigen": "デスクトップを表示",
+		"Details": "詳細",
+		"Deutschlandfunk": "Deutschlandfunk",
+		"Di": "火",
+		"Die Pause ist um.": "休憩おしまい。",
+		"Dienstag": "火曜日",
+		"Discord": "Discord",
+		"Discord Mikro": "Discord マイク",
+		"Discord öffnen": "Discord を開く",
+		"Discord stumm": "Discord ミュート",
+		"Discord taub": "Discord 聴覚オフ",
+		"Discord Ton": "Discord 音声",
+		"Disney+": "Disney+",
+		"Do": "木",
+		"Dokumente": "ドキュメント",
+		"Donnerstag": "木曜日",
+		"Download abgeschlossen. Viel Spaß!": "ダウンロード完了。楽しんでね！",
+		"Downloads": "ダウンロード",
+		"drücken = an": "押す＝オン",
+		"drücken = los": "押す＝開始",
+		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "システムのメディアキーを押します。Spotify、YouTube、ブラウザーなど、ほとんどのプレーヤーが反応します。",
+		"du bist live": "配信中",
+		"Dunkel": "ダーク",
+		"Dunkler": "暗く",
+		"Editor": "メモ帳",
+		"Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.": "キッチンタイマー：押すと開始 / 一時停止、長押しでリセット。時間になると Sam が知らせます。",
+		"Eigene App (Prozessname)": "その他のアプリ（プロセス名）",
+		"Eigener Sender (Stream-Link)": "カスタム局（ストリーム URL）",
+		"Ein Glas Wasser, dann geht's weiter.": "水を一杯飲んで、また続けよう。",
+		"Einstellungen": "設定",
+		"Emoji": "絵文字",
+		"Emoji-Auswahl": "絵文字パネル",
+		"Energiesparen": "スリープ",
+		"Energiesparen (zweimal drücken)": "スリープ（2 回押す）",
+		"Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.": "水分補給や体を動かすことを定期的にお知らせします。押せば完了です。",
+		"Erinnerung": "リマインダー",
+		"Erkläre auf Deutsch in höchstens fünf kurzen Sätzen, was diese Meldung wahrscheinlich bedeutet und was ich als Nächstes prüfen sollte. Keine Einleitung, keine Rückfragen.": "このメッセージがおそらく何を意味し、次に何を確認すべきかを、日本語で短い文 5 つ以内で説明してください。前置きも質問の聞き返しも不要です。",
+		"Erklären": "説明",
+		"Erledigt": "完了",
+		"es brennt": "緊急！",
+		"Explorer": "Explorer",
+		"Fehler": "エラー",
+		"Fehler (Koralle)": "エラー（コーラル）",
+		"Fehler 500": "エラー 500",
+		"Feierabend": "定時",
+		"Feierabend!": "おつかれ！",
+		"Fertig!": "完了！",
+		"Fokus": "集中",
+		"Fokus · {n}": "集中・{n}",
+		"Fokus starten": "集中開始",
+		"Fr": "金",
+		"Freitag": "金曜日",
+		"Freunde": "フレンド",
+		"Für „Erklären“ nutzt Lazy Deck die Claude-CLI, wenn sie installiert ist. Sie wurde nicht gefunden oder hat nicht geantwortet.": "「説明」には、インストールされていれば Claude CLI を使います。見つからないか、応答がありませんでした。",
+		"Game Bar": "Game Bar",
+		"Game Bar öffnen": "Game Bar を開く",
+		"geht hier nicht": "ここでは不可",
+		"geht nicht": "できない",
+		"geht so": "まあまあ",
+		"Gemini": "Gemini",
+		"geöffnet": "開いた",
+		"gerade eben": "たった今",
+		"Gerät A": "デバイス A",
+		"Gerät B": "デバイス B",
+		"Gesamt (alles, was rauskommt)": "全体（出力されるすべて）",
+		"Gewitter": "雷雨",
+		"GitHub-Reviews": "GitHubレビュー",
+		"GitHub-Reviews, die auf dich warten": "あなたを待っている GitHub のレビュー",
+		"GitHub: nicht da": "GitHub なし",
+		"Gmail": "Gmail",
+		"Google Maps": "Google Maps",
+		"Grok": "Grok",
+		"Groß": "最大化",
+		"Hallo!": "やあ！",
+		"halten = neu": "長押しで新規",
+		"Headset": "ヘッドセット",
+		"Heiter": "晴れ間",
+		"Hell": "ライト",
+		"Heller": "明るく",
+		"Helligkeit": "明るさ",
+		"Herunterfahren": "シャットダウン",
+		"Heutiges Datum einfügen": "今日の日付を貼り付け",
+		"Hey!": "ねえ！",
+		"Hilfe!": "助けて！",
+		"hr3": "hr3",
+		"I Love Radio": "I Love Radio",
+		"Ich": "ユーザー",
+		"in {time}": "あと{time}",
+		"In einer Minute. Taste am Timer gedrückt halten bricht ab.": "あと 1 分です。タイマーのキーを長押しでキャンセル。",
+		"Installieren: npm install -g @anthropic-ai/claude-code, dann einmal \"claude\" starten und anmelden.": "インストール：npm install -g @anthropic-ai/claude-code を実行し、一度 \"claude\" を起動してログインしてください。",
+		"Interface": "オーディオIF",
+		"Internet": "ネット",
+		"Internet weg": "ネット切断",
+		"Kabel oder aus": "有線かオフ",
+		"Karte": "地図",
+		"kein Akku": "電池なし",
+		"Kein Spiel": "ゲームなし",
+		"keine Antwort": "応答なし",
+		"keiner hört dich": "聞こえてない",
+		"keins": "なし",
+		"Klein": "最小化",
+		"Kopf": "表",
+		"Kopfhörer": "ヘッドホン",
+		"kopiert ✓": "コピー済 ✓",
+		"Kurz bewegen": "ちょっと体を動かそう",
+		"Lade Geräte …": "デバイスを読み込み中…",
+		"langsam": "遅い",
+		"Lauter": "大きく",
+		"Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.": "前面のゲーム、Discord、Spotify、ブラウザーなど、1 つのアプリだけ音量を上げ下げ・ミュートします。全体をまとめて操作することも。ダイヤルなら回して押すだけ。",
+		"Lautsprecher": "スピーカー",
+		"Lautstärke": "音量",
+		"Lazy Deck erklärt": "Lazy Deck の説明",
+		"Lazy Deck liest deine lokale Steam-Bibliothek, ohne Login. Die Taste zeigt das Spiel, das du zuletzt gespielt hast.": "Lazy Deck はローカルの Steam ライブラリをログインなしで読み取ります。キーには最近プレイしたゲームが表示されます。",
+		"Leer!": "空っぽ！",
+		"Leiser": "小さく",
+		"Letzte 30 s speichern": "直前の 30 秒を保存",
+		"Letzte Meldung": "最新のメッセージ",
+		"Links": "左へ",
+		"Links andocken": "左にスナップ",
+		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "すぐにサンプルのアラームを出して、アラーム用プロファイルに切り替えます。",
+		"Maximieren": "最大化",
+		"Mein Sender": "マイ局",
+		"Meldung": "メッセージ",
+		"Mi": "水",
+		"Microsoft Teams": "Microsoft Teams",
+		"Mikro": "マイク",
+		"Mikro an": "マイクオン",
+		"Mikro stumm": "マイクをミュート",
+		"Minimieren": "最小化",
+		"Mit Link für „Ansehen“:": "「見る」用のリンク付き：",
+		"Mitteilungen": "通知",
+		"Mittwoch": "水曜日",
+		"Mo": "月",
+		"Monitor": "モニター",
+		"Montag": "月曜日",
+		"Münzwurf": "コイントス",
+		"Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will.": "コイントス（表は Sam）またはサイコロ。自分で決めたくないことは全部おまかせ。",
+		"Musik": "ミュージック",
+		"Nach": "時間",
+		"Name": "名前",
+		"NDR 2": "NDR 2",
+		"Nebel": "霧",
+		"Netflix": "Netflix",
+		"Netz": "AC電源",
+		"Netzwerk": "ネットワーク",
+		"nichts": "なし",
+		"Nichts läuft": "再生なし",
+		"noch {n} min": "あと{n}分",
+		"Nochmal?": "もう一度？",
+		"nur bei Eigene App, z. B. obs64": "その他のアプリのみ。例: obs64",
+		"nur bei Eigene App, z. B. vlc": "その他のアプリのみ。例: vlc",
+		"nur bei Eigener Sender: https://…": "カスタム局のみ：https://…",
+		"Nutzt die GitHub-CLI „gh“ (auch in WSL), mit der du schon angemeldet bist. Alle 2 Minuten wird nachgesehen; neue Review-Anfragen lösen einen Alarm aus.": "ログイン済みの GitHub CLI「gh」（WSL 内でも可）を使います。2 分ごとに確認し、新しいレビュー依頼が来るとアラームが鳴ります。",
+		"OBS": "OBS",
+		"OBS Studio": "OBS Studio",
+		"Offline!": "オフライン！",
+		"Papierkorb": "ごみ箱",
+		"Papierkorb {n}": "ごみ箱 {n}",
+		"Papierkorb leeren (zweimal drücken)": "ごみ箱を空にする（2 回押す）",
+		"Passwort": "パスワード",
+		"Passwort erzeugen (in die Zwischenablage)": "パスワード生成（クリップボードへ）",
+		"Pause": "休憩",
+		"Pause!": "休憩！",
+		"pausiert": "一時停止中",
+		"PC aus · {n} min": "PCオフ・{n}分",
+		"PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid.": "30、60、90 分後に PC をオフまたはスリープに。夜に映画を見るときなどに。もう一度押すと 30 分延長、長押しでキャンセル。1 分前に Sam が知らせます。",
+		"PC geht gleich aus": "まもなく PC がオフになります",
+		"PC schläft gleich ein": "まもなく PC がスリープします",
+		"Play": "再生",
+		"Play / Pause": "再生 / 停止",
+		"Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.": "押す手間は少なく、成果はもっと多く。Stream Deck に住むナマケモノが、あなたの出番になるとデッキ全体でお知らせ。音楽、Discord、Steam の便利キーも付いています。設定は不要です。",
+		"Prime Video": "Prime Video",
+		"Projizieren": "表示切替",
+		"Projizieren (2. Bildschirm)": "表示切り替え（2 画面目）",
+		"Prozessname": "プロセス名",
+		"prüft …": "確認中…",
+		"Puh, heiß": "ふう、熱い",
+		"Quelle": "ソース",
+		"Radio Bob": "Radio Bob",
+		"radioeins": "radioeins",
+		"Rechner": "電卓",
+		"Rechts": "右へ",
+		"Rechts andocken": "右にスナップ",
+		"Regen": "雨",
+		"Review wartet": "レビュー待ち",
+		"Rock Antenne": "Rock Antenne",
+		"Sa": "土",
+		"Samstag": "土曜日",
+		"Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand.": "Teams、Zoom、ブラウザーの Meet など、1 つのアプリだけマイクをミュートします。ほかのアプリには引き続き聞こえます。キーには実際の状態が表示されます。",
+		"Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.": "ヘッドホン、スピーカー、モニターのあいだで音の出力先を切り替えます。仮想デバイス（Voicemod、Loopback など）はスキップ。ちょうど 2 つを選ぶこともできます。",
+		"Schaltet nur Discord stumm, direkt in Windows, egal welches Mikro in Discord gewählt ist. Dafür muss nichts eingestellt werden. Discords eigenes Stumm-Symbol bleibt dabei aus, die Taste zeigt den echten Zustand. Taub schaltet Discords Ton und Mikro zusammen.": "Discord で選んでいるマイクに関係なく、Windows 側で Discord だけをミュートします。設定は不要です。Discord 自体のミュートアイコンは表示されませんが、キーには実際の状態が表示されます。スピーカーミュートは Discord の音声とマイクをまとめてオフにします。",
+		"schau mal": "見て",
+		"Schau mal": "見て",
+		"Schlaf · {n} min": "スリープ・{n}分",
+		"Schlafen": "スリープ",
+		"schläft in {time}": "{time}後スリープ",
+		"schlummert · noch {n} min": "うとうと・あと{n}分",
+		"Schnee": "雪",
+		"schnell": "速い",
+		"Screenshot": "スクショ",
+		"Screenshot (Ausschnitt)": "スクショ（範囲指定）",
+		"seit {n} h": "{n}時間前",
+		"seit {n} min": "{n}分前",
+		"Seit 30 Sekunden keine Verbindung ins Internet.": "30 秒前からインターネットにつながっていません。",
+		"Sender": "放送局",
+		"Shop": "ストア",
+		"Slack": "Slack",
+		"So": "日",
+		"So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste.": "あなたを待っているものがあると、Sam はこうやって知らせます。「見る」「後で」、またはどのキーでも OK。",
+		"Sonnig": "快晴",
+		"Sonntag": "日曜日",
+		"Später": "後で",
+		"Sperren": "ロック",
+		"Spiel": "ゲーム",
+		"Spiel / App im Vordergrund": "前面のゲーム / アプリ",
+		"Spiel-Screenshot": "ゲームのスクショ",
+		"Spielen": "プレイ",
+		"Spielfoto": "ゲーム撮影",
+		"Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.": "ラジオ局を流します。押せばオン、もう一度押せばオフ。インストールもアカウントも不要です。",
+		"Spotify": "Spotify",
+		"Standard (60 / 45 min)": "標準（60 / 45 分）",
+		"Steam": "Steam",
+		"Steam lädt": "Steam DL中",
+		"still": "無音",
+		"Stoppuhr": "タイム計測",
+		"Stream-Link": "ストリーム URL",
+		"Strom": "電源",
+		"stumm": "ミュート",
+		"Stumm": "ミュート",
+		"Stumm an/aus": "ミュート オン / オフ",
+		"SWR3": "SWR3",
+		"System": "システム",
+		"SZENE 42 · TAKE 1": "SCENE 42 · TAKE 1",
+		"Task-Manager": "タスク管理",
+		"Taste": "キー",
+		"Taub schalten": "スピーカーミュート",
+		"Teams": "Teams",
+		"Telegram": "Telegram",
+		"Telegram Web": "Telegram Web",
+		"Terminal": "ターミナル",
+		"Test: Fehler": "テスト:エラー",
+		"Test: Warten": "テスト:待機",
+		"Timer": "タイマー",
+		"Timer läuft": "タイマー作動",
+		"Timer pausiert": "タイマー停止",
+		"Ton aus": "消音",
+		"Ton ist aus": "消音中",
+		"Ton über": "出力先",
+		"Trinken": "水分補給",
+		"Twitch": "Twitch",
+		"Übersetzen": "翻訳",
+		"Uhrzeit": "時刻",
+		"unbekannt": "不明",
+		"Ungelesene GitHub-Mitteilungen": "未読の GitHub 通知",
+		"Videos": "ビデオ",
+		"virtuell": "仮想",
+		"Virtueller Desktop links": "左の仮想デスクトップ",
+		"Virtueller Desktop rechts": "右の仮想デスクトップ",
+		"wach · {time}": "起きてる・{time}",
+		"wach · noch {time}": "起きてる・あと{time}",
+		"Wach bleiben": "起きたまま",
+		"Wartet auf dich (Honig)": "あなた待ち（ハニー）",
+		"Was": "種類",
+		"WDR 2": "WDR 2",
+		"Weiter": "次へ",
+		"Weiter geht's": "さあ、再開",
+		"Wetter": "天気",
+		"WhatsApp": "WhatsApp",
+		"WhatsApp Web": "WhatsApp Web",
+		"Wie lange": "時間",
+		"Wie lange noch bis Feierabend oder Wochenende.": "定時や週末まであとどれくらいかを表示します。",
+		"Windows-Mitteilungen (Infocenter)": "Windows の通知（通知センター）",
+		"wird geladen": "読み込み中",
+		"WLAN": "Wi-Fi",
+		"Wochenende (Freitag)": "週末（金曜日）",
+		"Wochenende!": "週末だ！",
+		"Wolkig": "薄曇り",
+		"Woran": "内容",
+		"Würfel": "サイコロ",
+		"Würfeln": "サイコロ",
+		"YouTube": "YouTube",
+		"Zahl": "裏",
+		"Zeigt": "表示",
+		"Zeit zu trinken": "水を飲む時間",
+		"Zoom": "Zoom",
+		"Zuletzt gespielt starten": "最近プレイしたゲームを起動",
+		"Zurück": "前へ",
+		"Zurücknehmen:": "取り消し：",
+		"Zwischenablage-Verlauf": "クリップボード履歴"
+	}
+}

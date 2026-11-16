@@ -17,6 +17,7 @@ import { github, pomodoro } from "../runtime.js";
 import { load } from "../stats.js";
 import { audio, isMac, isWindows, nowPlaying, openExternal, pressMediaKey, ps, type NowPlaying } from "../system.js";
 import { Ticker } from "./ticker.js";
+import { tr } from "../i18n.js";
 
 /** Runs `fn` every `ms` while at least one key wants it. */
 class Poller {
@@ -50,10 +51,11 @@ export class MicAction extends SingletonAction {
 	#muted: boolean | undefined;
 	#ticker = new Ticker(250, (_key, t) =>
 		this.#muted === undefined
-			? signKey({ title: "Mikro", value: "…", t, phase: 2.1 })
+			? signKey({ title: tr("Mikro"), value: "…", t, phase: 2.1 })
 			: this.#muted
-				? signKey({ title: "Mikro", value: "stumm", sub: "keiner hört dich", tone: "coral", t, phase: 2.1 })
-				: signKey({ title: "Mikro", value: "an", sub: "du bist live", tone: "honey", live: true, t, phase: 2.1 }),
+				? signKey({ title: tr("Mikro"), value: tr("stumm"), sub: tr("keiner hört dich"), tone: "coral", t, phase: 2.1 })
+				: signKey({ title: tr("Mikro"), value: tr("an"), sub: tr("du bist live"), tone: "honey", live: true, t, phase: 2.1 }),
+
 	);
 	#poll = new Poller(2000, async () => {
 		const state = await audio.state(1);

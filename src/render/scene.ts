@@ -11,6 +11,7 @@ import type { Alert } from "../alerts.js";
 import { roleAt } from "../roles.js";
 import { sloth } from "./sloth.js";
 import { BODY, C, keyImage, pill, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
 export const PITCH = 138;
 export const KEY = 124;
@@ -35,13 +36,13 @@ const keyBox = (c: number, r: number): Box => [c * PITCH, r * PITCH, c * PITCH +
 export function since(createdAt: number, now: number): string {
 	const minutes = Math.floor((now - createdAt) / 60_000);
 	if (minutes < 1) {
-		return "gerade eben";
+		return tr("gerade eben");
 	}
-	return minutes < 60 ? `seit ${minutes} min` : `seit ${Math.floor(minutes / 60)} h`;
+	return minutes < 60 ? tr("seit {n} min", { n: minutes }) : tr("seit {n} h", { n: Math.floor(minutes / 60) });
 }
 
 function placeholder(now: number): Alert {
-	return { id: 0, level: "wait", title: "Alles ruhig", source: "Lazy Deck", createdAt: now, stage: 2 };
+	return { id: 0, level: "wait", title: tr("Alles ruhig"), source: "Lazy Deck", createdAt: now, stage: 2 };
 }
 
 export function alertScene(o: SceneOptions): Item[] {
@@ -171,8 +172,8 @@ export function alertScene(o: SceneOptions): Item[] {
 		add(
 			`<g transform="rotate(${q(angle)} ${kx + 30} ${ky + 110})">` +
 				`<path d="M${kx + 22} ${ky + 12} h86 a10 10 0 0 1 10 10 v68 a10 10 0 0 1 -10 10 h-70 l-18 14 l4 -14 h-2 a10 10 0 0 1 -10 -10 v-68 a10 10 0 0 1 10 -10 z" fill="url(#alTone)"/>` +
-				text(error ? "Hilfe!" : "Hey!", { x: kx + 64, y: ky + 56, size: error ? 26 : 32, max: 90, fill: C.night, weight: 700 }) +
-				text(error ? "es brennt" : "schau mal", { x: kx + 64, y: ky + 80, size: 12.5, max: 86, fill: error ? "#3A1510" : "#3B2A10" }) +
+				text(error ? tr("Hilfe!") : tr("Hey!"), { x: kx + 64, y: ky + 56, size: error ? 26 : 32, max: 90, fill: C.night, weight: 700 }) +
+				text(error ? tr("es brennt") : tr("schau mal"), { x: kx + 64, y: ky + 80, size: 12.5, max: 86, fill: error ? "#3A1510" : "#3B2A10" }) +
 				`</g>`,
 			keyBox(kx / PITCH, ky / PITCH),
 		);
@@ -194,7 +195,7 @@ export function alertScene(o: SceneOptions): Item[] {
 		}
 		add(
 			`<rect x="${kx}" y="${ky}" width="${KEY}" height="${KEY}" fill="url(#alTone)"/>` +
-				g(icon + pill(alert.url ? "Ansehen" : "Erledigt", C.night, toneLight)),
+				g(icon + pill(alert.url ? tr("Ansehen") : tr("Erledigt"), C.night, toneLight)),
 			keyBox(kx / PITCH, ky / PITCH),
 		);
 	}
@@ -214,8 +215,8 @@ export function alertScene(o: SceneOptions): Item[] {
 				z(0, 82, 30, 14) +
 				z(1.6, 92, 22, 11) +
 				`<path d="M46 22 a16 16 0 1 0 18 20 a12 12 0 1 1 -18 -20 z" fill="${C.cream}"/>` +
-				text("5 min", { x: 60, y: 80, size: 20, max: 96, fill: C.cream }) +
-				pill("Später", C.pillDark, C.cream) +
+				text(tr("{n} min", { n: 5 }), { x: 60, y: 80, size: 20, max: 96, fill: C.cream }) +
+				pill(tr("Später"), C.pillDark, C.cream) +
 				`</g>`,
 			keyBox(kx / PITCH, ky / PITCH),
 		);
@@ -230,7 +231,8 @@ export function alertScene(o: SceneOptions): Item[] {
 		const dx = q(-5 + swing(t, period) * 9);
 		const dy = q(3 - swing(t, period, period / 3) * 6);
 		const wriggle = q(-4 + swing(t, 1.2) * 8);
-		const label = { idle: "Erklären", busy: "denkt …", done: "geöffnet", failed: "geht nicht" }[state];
+		const label = { idle: tr("Erklären"), busy: tr("denkt …"), done: tr("geöffnet"), failed: tr("geht nicht") }[state];
+
 		add(
 			`<rect x="${kx}" y="${ky}" width="${KEY}" height="${KEY}" fill="${C.keyDark}"/>` +
 				`<g transform="translate(${kx + 2} ${ky + 2})"><g transform="translate(${dx} ${dy})">` +

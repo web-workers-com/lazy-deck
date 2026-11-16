@@ -2,6 +2,7 @@
 import type { Choice } from "../catalog.js";
 import { iconKey, logoKey, tileKey } from "./apps.js";
 import { blanketKey, clipKey, monitorKey, moonKey, sunKey, viewfinderKey } from "./scenes.js";
+import { tr } from "../i18n.js";
 
 /** Choices drawn as canvas scenes instead of a plain icon. */
 export const SCENES: Record<string, (label: string, icon: string) => string> = {
@@ -14,7 +15,8 @@ export const SCENES: Record<string, (label: string, icon: string) => string> = {
 	darkmode: (label, icon) => (icon === "moon" ? moonKey(label, 1) : sunKey(label, 1)),
 };
 
-export function choiceKey(choice: Choice, label = choice.label, icon = choice.icon ?? "globe"): string {
+export function choiceKey(choice: Choice, label = tr(choice.label), icon
+ = choice.icon ?? "globe"): string {
 	if (choice.logo) return logoKey(choice.logo, label);
 	if (choice.tile) return tileKey(choice.tile, label);
 	const scene = SCENES[choice.id];

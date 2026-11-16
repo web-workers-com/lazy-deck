@@ -18,6 +18,7 @@ import { choiceOf, GROUPS, type Choice, type Group } from "../catalog.js";
 import { confirmKey } from "../render/apps.js";
 import { choiceKey } from "../render/choices.js";
 import { isWindows, openExternal, openFolder, ps, setClipboard, tap } from "../system.js";
+import { locale, tr } from "../i18n.js";
 
 const WIN = 0x5b, CTRL = 0x11, ALT = 0x12, LEFT = 0x25, UP = 0x26, RIGHT = 0x27, DOWN = 0x28;
 const THEME = "HKCU:\\Software\\Microsoft\\Windows\\CurrentVersion\\Themes\\Personalize";
@@ -40,7 +41,7 @@ const PRESS: Record<string, (choice: Choice, ctx: Ctx) => boolean | Promise<bool
 	},
 	recyclebin: async (_c, ctx) => {
 		await ps.query("(Clear-RecycleBin -Force -ErrorAction SilentlyContinue; '{}')", 30_000);
-		ctx.flash("Leer!");
+		ctx.flash(tr("Leer!"));
 		return true;
 	},
 	desktop: () => tap(WIN, 0x44),
@@ -62,14 +63,14 @@ const PRESS: Record<string, (choice: Choice, ctx: Ctx) => boolean | Promise<bool
 	calculator: () => (isWindows ? (openExternal("calculator:"), true) : false),
 	pastedate: () => {
 		const d = new Date();
-		const value = `${String(d.getDate()).padStart(2, "0")}.${String(d.getMonth() + 1).padStart(2, "0")}.${d.getFullYear()}`;
+		const value = d.toLocaleDateString(locale(), { year: "numeric", month: "2-digit", day: "2-digit" });
 		return ps.run(`Set-Clipboard -Value '${value}'; Start-Sleep -Milliseconds 80; Tap @(${CTRL},0x56)`);
 	},
 	password: (_c, ctx) => {
 		const alphabet = "ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!#%+-=?";
 		const value = Array.from({ length: 20 }, () => alphabet[randomInt(alphabet.length)]).join("");
 		const ok = setClipboard(value);
-		if (ok) ctx.flash("kopiert ✓");
+		if (ok) ctx.flash(tr("kopiert ✓"));
 		return ok;
 	},
 	// Gaming (Xbox Game Bar)
@@ -133,17 +134,18 @@ function groupAction(group: Group) {
 			const choice = choiceOf(group, entry.settings[group.setting]);
 			let image: string;
 			if (this.#pending.has(id)) {
-				image = confirmKey(choice.icon ?? "bin", "Nochmal?");
+				image = confirmKey(choice.icon ?? "bin", tr("Nochmal?"));
 			} else {
-				let label = this.#flash.get(id) ?? choice.label;
+				let label = this.#flash.get(id) ?? tr(choice.label);
 				let icon = choice.icon ?? "globe";
 				if (choice.id === "darkmode") {
 					const dark = this.#extra.get("dark") === "1";
 					icon = dark ? "moon" : "sun";
-					label = this.#flash.get(id) ?? (dark ? "Dunkel" : "Hell");
+					label = this.#flash.get(id) ?? (dark ? tr("Dunkel") : tr("Hell"));
 				}
 				if (choice.id === "recyclebin" && this.#extra.has("bin") && !this.#flash.has(id)) {
-					label = `Papierkorb ${this.#extra.get("bin")}`;
+					label = tr("Papierkorb {n}", { n: this.#extra.get("bin") ?? "" });
+
 				}
 				image = choiceKey(choice, label, icon);
 			}

@@ -1,0 +1,872 @@
+{
+	"Name": "Lazy Deck",
+	"Description": "少按一点，多干一点。一只住在你 Stream Deck 上的树懒，有事找你时会铺满整个 Deck，还有音乐、Discord 和 Steam 的日常按键。无需任何设置。",
+	"Category": "Lazy Deck",
+	"com.lazydeck.plugin.sloth": {
+		"Name": "Sam",
+		"Tooltip": "一切安静时它就睡觉。有事等你处理时，它会醒来并闪动。按一下就把提醒铺满整个 Deck。"
+	},
+	"com.lazydeck.plugin.test": {
+		"Name": "测试提醒",
+		"Tooltip": "触发一个示例提醒，让你看看 Deck 会怎么反应。"
+	},
+	"com.lazydeck.plugin.alert": {
+		"Name": "Alarm-Taste",
+		"Tooltip": "Teil des Alarm-Profils."
+	},
+	"com.lazydeck.plugin.mic": {
+		"Name": "麦克风",
+		"Tooltip": "把系统麦克风静音，所有应用同时生效：Discord、Teams、Zoom、OBS。按键显示真实状态。"
+	},
+	"com.lazydeck.plugin.output": {
+		"Name": "切换输出",
+		"Tooltip": "在你的设备之间切换声音：耳机、音箱、显示器。虚拟设备（Voicemod、Loopback …）会被跳过。也可以只选两个。"
+	},
+	"com.lazydeck.plugin.media": {
+		"Name": "音乐",
+		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+	},
+	"com.lazydeck.plugin.media.playpause": {
+		"Name": "播放 / 暂停",
+		"Tooltip": "播放或暂停音乐：Spotify、YouTube、浏览器和大多数播放器。有东西在放时，Sam 会睁着眼睛。"
+	},
+	"com.lazydeck.plugin.media.previous": {
+		"Name": "上一首",
+		"Tooltip": "上一首曲目。"
+	},
+	"com.lazydeck.plugin.media.next": {
+		"Name": "下一首",
+		"Tooltip": "下一首曲目。"
+	},
+	"com.lazydeck.plugin.media.volumedown": {
+		"Name": "调小音量",
+		"Tooltip": "把所有声音调小，并显示当前音量。"
+	},
+	"com.lazydeck.plugin.media.volumeup": {
+		"Name": "调大音量",
+		"Tooltip": "把所有声音调大，并显示当前音量。"
+	},
+	"com.lazydeck.plugin.media.mute": {
+		"Name": "音量 / 静音",
+		"Tooltip": "音量显示为树枝上的小牌子。按一下静音，再按一下恢复。"
+	},
+	"com.lazydeck.plugin.nowplaying": {
+		"Name": "正在播放",
+		"Tooltip": "显示正在播放内容的封面和标题（Spotify、YouTube、浏览器 …）。按一下：播放/暂停。"
+	},
+	"com.lazydeck.plugin.radio": {
+		"Name": "电台",
+		"Tooltip": "播放一个电台，按一下开，再按一下关。无需安装，无需账号。"
+	},
+	"com.lazydeck.plugin.appvolume": {
+		"Name": "应用音量",
+		"Tooltip": "只针对一个应用调大、调小或静音：前台的游戏、Discord、Spotify、浏览器 … 或者全部一起。在旋钮上：转动和按下。"
+	},
+	"com.lazydeck.plugin.appvolume.fgdown": {
+		"Name": "游戏调小声",
+		"Tooltip": "只把游戏（或前台应用）调小声，Discord 和音乐保持不变。"
+	},
+	"com.lazydeck.plugin.appvolume.fgup": {
+		"Name": "游戏调大声",
+		"Tooltip": "只把游戏（或前台应用）调大声。"
+	},
+	"com.lazydeck.plugin.appvolume.spotifymute": {
+		"Name": "Spotify 静音",
+		"Tooltip": "只把 Spotify 静音或恢复。"
+	},
+	"com.lazydeck.plugin.appmic": {
+		"Name": "应用麦克风",
+		"Tooltip": "只为一个应用把麦克风静音，比如 Teams、Zoom 或浏览器里的 Meet。其他应用还能听到你。按键显示真实状态。"
+	},
+	"com.lazydeck.plugin.appmic.teams": {
+		"Name": "Teams 麦克风",
+		"Tooltip": "只把 Microsoft Teams 里的麦克风静音。"
+	},
+	"com.lazydeck.plugin.appmic.zoom": {
+		"Name": "Zoom 麦克风",
+		"Tooltip": "只把 Zoom 里的麦克风静音。"
+	},
+	"com.lazydeck.plugin.appmic.browser": {
+		"Name": "Meet 麦克风（浏览器）",
+		"Tooltip": "把浏览器里的麦克风静音，比如用 Google Meet 或 Jitsi 时。"
+	},
+	"com.lazydeck.plugin.discord": {
+		"Name": "Discord",
+		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+	},
+	"com.lazydeck.plugin.discord.mute": {
+		"Name": "Discord 麦克风",
+		"Tooltip": "只把 Discord 静音，不管那里选的是哪个麦克风。按键显示真实状态。"
+	},
+	"com.lazydeck.plugin.discord.deafen": {
+		"Name": "Discord 拒听",
+		"Tooltip": "Discord 什么都听不到也发不出：声音和麦克风一起关。"
+	},
+	"com.lazydeck.plugin.discord.open": {
+		"Name": "打开 Discord",
+		"Tooltip": "打开 Discord。"
+	},
+	"com.lazydeck.plugin.steam": {
+		"Name": "Steam",
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+	},
+	"com.lazydeck.plugin.steam.last": {
+		"Name": "最近玩过",
+		"Tooltip": "启动你最近玩过的 Steam 游戏。"
+	},
+	"com.lazydeck.plugin.steam.friends": {
+		"Name": "Steam 好友",
+		"Tooltip": "打开 Steam 里的好友列表。"
+	},
+	"com.lazydeck.plugin.steam.library": {
+		"Name": "Steam 库",
+		"Tooltip": "打开你的 Steam 库。"
+	},
+	"com.lazydeck.plugin.steam.bigpicture": {
+		"Name": "Steam 大屏幕",
+		"Tooltip": "以大屏幕模式启动 Steam，适合电视和手柄。"
+	},
+	"com.lazydeck.plugin.steam.store": {
+		"Name": "Steam 商店",
+		"Tooltip": "打开 Steam 商店。"
+	},
+	"com.lazydeck.plugin.steamdownloads": {
+		"Name": "Steam 下载",
+		"Tooltip": "Steam 下载到哪儿了。大文件下完时，Sam 会告诉你，没有这个按键也一样。"
+	},
+	"com.lazydeck.plugin.gamebar": {
+		"Name": "Gaming",
+		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+	},
+	"com.lazydeck.plugin.gamebar.clip": {
+		"Name": "保存最后 30 秒",
+		"Tooltip": "通过 Windows 的 Xbox Game Bar 保存最后 30 秒。"
+	},
+	"com.lazydeck.plugin.gamebar.record": {
+		"Name": "录制开/关",
+		"Tooltip": "通过 Windows 的 Xbox Game Bar 开始或停止录制。"
+	},
+	"com.lazydeck.plugin.gamebar.shot": {
+		"Name": "游戏截图",
+		"Tooltip": "通过 Windows 的 Xbox Game Bar 截取游戏画面。"
+	},
+	"com.lazydeck.plugin.gamebar.open": {
+		"Name": "打开 Game Bar",
+		"Tooltip": "打开 Windows 的 Xbox Game Bar。"
+	},
+	"com.lazydeck.plugin.brightness": {
+		"Name": "亮度",
+		"Tooltip": "让屏幕更亮或更暗，外接显示器也行（通过 DDC/CI，类似 Twinkle Tray）。在旋钮上：转动。"
+	},
+	"com.lazydeck.plugin.brightness.down": {
+		"Name": "调暗",
+		"Tooltip": "所有屏幕调暗，外接显示器也行。"
+	},
+	"com.lazydeck.plugin.brightness.up": {
+		"Name": "调亮",
+		"Tooltip": "所有屏幕调亮，外接显示器也行。"
+	},
+	"com.lazydeck.plugin.windows": {
+		"Name": "Windows",
+		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+	},
+	"com.lazydeck.plugin.windows.screenshot": {
+		"Name": "截图（区域）",
+		"Tooltip": "截取屏幕区域。"
+	},
+	"com.lazydeck.plugin.windows.lock": {
+		"Name": "锁定屏幕",
+		"Tooltip": "锁定屏幕。"
+	},
+	"com.lazydeck.plugin.windows.monitoroff": {
+		"Name": "关闭屏幕",
+		"Tooltip": "关闭屏幕。"
+	},
+	"com.lazydeck.plugin.windows.sleep": {
+		"Name": "睡眠",
+		"Tooltip": "让电脑睡眠。为保险起见要按两次。"
+	},
+	"com.lazydeck.plugin.windows.darkmode": {
+		"Name": "切换深色模式",
+		"Tooltip": "切换深色模式。"
+	},
+	"com.lazydeck.plugin.windows.recyclebin": {
+		"Name": "清空回收站",
+		"Tooltip": "清空回收站。为保险起见要按两次。"
+	},
+	"com.lazydeck.plugin.windows.desktop": {
+		"Name": "显示桌面",
+		"Tooltip": "显示桌面。"
+	},
+	"com.lazydeck.plugin.windows.settings": {
+		"Name": "设置",
+		"Tooltip": "打开设置。"
+	},
+	"com.lazydeck.plugin.windows.taskmanager": {
+		"Name": "任务管理器",
+		"Tooltip": "打开任务管理器。"
+	},
+	"com.lazydeck.plugin.window": {
+		"Name": "Fenster",
+		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+	},
+	"com.lazydeck.plugin.window.snapleft": {
+		"Name": "靠左贴靠",
+		"Tooltip": "把窗口贴靠到左边。"
+	},
+	"com.lazydeck.plugin.window.snapright": {
+		"Name": "靠右贴靠",
+		"Tooltip": "把窗口贴靠到右边。"
+	},
+	"com.lazydeck.plugin.window.maximize": {
+		"Name": "最大化",
+		"Tooltip": "最大化窗口。"
+	},
+	"com.lazydeck.plugin.window.minimize": {
+		"Name": "最小化",
+		"Tooltip": "最小化窗口。"
+	},
+	"com.lazydeck.plugin.window.vdleft": {
+		"Name": "左侧虚拟桌面",
+		"Tooltip": "切换到左侧的虚拟桌面。"
+	},
+	"com.lazydeck.plugin.window.vdright": {
+		"Name": "右侧虚拟桌面",
+		"Tooltip": "切换到右侧的虚拟桌面。"
+	},
+	"com.lazydeck.plugin.window.taskview": {
+		"Name": "任务视图",
+		"Tooltip": "打开任务视图。"
+	},
+	"com.lazydeck.plugin.window.project": {
+		"Name": "投影（第二屏幕）",
+		"Tooltip": "投影到第二块屏幕。"
+	},
+	"com.lazydeck.plugin.awake": {
+		"Name": "保持唤醒",
+		"Tooltip": "按键开着时，电脑和屏幕都不会睡着：适合下载、演示和看电影。"
+	},
+	"com.lazydeck.plugin.sleeptimer": {
+		"Name": "关机定时",
+		"Tooltip": "30、60 或 90 分钟后关机或睡眠，比如晚上看电影时。再按一下：多加 30 分钟，长按：取消。提前一分钟 Sam 会告诉你。"
+	},
+	"com.lazydeck.plugin.clock": {
+		"Name": "时钟",
+		"Tooltip": "时间、星期、日期和周数。"
+	},
+	"com.lazydeck.plugin.weather": {
+		"Name": "天气",
+		"Tooltip": "你所在地的天气，无需设置。位置来自你的 IP 地址（ipwho.is），天气来自 Open-Meteo。"
+	},
+	"com.lazydeck.plugin.timer": {
+		"Name": "计时器",
+		"Tooltip": "厨房计时器：按一下开始/暂停，长按重置。时间到了，Sam 会来叫你。"
+	},
+	"com.lazydeck.plugin.stopwatch": {
+		"Name": "秒表",
+		"Tooltip": "按一下开始/停止，长按重置。"
+	},
+	"com.lazydeck.plugin.countdown": {
+		"Name": "Countdown",
+		"Tooltip": "距离下班或周末还有多久。"
+	},
+	"com.lazydeck.plugin.countdown.feierabend": {
+		"Name": "距离下班",
+		"Tooltip": "离下班还有多久（17:00，可调整）。"
+	},
+	"com.lazydeck.plugin.countdown.weekend": {
+		"Name": "距离周末",
+		"Tooltip": "离周五下班还有多久。"
+	},
+	"com.lazydeck.plugin.reminder": {
+		"Name": "提醒",
+		"Tooltip": "定时提醒你喝水或活动一下。按一下就算完成。"
+	},
+	"com.lazydeck.plugin.reminder.water": {
+		"Name": "喝水",
+		"Tooltip": "每小时提醒你喝水。按一下表示已完成。"
+	},
+	"com.lazydeck.plugin.reminder.move": {
+		"Name": "活动一下",
+		"Tooltip": "每 45 分钟提醒你起来动一动。按一下表示已完成。"
+	},
+	"com.lazydeck.plugin.internet": {
+		"Name": "网络",
+		"Tooltip": "显示网络响应有多快。断网 30 秒，Sam 就会来告诉你。"
+	},
+	"com.lazydeck.plugin.wifi": {
+		"Name": "Wi-Fi",
+		"Tooltip": "Wi-Fi 名称和信号强度。"
+	},
+	"com.lazydeck.plugin.battery": {
+		"Name": "电池",
+		"Tooltip": "电量以及是否在充电（笔记本）。台式机上：显示接通电源。"
+	},
+	"com.lazydeck.plugin.apps": {
+		"Name": "App starten",
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+	},
+	"com.lazydeck.plugin.apps.spotify": {
+		"Name": "启动 Spotify",
+		"Tooltip": "一键启动 Spotify。"
+	},
+	"com.lazydeck.plugin.apps.discord": {
+		"Name": "启动 Discord",
+		"Tooltip": "一键启动 Discord。"
+	},
+	"com.lazydeck.plugin.apps.steam": {
+		"Name": "启动 Steam",
+		"Tooltip": "一键启动 Steam。"
+	},
+	"com.lazydeck.plugin.apps.whatsapp": {
+		"Name": "启动 WhatsApp",
+		"Tooltip": "一键启动 WhatsApp。"
+	},
+	"com.lazydeck.plugin.apps.teams": {
+		"Name": "启动 Microsoft Teams",
+		"Tooltip": "一键启动 Microsoft Teams。"
+	},
+	"com.lazydeck.plugin.apps.obs": {
+		"Name": "启动 OBS Studio",
+		"Tooltip": "一键启动 OBS Studio。"
+	},
+	"com.lazydeck.plugin.apps.explorer": {
+		"Name": "启动资源管理器",
+		"Tooltip": "一键启动资源管理器。"
+	},
+	"com.lazydeck.plugin.apps.terminal": {
+		"Name": "启动终端",
+		"Tooltip": "一键启动终端。"
+	},
+	"com.lazydeck.plugin.apps.notepad": {
+		"Name": "启动记事本",
+		"Tooltip": "一键启动记事本。"
+	},
+	"com.lazydeck.plugin.apps.telegram": {
+		"Name": "启动 Telegram",
+		"Tooltip": "一键启动 Telegram。"
+	},
+	"com.lazydeck.plugin.website": {
+		"Name": "Webseite",
+		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+	},
+	"com.lazydeck.plugin.website.youtube": {
+		"Name": "打开 YouTube",
+		"Tooltip": "在浏览器中打开 YouTube。"
+	},
+	"com.lazydeck.plugin.website.netflix": {
+		"Name": "打开 Netflix",
+		"Tooltip": "在浏览器中打开 Netflix。"
+	},
+	"com.lazydeck.plugin.website.twitch": {
+		"Name": "打开 Twitch",
+		"Tooltip": "在浏览器中打开 Twitch。"
+	},
+	"com.lazydeck.plugin.website.gmail": {
+		"Name": "打开 Gmail",
+		"Tooltip": "在浏览器中打开 Gmail。"
+	},
+	"com.lazydeck.plugin.website.whatsappweb": {
+		"Name": "打开 WhatsApp Web",
+		"Tooltip": "在浏览器中打开 WhatsApp Web。"
+	},
+	"com.lazydeck.plugin.website.prime": {
+		"Name": "打开 Prime Video",
+		"Tooltip": "在浏览器中打开 Prime Video。"
+	},
+	"com.lazydeck.plugin.website.disney": {
+		"Name": "打开 Disney+",
+		"Tooltip": "在浏览器中打开 Disney+。"
+	},
+	"com.lazydeck.plugin.website.claude": {
+		"Name": "打开 Claude",
+		"Tooltip": "在浏览器中打开 Claude。"
+	},
+	"com.lazydeck.plugin.website.maps": {
+		"Name": "打开 Google Maps",
+		"Tooltip": "在浏览器中打开 Google Maps。"
+	},
+	"com.lazydeck.plugin.website.deepl": {
+		"Name": "打开 DeepL 翻译",
+		"Tooltip": "在浏览器中打开 DeepL 翻译。"
+	},
+	"com.lazydeck.plugin.website.chatgpt": {
+		"Name": "打开 ChatGPT",
+		"Tooltip": "在浏览器中打开 ChatGPT。"
+	},
+	"com.lazydeck.plugin.website.gemini": {
+		"Name": "打开 Gemini",
+		"Tooltip": "在浏览器中打开 Gemini。"
+	},
+	"com.lazydeck.plugin.website.grok": {
+		"Name": "打开 Grok",
+		"Tooltip": "在浏览器中打开 Grok。"
+	},
+	"com.lazydeck.plugin.website.telegramweb": {
+		"Name": "打开 Telegram Web",
+		"Tooltip": "在浏览器中打开 Telegram Web。"
+	},
+	"com.lazydeck.plugin.folder": {
+		"Name": "Ordner",
+		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+	},
+	"com.lazydeck.plugin.folder.downloads": {
+		"Name": "下载文件夹",
+		"Tooltip": "打开下载文件夹。"
+	},
+	"com.lazydeck.plugin.folder.documents": {
+		"Name": "文档文件夹",
+		"Tooltip": "打开文档文件夹。"
+	},
+	"com.lazydeck.plugin.folder.pictures": {
+		"Name": "图片文件夹",
+		"Tooltip": "打开图片文件夹。"
+	},
+	"com.lazydeck.plugin.folder.desktop": {
+		"Name": "桌面文件夹",
+		"Tooltip": "打开桌面文件夹。"
+	},
+	"com.lazydeck.plugin.folder.music": {
+		"Name": "音乐文件夹",
+		"Tooltip": "打开音乐文件夹。"
+	},
+	"com.lazydeck.plugin.folder.videos": {
+		"Name": "视频文件夹",
+		"Tooltip": "打开视频文件夹。"
+	},
+	"com.lazydeck.plugin.folder.home": {
+		"Name": "用户文件夹",
+		"Tooltip": "打开你的用户文件夹。"
+	},
+	"com.lazydeck.plugin.tools": {
+		"Name": "Werkzeuge",
+		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+	},
+	"com.lazydeck.plugin.tools.clipboard": {
+		"Name": "剪贴板历史",
+		"Tooltip": "打开剪贴板历史。"
+	},
+	"com.lazydeck.plugin.tools.emoji": {
+		"Name": "表情选择器",
+		"Tooltip": "打开表情选择器。"
+	},
+	"com.lazydeck.plugin.tools.notifications": {
+		"Name": "Windows 通知（通知中心）",
+		"Tooltip": "打开 Windows 通知中心。"
+	},
+	"com.lazydeck.plugin.tools.calculator": {
+		"Name": "计算器",
+		"Tooltip": "打开计算器。"
+	},
+	"com.lazydeck.plugin.tools.pastedate": {
+		"Name": "插入今天日期",
+		"Tooltip": "插入今天的日期。"
+	},
+	"com.lazydeck.plugin.tools.password": {
+		"Name": "生成密码（到剪贴板）",
+		"Tooltip": "生成一个密码并放进剪贴板。"
+	},
+	"com.lazydeck.plugin.chance": {
+		"Name": "Münze & Würfel",
+		"Tooltip": "抛硬币（正面是 Sam）或掷骰子。专治所有不想自己做的决定。"
+	},
+	"com.lazydeck.plugin.chance.coin": {
+		"Name": "抛硬币",
+		"Tooltip": "正面还是反面。正面是 Sam。"
+	},
+	"com.lazydeck.plugin.chance.dice": {
+		"Name": "掷骰子",
+		"Tooltip": "掷出 1 到 6 之间的一个数。"
+	},
+	"com.lazydeck.plugin.system": {
+		"Name": "系统",
+		"Tooltip": "CPU 和内存。按一下打开任务管理器。"
+	},
+	"com.lazydeck.plugin.pomodoro": {
+		"Name": "Pomodoro",
+		"Tooltip": "专注 25 分钟，休息 5 分钟。按一下：开始/暂停，长按：重置。时间到了 Sam 会告诉你。"
+	},
+	"com.lazydeck.plugin.github": {
+		"Name": "GitHub",
+		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+	},
+	"com.lazydeck.plugin.github.notifications": {
+		"Name": "GitHub 通知",
+		"Tooltip": "未读的 GitHub 通知。使用你已登录的 gh-CLI。"
+	},
+	"com.lazydeck.plugin.github.reviews": {
+		"Name": "GitHub 审查",
+		"Tooltip": "等你处理的代码审查。有新的就会触发提醒。"
+	},
+	"Localization": {
+		"{d}.{m}. · KW {w}": "{m}/{d} · 第{w}周",
+		"{day} {d}.{m}. · alles ruhig": "{day} {m}/{d} · 一切平静",
+		"{h}:{mm} h": "{h}:{mm}",
+		"{n} min": "{n} 分钟",
+		"{n} min um": "{n} 分钟到",
+		"{n} Reviews warten": "{n} 个审查待处理",
+		"{n} Tage": "{n} 天",
+		"{name} ist fertig": "{name} 已完成",
+		"{name} still": "{name} 无声",
+		"{name} stumm": "{name} 静音",
+		"1 Minute": "1 分钟",
+		"1 Stunde": "1 小时",
+		"1,5 Stunden": "1.5 小时",
+		"10 Minuten": "10 分钟",
+		"15 Minuten": "15 分钟",
+		"1LIVE": "1LIVE",
+		"2 Stunden": "2 小时",
+		"20 Minuten": "20 分钟",
+		"25 Minuten geschafft. 5 Minuten durchatmen.": "25 分钟搞定。歇 5 分钟喘口气。",
+		"3 Minuten": "3 分钟",
+		"30 Minuten": "30 分钟",
+		"4 Stunden": "4 小时",
+		"45 Minuten": "45 分钟",
+		"5 Minuten": "5 分钟",
+		"80s80s": "80s80s",
+		"Ablage": "剪贴板",
+		"Akku": "电池",
+		"Akku lädt": "充电中",
+		"Aktion": "操作",
+		"Alarm aus jedem Skript auslösen:": "从任意脚本触发提醒：",
+		"Alle": "每隔",
+		"Alle Fenster": "所有窗口",
+		"alles aktuell": "已是最新",
+		"Alles ruhig": "一切平静",
+		"an": "开",
+		"angehalten": "已暂停",
+		"Ansehen": "查看",
+		"Antenne Bayern": "Antenne Bayern",
+		"App": "应用",
+		"Art": "类型",
+		"Aufgabenansicht": "任务视图",
+		"Aufnahme": "录制",
+		"Aufnahme an/aus": "录制开/关",
+		"Aufstehen, strecken, einmal durchatmen.": "站起来，伸个懒腰，深呼吸一下。",
+		"aus in {time}": "{time} 后关机",
+		"Ausschalt-Timer": "关机定时",
+		"Automatisch (alle echten Geräte)": "自动（所有真实设备）",
+		"Bayern 3": "Bayern 3",
+		"Benutzerordner": "用户文件夹",
+		"Bewegen": "活动",
+		"Bewölkt": "多云",
+		"Bibliothek": "库",
+		"Big Picture": "大屏幕",
+		"bigFM": "bigFM",
+		"Bilder": "图片",
+		"Bildschirm aus": "关闭屏幕",
+		"Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen.": "让屏幕变亮或变暗，外接显示器也行（通过 DDC/CI，类似 Twinkle Tray）。在旋钮上：转动。",
+		"Bildschirm sperren": "锁定屏幕",
+		"Bis": "直到",
+		"bis Feierabend": "距离下班",
+		"bis ich wieder drücke": "直到我再按一次",
+		"bis Wochenende": "距离周末",
+		"Browser": "浏览器",
+		"Browser (Chrome, Edge, Firefox …)": "浏览器（Chrome、Edge、Firefox …）",
+		"ChatGPT": "ChatGPT",
+		"Chillout (Antenne)": "Chillout (Antenne)",
+		"Claude": "Claude",
+		"Clip!": "剪辑！",
+		"Dann": "然后",
+		"Dark Mode umschalten": "切换深色模式",
+		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "一切安静时，树懒就睡觉。有提醒来了，它会醒来并闪动。待处理的提醒 2 分钟后铺满整个 Deck，错误则立刻铺满。按一下马上把提醒铺到 Deck 上。",
+		"Datum": "日期",
+		"Dauer": "时长",
+		"DeepL Übersetzer": "DeepL 翻译",
+		"Dein Timer ist abgelaufen.": "你的计时器时间到了。",
+		"denkt …": "思考中…",
+		"Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme.": "只要按键开着，电脑和屏幕就不会休眠：适合下载、演示和看电影。",
+		"Desktop": "桌面",
+		"Desktop ←": "桌面 ←",
+		"Desktop →": "桌面 →",
+		"Desktop zeigen": "显示桌面",
+		"Details": "详情",
+		"Deutschlandfunk": "Deutschlandfunk",
+		"Di": "周二",
+		"Die Pause ist um.": "休息结束了。",
+		"Dienstag": "星期二",
+		"Discord": "Discord",
+		"Discord Mikro": "Discord 麦克风",
+		"Discord öffnen": "打开 Discord",
+		"Discord stumm": "Discord 静音",
+		"Discord taub": "Discord 拒听",
+		"Discord Ton": "Discord 声音",
+		"Disney+": "Disney+",
+		"Do": "周四",
+		"Dokumente": "文档",
+		"Donnerstag": "星期四",
+		"Download abgeschlossen. Viel Spaß!": "下载完成，玩得开心！",
+		"Downloads": "下载",
+		"drücken = an": "按下 = 开",
+		"drücken = los": "按下 = 开始",
+		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "按下系统的媒体键：Spotify、YouTube、浏览器和大多数播放器都会响应。",
+		"du bist live": "你在直播",
+		"Dunkel": "深色",
+		"Dunkler": "调暗",
+		"Editor": "记事本",
+		"Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.": "计时器：按下开始/暂停，长按重置。时间到了 Sam 会提醒你。",
+		"Eigene App (Prozessname)": "自定义应用（进程名）",
+		"Eigener Sender (Stream-Link)": "自定义电台（流链接）",
+		"Ein Glas Wasser, dann geht's weiter.": "喝杯水，然后继续。",
+		"Einstellungen": "设置",
+		"Emoji": "表情",
+		"Emoji-Auswahl": "表情选择器",
+		"Energiesparen": "睡眠",
+		"Energiesparen (zweimal drücken)": "睡眠（按两次）",
+		"Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.": "定时提醒你喝水或活动一下。按一下就算完成。",
+		"Erinnerung": "提醒",
+		"Erkläre auf Deutsch in höchstens fünf kurzen Sätzen, was diese Meldung wahrscheinlich bedeutet und was ich als Nächstes prüfen sollte. Keine Einleitung, keine Rückfragen.": "请用简体中文，最多五个短句，解释这条消息大概是什么意思，以及我接下来应该检查什么。不要开场白，不要反问。",
+		"Erklären": "解释",
+		"Erledigt": "完成",
+		"es brennt": "着火了",
+		"Explorer": "资源管理器",
+		"Fehler": "错误",
+		"Fehler (Koralle)": "错误（珊瑚色）",
+		"Fehler 500": "错误 500",
+		"Feierabend": "下班",
+		"Feierabend!": "下班啦！",
+		"Fertig!": "完成！",
+		"Fokus": "专注",
+		"Fokus · {n}": "专注 · {n}",
+		"Fokus starten": "开始专注",
+		"Fr": "周五",
+		"Freitag": "星期五",
+		"Freunde": "好友",
+		"Für „Erklären“ nutzt Lazy Deck die Claude-CLI, wenn sie installiert ist. Sie wurde nicht gefunden oder hat nicht geantwortet.": "“解释”功能会使用已安装的 Claude CLI。但没有找到它，或者它没有响应。",
+		"Game Bar": "Game Bar",
+		"Game Bar öffnen": "打开 Game Bar",
+		"geht hier nicht": "这里不可用",
+		"geht nicht": "不可用",
+		"geht so": "一般",
+		"Gemini": "Gemini",
+		"geöffnet": "已打开",
+		"gerade eben": "刚刚",
+		"Gerät A": "设备 A",
+		"Gerät B": "设备 B",
+		"Gesamt (alles, was rauskommt)": "全部（所有输出的声音）",
+		"Gewitter": "雷雨",
+		"GitHub-Reviews": "GitHub 审查",
+		"GitHub-Reviews, die auf dich warten": "等你处理的 GitHub 审查",
+		"GitHub: nicht da": "GitHub：未找到",
+		"Gmail": "Gmail",
+		"Google Maps": "Google Maps",
+		"Grok": "Grok",
+		"Groß": "最大化",
+		"Hallo!": "你好！",
+		"halten = neu": "长按 = 重置",
+		"Headset": "耳麦",
+		"Heiter": "晴间多云",
+		"Hell": "浅色",
+		"Heller": "调亮",
+		"Helligkeit": "亮度",
+		"Herunterfahren": "关机",
+		"Heutiges Datum einfügen": "插入今天日期",
+		"Hey!": "嘿！",
+		"Hilfe!": "救命！",
+		"hr3": "hr3",
+		"I Love Radio": "I Love Radio",
+		"Ich": "我",
+		"in {time}": "{time} 后",
+		"In einer Minute. Taste am Timer gedrückt halten bricht ab.": "还有一分钟。长按定时按键可取消。",
+		"Installieren: npm install -g @anthropic-ai/claude-code, dann einmal \"claude\" starten und anmelden.": "安装：npm install -g @anthropic-ai/claude-code，然后运行一次 \"claude\" 并登录。",
+		"Interface": "声卡",
+		"Internet": "网络",
+		"Internet weg": "网络断了",
+		"Kabel oder aus": "有线或关闭",
+		"Karte": "地图",
+		"kein Akku": "无电池",
+		"Kein Spiel": "没有游戏",
+		"keine Antwort": "没有回应",
+		"keiner hört dich": "没人听得到你",
+		"keins": "无",
+		"Klein": "最小化",
+		"Kopf": "正面",
+		"Kopfhörer": "耳机",
+		"kopiert ✓": "已复制 ✓",
+		"Kurz bewegen": "活动一下",
+		"Lade Geräte …": "正在加载设备 …",
+		"langsam": "慢",
+		"Lauter": "调大",
+		"Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.": "只针对一个应用调大、调小或静音：前台的游戏、Discord、Spotify、浏览器 … 或者全部一起。在旋钮上：转动和按下。",
+		"Lautsprecher": "音箱",
+		"Lautstärke": "音量",
+		"Lazy Deck erklärt": "Lazy Deck 解释",
+		"Lazy Deck liest deine lokale Steam-Bibliothek, ohne Login. Die Taste zeigt das Spiel, das du zuletzt gespielt hast.": "Lazy Deck 读取你本地的 Steam 库，无需登录。按键显示你最近玩过的游戏。",
+		"Leer!": "空了！",
+		"Leiser": "调小",
+		"Letzte 30 s speichern": "保存最后 30 秒",
+		"Letzte Meldung": "最新消息",
+		"Links": "靠左",
+		"Links andocken": "靠左贴靠",
+		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "立即触发一个示例提醒，并切换到提醒配置文件。",
+		"Maximieren": "最大化",
+		"Mein Sender": "我的电台",
+		"Meldung": "消息",
+		"Mi": "周三",
+		"Microsoft Teams": "Microsoft Teams",
+		"Mikro": "麦克风",
+		"Mikro an": "麦克风开",
+		"Mikro stumm": "麦克风静音",
+		"Minimieren": "最小化",
+		"Mit Link für „Ansehen“:": "带“查看”链接：",
+		"Mitteilungen": "通知",
+		"Mittwoch": "星期三",
+		"Mo": "周一",
+		"Monitor": "显示器",
+		"Montag": "星期一",
+		"Münzwurf": "抛硬币",
+		"Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will.": "抛硬币（正面是 Sam）或掷骰子。专治所有不想自己做的决定。",
+		"Musik": "音乐",
+		"Nach": "多久后",
+		"Name": "名称",
+		"NDR 2": "NDR 2",
+		"Nebel": "雾",
+		"Netflix": "Netflix",
+		"Netz": "网络",
+		"Netzwerk": "网络",
+		"nichts": "无",
+		"Nichts läuft": "没在播放",
+		"noch {n} min": "还剩 {n} 分",
+		"Nochmal?": "再来？",
+		"nur bei Eigene App, z. B. obs64": "仅限自定义应用，例如 obs64",
+		"nur bei Eigene App, z. B. vlc": "仅限自定义应用，例如 vlc",
+		"nur bei Eigener Sender: https://…": "仅限自定义电台：https://…",
+		"Nutzt die GitHub-CLI „gh“ (auch in WSL), mit der du schon angemeldet bist. Alle 2 Minuten wird nachgesehen; neue Review-Anfragen lösen einen Alarm aus.": "使用你已登录的 GitHub CLI “gh”（WSL 中的也可以）。每 2 分钟检查一次；有新的审查请求就会触发提醒。",
+		"OBS": "OBS",
+		"OBS Studio": "OBS Studio",
+		"Offline!": "离线！",
+		"Papierkorb": "回收站",
+		"Papierkorb {n}": "回收站 {n}",
+		"Papierkorb leeren (zweimal drücken)": "清空回收站（按两次）",
+		"Passwort": "密码",
+		"Passwort erzeugen (in die Zwischenablage)": "生成密码（到剪贴板）",
+		"Pause": "暂停",
+		"Pause!": "休息！",
+		"pausiert": "已暂停",
+		"PC aus · {n} min": "关机 · {n} 分",
+		"PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid.": "30、60 或 90 分钟后关机或睡眠，比如晚上看电影时。再按一下：多加 30 分钟；长按：取消。提前一分钟 Sam 会告诉你。",
+		"PC geht gleich aus": "电脑马上关机",
+		"PC schläft gleich ein": "电脑马上睡眠",
+		"Play": "播放",
+		"Play / Pause": "播放 / 暂停",
+		"Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.": "少按一点，多干一点。一只住在你 Stream Deck 上的树懒，有事找你时会铺满整个 Deck，还有音乐、Discord 和 Steam 的日常按键。无需任何设置。",
+		"Prime Video": "Prime Video",
+		"Projizieren": "投影",
+		"Projizieren (2. Bildschirm)": "投影（第二屏幕）",
+		"Prozessname": "进程名",
+		"prüft …": "检查中…",
+		"Puh, heiß": "好热",
+		"Quelle": "来源",
+		"Radio Bob": "Radio Bob",
+		"radioeins": "radioeins",
+		"Rechner": "计算器",
+		"Rechts": "靠右",
+		"Rechts andocken": "靠右贴靠",
+		"Regen": "雨",
+		"Review wartet": "审查待处理",
+		"Rock Antenne": "Rock Antenne",
+		"Sa": "周六",
+		"Samstag": "星期六",
+		"Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand.": "只为一个应用把麦克风静音，比如 Teams、Zoom 或浏览器里的 Meet。其他应用还能听到你。按键显示真实状态。",
+		"Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.": "在你的设备之间切换声音：耳机、音箱、显示器。虚拟设备（Voicemod、Loopback …）会被跳过。也可以只选两个。",
+		"Schaltet nur Discord stumm, direkt in Windows, egal welches Mikro in Discord gewählt ist. Dafür muss nichts eingestellt werden. Discords eigenes Stumm-Symbol bleibt dabei aus, die Taste zeigt den echten Zustand. Taub schaltet Discords Ton und Mikro zusammen.": "直接在 Windows 里只把 Discord 静音，不管 Discord 里选的是哪个麦克风。无需任何设置。Discord 自己的静音图标不会亮，按键显示真实状态。拒听会同时关闭 Discord 的声音和麦克风。",
+		"schau mal": "看一下",
+		"Schau mal": "看一下",
+		"Schlaf · {n} min": "睡眠 · {n} 分",
+		"Schlafen": "睡眠",
+		"schläft in {time}": "{time} 后睡眠",
+		"schlummert · noch {n} min": "小睡 · 还剩 {n} 分",
+		"Schnee": "雪",
+		"schnell": "快",
+		"Screenshot": "截图",
+		"Screenshot (Ausschnitt)": "截图（区域）",
+		"seit {n} h": "{n} 小时前",
+		"seit {n} min": "{n} 分钟前",
+		"Seit 30 Sekunden keine Verbindung ins Internet.": "已经 30 秒连不上网络了。",
+		"Sender": "电台",
+		"Shop": "商店",
+		"Slack": "Slack",
+		"So": "周日",
+		"So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste.": "有事等你时，Sam 就会这样提醒你。查看、稍后，或者随便按一个键。",
+		"Sonnig": "晴",
+		"Sonntag": "星期日",
+		"Später": "稍后",
+		"Sperren": "锁定",
+		"Spiel": "游戏",
+		"Spiel / App im Vordergrund": "前台的游戏 / 应用",
+		"Spiel-Screenshot": "游戏截图",
+		"Spielen": "游戏中",
+		"Spielfoto": "游戏截图",
+		"Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.": "播放一个电台，按一下开，再按一下关。无需安装，无需账号。",
+		"Spotify": "Spotify",
+		"Standard (60 / 45 min)": "默认（60 / 45 分钟）",
+		"Steam": "Steam",
+		"Steam lädt": "Steam 下载中",
+		"still": "无声",
+		"Stoppuhr": "秒表",
+		"Stream-Link": "流链接",
+		"Strom": "电源",
+		"stumm": "静音",
+		"Stumm": "静音",
+		"Stumm an/aus": "静音开/关",
+		"SWR3": "SWR3",
+		"System": "系统",
+		"SZENE 42 · TAKE 1": "SCENE 42 · TAKE 1",
+		"Task-Manager": "任务管理器",
+		"Taste": "按键",
+		"Taub schalten": "拒听",
+		"Teams": "Teams",
+		"Telegram": "Telegram",
+		"Telegram Web": "Telegram Web",
+		"Terminal": "终端",
+		"Test: Fehler": "测试：错误",
+		"Test: Warten": "测试：等待",
+		"Timer": "计时器",
+		"Timer läuft": "计时中",
+		"Timer pausiert": "计时已暂停",
+		"Ton aus": "静音",
+		"Ton ist aus": "已静音",
+		"Ton über": "声音输出",
+		"Trinken": "喝水",
+		"Twitch": "Twitch",
+		"Übersetzen": "翻译",
+		"Uhrzeit": "时间",
+		"unbekannt": "未知",
+		"Ungelesene GitHub-Mitteilungen": "未读 GitHub 通知",
+		"Videos": "视频",
+		"virtuell": "虚拟",
+		"Virtueller Desktop links": "左侧虚拟桌面",
+		"Virtueller Desktop rechts": "右侧虚拟桌面",
+		"wach · {time}": "唤醒 · {time}",
+		"wach · noch {time}": "唤醒 · 还剩 {time}",
+		"Wach bleiben": "保持唤醒",
+		"Wartet auf dich (Honig)": "等你处理（蜂蜜色）",
+		"Was": "选择",
+		"WDR 2": "WDR 2",
+		"Weiter": "下一首",
+		"Weiter geht's": "继续吧",
+		"Wetter": "天气",
+		"WhatsApp": "WhatsApp",
+		"WhatsApp Web": "WhatsApp Web",
+		"Wie lange": "多久",
+		"Wie lange noch bis Feierabend oder Wochenende.": "距离下班或周末还有多久。",
+		"Windows-Mitteilungen (Infocenter)": "Windows 通知（通知中心）",
+		"wird geladen": "加载中",
+		"WLAN": "Wi-Fi",
+		"Wochenende (Freitag)": "周末（星期五）",
+		"Wochenende!": "周末啦！",
+		"Wolkig": "多云",
+		"Woran": "提醒内容",
+		"Würfel": "骰子",
+		"Würfeln": "掷骰子",
+		"YouTube": "YouTube",
+		"Zahl": "反面",
+		"Zeigt": "显示",
+		"Zeit zu trinken": "该喝水了",
+		"Zoom": "Zoom",
+		"Zuletzt gespielt starten": "启动最近玩过的",
+		"Zurück": "上一首",
+		"Zurücknehmen:": "撤销：",
+		"Zwischenablage-Verlauf": "剪贴板历史"
+	}
+}

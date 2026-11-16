@@ -8,10 +8,11 @@ import { formatLeft } from "../home.js";
 import { since } from "./scene.js";
 import { sloth } from "./sloth.js";
 import { BODY, C, DEFS, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
 export const INFOBAR = { width: 232, height: 50 } as const;
 
-const DAYS = ["So", "Mo", "Di", "Mi", "Do", "Fr", "Sa"];
+const DAYS = () => [tr("So"), tr("Mo"), tr("Di"), tr("Mi"), tr("Do"), tr("Fr"), tr("Sa")];
 
 export type InfobarOptions = {
 	alert: Alert | undefined;
@@ -41,12 +42,12 @@ export function infobarImage(o: InfobarOptions): string {
 	let lines = "";
 	if (alert && snoozed) {
 		const minutes = Math.max(1, Math.ceil((alert.snoozedUntil! - now) / 60_000));
-		lines = line1(alert.title, C.cream) + line2(`schlummert · noch ${minutes} min`, C.honey);
+		lines = line1(alert.title, C.cream) + line2(tr("schlummert · noch {n} min", { n: minutes }), C.honey);
 	} else if (alert) {
 		lines = line1(alert.title, tone) + line2([alert.source, since(alert.createdAt, now)].filter(Boolean).join(" · "), C.cream);
 	} else if (o.pomodoro) {
 		const p = o.pomodoro;
-		const label = `${p.phase === "focus" ? "Fokus" : "Pause"} ${formatLeft(p.left)}${p.paused ? " · angehalten" : ""}`;
+		const label = `${p.phase === "focus" ? tr("Fokus") : tr("Pause")} ${formatLeft(p.left)}${p.paused ? ` · ${tr("angehalten")}` : ""}`;
 		const width = MAX * Math.min(1, Math.max(0, p.progress));
 		lines =
 			line1(label, p.phase === "focus" ? C.coral : C.leaf) +
@@ -61,7 +62,8 @@ export function infobarImage(o: InfobarOptions): string {
 			const opacity = p < 0.3 ? p / 0.3 : 1 - (p - 0.3) / 0.7;
 			return `<text x="${q(44 + i * 5 + p * 4)}" y="${q(20 - i * 4 - p * 10)}" font-family="${BODY}" font-weight="700" font-size="${10 - i * 2}" fill="${C.sky}" opacity="${q(opacity, 0.25)}">z</text>`;
 		});
-		lines = line1(`${hh}:${mm}`, C.cream) + line2(`${DAYS[d.getDay()]} ${d.getDate()}.${d.getMonth() + 1}. · alles ruhig`, "#9D9A94") + zz.join("");
+		lines = line1(`${hh}:${mm}`, C.cream) + line2(tr("{day} {d}.{m}. · alles ruhig", { day: DAYS()[d.getDay()]!, d: d.getDate(), m: d.getMonth() + 1 }), "#9D9A94")
+ + zz.join("");
 	}
 
 	const opacity = live ? q(0.35 + swing(t, alert.level === "error" ? 1.6 : 2.8) * 0.65, 0.35) : "1";

@@ -1,4 +1,5 @@
 /** Pure helpers for the everyday keys: time maths, weather codes, parsers. */
+import { tr } from "./i18n.js";
 
 /** ISO calendar week, as Germans read it on the wall calendar. */
 export function isoWeek(date: Date): number {
@@ -12,13 +13,14 @@ export function isoWeek(date: Date): number {
 /** "2:05 h", "45 min", "0:42" — the shortest honest way to say how long. */
 export function formatLeft(ms: number): string {
 	const total = Math.max(0, Math.round(ms / 1000));
-	if (total >= 2 * 86_400) return `${Math.floor(total / 86_400)} Tage`;
+	if (total >= 2 * 86_400) return tr("{n} Tage", { n: Math.floor(total / 86_400) });
 	if (total >= 3600) {
 		const h = Math.floor(total / 3600);
 		const m = Math.floor((total % 3600) / 60);
-		return `${h}:${String(m).padStart(2, "0")} h`;
+		return tr("{h}:{mm} h", { h, mm: String(m).padStart(2, "0") });
 	}
-	if (total >= 600) return `${Math.ceil(total / 60)} min`;
+	if (total >= 600) return tr("{n} min", { n: Math.ceil(total / 60) });
+
 	return `${Math.floor(total / 60)}:${String(total % 60).padStart(2, "0")}`;
 }
 
@@ -72,14 +74,15 @@ export type Sky = "sun" | "partly" | "cloud" | "fog" | "rain" | "snow" | "storm"
 
 /** WMO weather codes (as Open-Meteo reports them) to a picture and a word. */
 export function weatherInfo(code: number): { sky: Sky; word: string } {
-	if (code === 0) return { sky: "sun", word: "Sonnig" };
-	if (code <= 2) return { sky: "partly", word: "Heiter" };
-	if (code === 3) return { sky: "cloud", word: "Bewölkt" };
-	if (code === 45 || code === 48) return { sky: "fog", word: "Nebel" };
-	if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return { sky: "rain", word: "Regen" };
-	if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { sky: "snow", word: "Schnee" };
-	if (code >= 95) return { sky: "storm", word: "Gewitter" };
-	return { sky: "cloud", word: "Wolkig" };
+	if (code === 0) return { sky: "sun", word: tr("Sonnig") };
+	if (code <= 2) return { sky: "partly", word: tr("Heiter") };
+	if (code === 3) return { sky: "cloud", word: tr("Bewölkt") };
+	if (code === 45 || code === 48) return { sky: "fog", word: tr("Nebel") };
+	if ((code >= 51 && code <= 67) || (code >= 80 && code <= 82)) return { sky: "rain", word: tr("Regen") };
+	if ((code >= 71 && code <= 77) || code === 85 || code === 86) return { sky: "snow", word: tr("Schnee") };
+	if (code >= 95) return { sky: "storm", word: tr("Gewitter") };
+	return { sky: "cloud", word: tr("Wolkig") };
+
 }
 
 /** Reads SSID and signal from `netsh wlan show interfaces` (any language). */

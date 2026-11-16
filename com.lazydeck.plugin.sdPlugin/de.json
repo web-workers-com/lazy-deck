@@ -1,0 +1,502 @@
+{
+	"Name": "Lazy Deck",
+	"Description": "Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.",
+	"Category": "Lazy Deck",
+	"com.lazydeck.plugin.sloth": {
+		"Name": "Sam",
+		"Tooltip": "Schläft, solange alles ruhig ist. Wacht auf und pulsiert, wenn etwas auf dich wartet. Drücken holt den Alarm aufs ganze Deck."
+	},
+	"com.lazydeck.plugin.test": {
+		"Name": "Alarm testen",
+		"Tooltip": "Löst einen Beispiel-Alarm aus, damit du siehst, wie das Deck reagiert."
+	},
+	"com.lazydeck.plugin.alert": {
+		"Name": "Alarm-Taste",
+		"Tooltip": "Teil des Alarm-Profils."
+	},
+	"com.lazydeck.plugin.mic": {
+		"Name": "Mikrofon",
+		"Tooltip": "Schaltet das Mikrofon des Systems stumm, für alle Apps gleichzeitig: Discord, Teams, Zoom, OBS. Die Taste zeigt den echten Zustand."
+	},
+	"com.lazydeck.plugin.output": {
+		"Name": "Ausgabe wechseln",
+		"Tooltip": "Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei."
+	},
+	"com.lazydeck.plugin.media": {
+		"Name": "Musik",
+		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+	},
+	"com.lazydeck.plugin.media.playpause": {
+		"Name": "Play / Pause",
+		"Tooltip": "Startet oder pausiert die Musik: Spotify, YouTube, Browser und die meisten Player. Läuft etwas, hat Sam die Augen offen."
+	},
+	"com.lazydeck.plugin.media.previous": {
+		"Name": "Zurück",
+		"Tooltip": "Vorheriger Titel."
+	},
+	"com.lazydeck.plugin.media.next": {
+		"Name": "Weiter",
+		"Tooltip": "Nächster Titel."
+	},
+	"com.lazydeck.plugin.media.volumedown": {
+		"Name": "Leiser",
+		"Tooltip": "Macht alles leiser und zeigt, wo die Lautstärke steht."
+	},
+	"com.lazydeck.plugin.media.volumeup": {
+		"Name": "Lauter",
+		"Tooltip": "Macht alles lauter und zeigt, wo die Lautstärke steht."
+	},
+	"com.lazydeck.plugin.media.mute": {
+		"Name": "Lautstärke / Ton aus",
+		"Tooltip": "Zeigt die Lautstärke als Schild am Ast. Drücken schaltet den Ton aus und wieder an."
+	},
+	"com.lazydeck.plugin.nowplaying": {
+		"Name": "Jetzt läuft",
+		"Tooltip": "Zeigt Cover und Titel von dem, was gerade spielt (Spotify, YouTube, Browser …). Drücken: Play/Pause."
+	},
+	"com.lazydeck.plugin.radio": {
+		"Name": "Radio",
+		"Tooltip": "Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto."
+	},
+	"com.lazydeck.plugin.appvolume": {
+		"Name": "App-Lautstärke",
+		"Tooltip": "Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken."
+	},
+	"com.lazydeck.plugin.appvolume.fgdown": {
+		"Name": "Spiel leiser",
+		"Tooltip": "Macht nur das Spiel (oder die App im Vordergrund) leiser, Discord und Musik bleiben gleich."
+	},
+	"com.lazydeck.plugin.appvolume.fgup": {
+		"Name": "Spiel lauter",
+		"Tooltip": "Macht nur das Spiel (oder die App im Vordergrund) lauter."
+	},
+	"com.lazydeck.plugin.appvolume.spotifymute": {
+		"Name": "Spotify stumm",
+		"Tooltip": "Schaltet nur Spotify stumm und wieder an."
+	},
+	"com.lazydeck.plugin.appmic": {
+		"Name": "App-Mikro",
+		"Tooltip": "Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand."
+	},
+	"com.lazydeck.plugin.appmic.teams": {
+		"Name": "Teams Mikro",
+		"Tooltip": "Schaltet nur das Mikro in Microsoft Teams stumm."
+	},
+	"com.lazydeck.plugin.appmic.zoom": {
+		"Name": "Zoom Mikro",
+		"Tooltip": "Schaltet nur das Mikro in Zoom stumm."
+	},
+	"com.lazydeck.plugin.appmic.browser": {
+		"Name": "Meet Mikro (Browser)",
+		"Tooltip": "Schaltet das Mikro im Browser stumm, z. B. bei Google Meet oder Jitsi."
+	},
+	"com.lazydeck.plugin.discord": {
+		"Name": "Discord",
+		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+	},
+	"com.lazydeck.plugin.discord.mute": {
+		"Name": "Discord Mikro",
+		"Tooltip": "Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist. Die Taste zeigt den echten Zustand."
+	},
+	"com.lazydeck.plugin.discord.deafen": {
+		"Name": "Discord taub",
+		"Tooltip": "Discord hört und sendet nichts mehr: Ton und Mikro zusammen aus."
+	},
+	"com.lazydeck.plugin.discord.open": {
+		"Name": "Discord öffnen",
+		"Tooltip": "Öffnet Discord."
+	},
+	"com.lazydeck.plugin.steam": {
+		"Name": "Steam",
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+	},
+	"com.lazydeck.plugin.steam.last": {
+		"Name": "Zuletzt gespielt",
+		"Tooltip": "Startet dein zuletzt gespieltes Steam-Spiel."
+	},
+	"com.lazydeck.plugin.steam.friends": {
+		"Name": "Steam Freunde",
+		"Tooltip": "Öffnet deine Freundesliste in Steam."
+	},
+	"com.lazydeck.plugin.steam.library": {
+		"Name": "Steam Bibliothek",
+		"Tooltip": "Öffnet deine Steam-Bibliothek."
+	},
+	"com.lazydeck.plugin.steam.bigpicture": {
+		"Name": "Steam Big Picture",
+		"Tooltip": "Startet Steam im Big-Picture-Modus, für Fernseher und Controller."
+	},
+	"com.lazydeck.plugin.steam.store": {
+		"Name": "Steam Shop",
+		"Tooltip": "Öffnet den Steam-Shop."
+	},
+	"com.lazydeck.plugin.steamdownloads": {
+		"Name": "Steam-Downloads",
+		"Tooltip": "Wie weit Steam mit dem Laden ist. Ist ein großer Download fertig, sagt Sam Bescheid, auch ohne diese Taste."
+	},
+	"com.lazydeck.plugin.gamebar": {
+		"Name": "Gaming",
+		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+	},
+	"com.lazydeck.plugin.gamebar.clip": {
+		"Name": "Letzte 30 s speichern",
+		"Tooltip": "Letzte 30 s speichern über die Xbox Game Bar von Windows."
+	},
+	"com.lazydeck.plugin.gamebar.record": {
+		"Name": "Aufnahme an/aus",
+		"Tooltip": "Aufnahme an/aus über die Xbox Game Bar von Windows."
+	},
+	"com.lazydeck.plugin.gamebar.shot": {
+		"Name": "Spiel-Screenshot",
+		"Tooltip": "Spiel-Screenshot über die Xbox Game Bar von Windows."
+	},
+	"com.lazydeck.plugin.gamebar.open": {
+		"Name": "Game Bar öffnen",
+		"Tooltip": "Game Bar öffnen über die Xbox Game Bar von Windows."
+	},
+	"com.lazydeck.plugin.brightness": {
+		"Name": "Helligkeit",
+		"Tooltip": "Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen."
+	},
+	"com.lazydeck.plugin.brightness.down": {
+		"Name": "Dunkler",
+		"Tooltip": "Alle Bildschirme dunkler, auch externe Monitore."
+	},
+	"com.lazydeck.plugin.brightness.up": {
+		"Name": "Heller",
+		"Tooltip": "Alle Bildschirme heller, auch externe Monitore."
+	},
+	"com.lazydeck.plugin.windows": {
+		"Name": "Windows",
+		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+	},
+	"com.lazydeck.plugin.windows.screenshot": {
+		"Name": "Screenshot (Ausschnitt)",
+		"Tooltip": "Screenshot (Ausschnitt)."
+	},
+	"com.lazydeck.plugin.windows.lock": {
+		"Name": "Bildschirm sperren",
+		"Tooltip": "Bildschirm sperren."
+	},
+	"com.lazydeck.plugin.windows.monitoroff": {
+		"Name": "Bildschirm aus",
+		"Tooltip": "Bildschirm aus."
+	},
+	"com.lazydeck.plugin.windows.sleep": {
+		"Name": "Energiesparen",
+		"Tooltip": "Energiesparen. Zur Sicherheit zweimal drücken."
+	},
+	"com.lazydeck.plugin.windows.darkmode": {
+		"Name": "Dark Mode umschalten",
+		"Tooltip": "Dark Mode umschalten."
+	},
+	"com.lazydeck.plugin.windows.recyclebin": {
+		"Name": "Papierkorb leeren",
+		"Tooltip": "Papierkorb leeren. Zur Sicherheit zweimal drücken."
+	},
+	"com.lazydeck.plugin.windows.desktop": {
+		"Name": "Desktop zeigen",
+		"Tooltip": "Desktop zeigen."
+	},
+	"com.lazydeck.plugin.windows.settings": {
+		"Name": "Einstellungen",
+		"Tooltip": "Einstellungen."
+	},
+	"com.lazydeck.plugin.windows.taskmanager": {
+		"Name": "Task-Manager",
+		"Tooltip": "Task-Manager."
+	},
+	"com.lazydeck.plugin.window": {
+		"Name": "Fenster",
+		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+	},
+	"com.lazydeck.plugin.window.snapleft": {
+		"Name": "Links andocken",
+		"Tooltip": "Links andocken."
+	},
+	"com.lazydeck.plugin.window.snapright": {
+		"Name": "Rechts andocken",
+		"Tooltip": "Rechts andocken."
+	},
+	"com.lazydeck.plugin.window.maximize": {
+		"Name": "Maximieren",
+		"Tooltip": "Maximieren."
+	},
+	"com.lazydeck.plugin.window.minimize": {
+		"Name": "Minimieren",
+		"Tooltip": "Minimieren."
+	},
+	"com.lazydeck.plugin.window.vdleft": {
+		"Name": "Virtueller Desktop links",
+		"Tooltip": "Virtueller Desktop links."
+	},
+	"com.lazydeck.plugin.window.vdright": {
+		"Name": "Virtueller Desktop rechts",
+		"Tooltip": "Virtueller Desktop rechts."
+	},
+	"com.lazydeck.plugin.window.taskview": {
+		"Name": "Aufgabenansicht",
+		"Tooltip": "Aufgabenansicht."
+	},
+	"com.lazydeck.plugin.window.project": {
+		"Name": "Projizieren (2. Bildschirm)",
+		"Tooltip": "Projizieren (2. Bildschirm)."
+	},
+	"com.lazydeck.plugin.awake": {
+		"Name": "Wach bleiben",
+		"Tooltip": "Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme."
+	},
+	"com.lazydeck.plugin.sleeptimer": {
+		"Name": "Ausschalt-Timer",
+		"Tooltip": "PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid."
+	},
+	"com.lazydeck.plugin.clock": {
+		"Name": "Uhr",
+		"Tooltip": "Uhrzeit, Wochentag, Datum und Kalenderwoche."
+	},
+	"com.lazydeck.plugin.weather": {
+		"Name": "Wetter",
+		"Tooltip": "Wetter für deinen Ort, ohne Einrichtung. Der Ort kommt aus deiner IP-Adresse (ipwho.is), das Wetter von Open-Meteo."
+	},
+	"com.lazydeck.plugin.timer": {
+		"Name": "Timer",
+		"Tooltip": "Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam."
+	},
+	"com.lazydeck.plugin.stopwatch": {
+		"Name": "Stoppuhr",
+		"Tooltip": "Drücken startet/stoppt, halten setzt zurück."
+	},
+	"com.lazydeck.plugin.countdown": {
+		"Name": "Countdown",
+		"Tooltip": "Wie lange noch bis Feierabend oder Wochenende."
+	},
+	"com.lazydeck.plugin.countdown.feierabend": {
+		"Name": "Bis Feierabend",
+		"Tooltip": "Wie lange noch bis Feierabend (17:00, einstellbar)."
+	},
+	"com.lazydeck.plugin.countdown.weekend": {
+		"Name": "Bis Wochenende",
+		"Tooltip": "Wie lange noch bis Freitag Feierabend."
+	},
+	"com.lazydeck.plugin.reminder": {
+		"Name": "Erinnerung",
+		"Tooltip": "Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt."
+	},
+	"com.lazydeck.plugin.reminder.water": {
+		"Name": "Trinken",
+		"Tooltip": "Erinnert dich jede Stunde ans Trinken. Drücken heißt erledigt."
+	},
+	"com.lazydeck.plugin.reminder.move": {
+		"Name": "Bewegen",
+		"Tooltip": "Erinnert dich alle 45 Minuten, dich zu bewegen. Drücken heißt erledigt."
+	},
+	"com.lazydeck.plugin.internet": {
+		"Name": "Internet",
+		"Tooltip": "Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam."
+	},
+	"com.lazydeck.plugin.wifi": {
+		"Name": "WLAN",
+		"Tooltip": "WLAN-Name und Signalstärke."
+	},
+	"com.lazydeck.plugin.battery": {
+		"Name": "Akku",
+		"Tooltip": "Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom."
+	},
+	"com.lazydeck.plugin.apps": {
+		"Name": "App starten",
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+	},
+	"com.lazydeck.plugin.apps.spotify": {
+		"Name": "Spotify starten",
+		"Tooltip": "Startet Spotify mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.discord": {
+		"Name": "Discord starten",
+		"Tooltip": "Startet Discord mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.steam": {
+		"Name": "Steam starten",
+		"Tooltip": "Startet Steam mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.whatsapp": {
+		"Name": "WhatsApp starten",
+		"Tooltip": "Startet WhatsApp mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.teams": {
+		"Name": "Microsoft Teams starten",
+		"Tooltip": "Startet Microsoft Teams mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.obs": {
+		"Name": "OBS Studio starten",
+		"Tooltip": "Startet OBS Studio mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.explorer": {
+		"Name": "Explorer starten",
+		"Tooltip": "Startet Explorer mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.terminal": {
+		"Name": "Terminal starten",
+		"Tooltip": "Startet Terminal mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.notepad": {
+		"Name": "Editor starten",
+		"Tooltip": "Startet Editor mit einem Druck."
+	},
+	"com.lazydeck.plugin.apps.telegram": {
+		"Name": "Telegram starten",
+		"Tooltip": "Startet Telegram mit einem Druck."
+	},
+	"com.lazydeck.plugin.website": {
+		"Name": "Webseite",
+		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+	},
+	"com.lazydeck.plugin.website.youtube": {
+		"Name": "YouTube öffnen",
+		"Tooltip": "Öffnet YouTube im Browser."
+	},
+	"com.lazydeck.plugin.website.netflix": {
+		"Name": "Netflix öffnen",
+		"Tooltip": "Öffnet Netflix im Browser."
+	},
+	"com.lazydeck.plugin.website.twitch": {
+		"Name": "Twitch öffnen",
+		"Tooltip": "Öffnet Twitch im Browser."
+	},
+	"com.lazydeck.plugin.website.gmail": {
+		"Name": "Gmail öffnen",
+		"Tooltip": "Öffnet Gmail im Browser."
+	},
+	"com.lazydeck.plugin.website.whatsappweb": {
+		"Name": "WhatsApp Web öffnen",
+		"Tooltip": "Öffnet WhatsApp Web im Browser."
+	},
+	"com.lazydeck.plugin.website.prime": {
+		"Name": "Prime Video öffnen",
+		"Tooltip": "Öffnet Prime Video im Browser."
+	},
+	"com.lazydeck.plugin.website.disney": {
+		"Name": "Disney+ öffnen",
+		"Tooltip": "Öffnet Disney+ im Browser."
+	},
+	"com.lazydeck.plugin.website.claude": {
+		"Name": "Claude öffnen",
+		"Tooltip": "Öffnet Claude im Browser."
+	},
+	"com.lazydeck.plugin.website.maps": {
+		"Name": "Google Maps öffnen",
+		"Tooltip": "Öffnet Google Maps im Browser."
+	},
+	"com.lazydeck.plugin.website.deepl": {
+		"Name": "DeepL Übersetzer öffnen",
+		"Tooltip": "Öffnet DeepL Übersetzer im Browser."
+	},
+	"com.lazydeck.plugin.website.chatgpt": {
+		"Name": "ChatGPT öffnen",
+		"Tooltip": "Öffnet ChatGPT im Browser."
+	},
+	"com.lazydeck.plugin.website.gemini": {
+		"Name": "Gemini öffnen",
+		"Tooltip": "Öffnet Gemini im Browser."
+	},
+	"com.lazydeck.plugin.website.grok": {
+		"Name": "Grok öffnen",
+		"Tooltip": "Öffnet Grok im Browser."
+	},
+	"com.lazydeck.plugin.website.telegramweb": {
+		"Name": "Telegram Web öffnen",
+		"Tooltip": "Öffnet Telegram Web im Browser."
+	},
+	"com.lazydeck.plugin.folder": {
+		"Name": "Ordner",
+		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+	},
+	"com.lazydeck.plugin.folder.downloads": {
+		"Name": "Ordner Downloads",
+		"Tooltip": "Öffnet den Ordner Downloads."
+	},
+	"com.lazydeck.plugin.folder.documents": {
+		"Name": "Ordner Dokumente",
+		"Tooltip": "Öffnet den Ordner Dokumente."
+	},
+	"com.lazydeck.plugin.folder.pictures": {
+		"Name": "Ordner Bilder",
+		"Tooltip": "Öffnet den Ordner Bilder."
+	},
+	"com.lazydeck.plugin.folder.desktop": {
+		"Name": "Ordner Desktop",
+		"Tooltip": "Öffnet den Ordner Desktop."
+	},
+	"com.lazydeck.plugin.folder.music": {
+		"Name": "Ordner Musik",
+		"Tooltip": "Öffnet den Ordner Musik."
+	},
+	"com.lazydeck.plugin.folder.videos": {
+		"Name": "Ordner Videos",
+		"Tooltip": "Öffnet den Ordner Videos."
+	},
+	"com.lazydeck.plugin.folder.home": {
+		"Name": "Ordner Benutzerordner",
+		"Tooltip": "Öffnet den Ordner Benutzerordner."
+	},
+	"com.lazydeck.plugin.tools": {
+		"Name": "Werkzeuge",
+		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+	},
+	"com.lazydeck.plugin.tools.clipboard": {
+		"Name": "Zwischenablage-Verlauf",
+		"Tooltip": "Zwischenablage-Verlauf."
+	},
+	"com.lazydeck.plugin.tools.emoji": {
+		"Name": "Emoji-Auswahl",
+		"Tooltip": "Emoji-Auswahl."
+	},
+	"com.lazydeck.plugin.tools.notifications": {
+		"Name": "Windows-Mitteilungen (Infocenter)",
+		"Tooltip": "Windows-Mitteilungen (Infocenter)."
+	},
+	"com.lazydeck.plugin.tools.calculator": {
+		"Name": "Rechner",
+		"Tooltip": "Rechner."
+	},
+	"com.lazydeck.plugin.tools.pastedate": {
+		"Name": "Heutiges Datum einfügen",
+		"Tooltip": "Heutiges Datum einfügen."
+	},
+	"com.lazydeck.plugin.tools.password": {
+		"Name": "Passwort erzeugen (in die Zwischenablage)",
+		"Tooltip": "Passwort erzeugen (in die Zwischenablage)."
+	},
+	"com.lazydeck.plugin.chance": {
+		"Name": "Münze & Würfel",
+		"Tooltip": "Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will."
+	},
+	"com.lazydeck.plugin.chance.coin": {
+		"Name": "Münzwurf",
+		"Tooltip": "Kopf oder Zahl. Kopf zeigt Sam."
+	},
+	"com.lazydeck.plugin.chance.dice": {
+		"Name": "Würfel",
+		"Tooltip": "Würfelt eine Zahl von 1 bis 6."
+	},
+	"com.lazydeck.plugin.system": {
+		"Name": "System",
+		"Tooltip": "CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager."
+	},
+	"com.lazydeck.plugin.pomodoro": {
+		"Name": "Pomodoro",
+		"Tooltip": "25 Minuten Fokus, 5 Minuten Pause. Drücken: Start/Pause, halten: zurücksetzen. Sam sagt Bescheid, wenn die Zeit um ist."
+	},
+	"com.lazydeck.plugin.github": {
+		"Name": "GitHub",
+		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+	},
+	"com.lazydeck.plugin.github.notifications": {
+		"Name": "GitHub-Mitteilungen",
+		"Tooltip": "Ungelesene GitHub-Mitteilungen. Nutzt die gh-CLI, mit der du angemeldet bist."
+	},
+	"com.lazydeck.plugin.github.reviews": {
+		"Name": "GitHub-Reviews",
+		"Tooltip": "Reviews, die auf dich warten. Neue lösen einen Alarm aus."
+	},
+	"Localization": {}
+}

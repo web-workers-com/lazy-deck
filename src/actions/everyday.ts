@@ -40,6 +40,7 @@ import {
 	type AudioState,
 } from "../system.js";
 import { Ticker } from "./ticker.js";
+import { tr } from "../i18n.js";
 
 type AnyKey = KeyAction<any>;
 const C_HONEY = "#F2B544";
@@ -117,6 +118,7 @@ export function shortDeviceName(name: string): string {
 
 /** What kind of device it probably is, for the sign. */
 export function deviceKind(name: string): "Kopfhörer" | "Headset" | "Lautsprecher" | "Monitor" | "Interface" {
+	// Shown through tr(): N("Kopfhörer"), N("Headset"), N("Lautsprecher"), N("Monitor"), N("Interface")
 	if (/headset|hands-?free|freisprech/i.test(name)) return "Headset";
 	if (/kopfh|headphone|airpods|buds|wh-|arctis|hyperx|cloud|kraken|astro|g pro|blackshark/i.test(name)) return "Kopfhörer";
 	if (/hdmi|display|monitor|lg |ultragear|samsung|dell|benq|aoc|asus|acer|msi|kg\d|amd high definition|nvidia high definition|intel.*display/i.test(name)) return "Monitor";
@@ -131,8 +133,8 @@ export class OutputAction extends EverydayAction {
 	#poll = new Every(5000, () => this.read());
 	protected ticker = new Ticker(400, (_key: AnyKey, t) => {
 		const current = this.#list.find((d) => d.default);
-		if (!current) return signKey({ title: "Ton über", value: "…", t, phase: 2.8 });
-		return signKey({ title: "Ton über", value: shortDeviceName(current.name), sub: deviceKind(current.name), t, phase: 2.8 });
+		if (!current) return signKey({ title: tr("Ton über"), value: "…", t, phase: 2.8 });
+		return signKey({ title: tr("Ton über"), value: shortDeviceName(current.name), sub: tr(deviceKind(current.name)), t, phase: 2.8 });
 	});
 
 	async read(): Promise<void> {
@@ -178,7 +180,7 @@ export class OutputAction extends EverydayAction {
 		const payload = ev.payload as { event?: string } | null;
 		if (payload?.event !== "outputs") return;
 		await this.read();
-		const items = [{ value: "", label: "Automatisch (alle echten Geräte)" }, ...this.#list.map((d) => ({ value: d.id, label: shortDeviceName(d.name) + (VIRTUAL.test(d.name) ? " (virtuell)" : "") }))];
+		const items = [{ value: "", label: tr("Automatisch (alle echten Geräte)") }, ...this.#list.map((d) => ({ value: d.id, label: shortDeviceName(d.name) + (VIRTUAL.test(d.name) ? ` (${tr("virtuell")})` : "") }))];
 		await streamDeck.ui.sendToPropertyInspector({ event: "outputs", items });
 	}
 }
@@ -197,7 +199,7 @@ function processesOf(settings: Settings, app = appOf(settings)): string {
 function appLabel(app: AudioApp, state: AppAudioState | undefined, settings: Settings): string {
 	if (app.id === "fg" && state?.found && state.name) return state.name.split(/\s[-–|:]\s/)[0]!;
 	if (app.id === "custom" && settings.process) return settings.process.replace(/\.exe$/i, "");
-	return app.label;
+	return tr(app.label);
 }
 
 type VolumeView = { level?: number; muted?: boolean; found: boolean; name: string };
@@ -212,13 +214,13 @@ export class AppVolumeAction extends EverydayAction {
 		const app = appOf(s);
 		const view = this.#views.get(key.id);
 		const mode = s.mode ?? "down";
-		const name = view?.name || app.label;
+		const name = view?.name || tr(app.label);
 		const label =
 			view && !view.found && app.id !== "master"
-				? `${name} still`
+				? tr("{name} still", { name })
 				: mode === "mute"
-					? view?.muted ? `${name} stumm` : `${name} ${view?.level ?? "–"} %`
-					: `${mode === "up" ? "Lauter" : "Leiser"} · ${app.logo && view?.level !== undefined ? `${view.level} %` : name}`;
+					? view?.muted ? tr("{name} stumm", { name }) : `${name} ${view?.level ?? "–"} %`
+					: `${mode === "up" ? tr("Lauter") : tr("Leiser")} · ${app.logo && view?.level !== undefined ? `${view.level} %` : name}`;
 		return knobKey({
 			kind: app.id === "master" ? "speaker" : "app",
 			mono: app.id === "custom" ? (s.process ?? "?").slice(0, 2) : app.mono,
@@ -237,7 +239,7 @@ export class AppVolumeAction extends EverydayAction {
 		let view: VolumeView;
 		if (app.id === "master") {
 			const st: AudioState | undefined = await audio.state(0);
-			view = { level: st?.level, muted: st?.muted, found: !!st?.ok, name: app.label };
+			view = { level: st?.level, muted: st?.muted, found: !!st?.ok, name: tr(app.label) };
 		} else {
 			const st = await appAudio.state(processesOf(s, app), 0);
 			view = { level: st?.level, muted: st?.muted, found: !!st?.found, name: appLabel(app, st, s) };
@@ -257,8 +259,8 @@ export class AppVolumeAction extends EverydayAction {
 		const app = appOf(this.opts(id));
 		const v = this.#views.get(id);
 		void dial.setFeedback({
-			title: v?.name || app.label,
-			value: !v?.found && app.id !== "master" ? "still" : v?.muted ? "stumm" : `${v?.level ?? 0} %`,
+			title: v?.name || tr(app.label),
+			value: !v?.found && app.id !== "master" ? tr("still") : v?.muted ? tr("stumm") : `${v?.level ?? 0} %`,
 			indicator: { value: v?.muted ? 0 : (v?.level ?? 0) },
 		});
 	}
@@ -374,7 +376,7 @@ export class BrightnessAction extends EverydayAction {
 			kind: "sun",
 			level: screen.level,
 			dir: mode,
-			label: !known && screen.at ? "geht hier nicht" : `${mode === "up" ? "Heller" : "Dunkler"}${screen.level !== undefined ? ` · ${screen.level} %` : ""}`,
+			label: !known && screen.at ? tr("geht hier nicht") : `${mode === "up" ? tr("Heller") : tr("Dunkler")}${screen.level !== undefined ? ` · ${screen.level} %` : ""}`,
 			t,
 		});
 	});
@@ -397,7 +399,7 @@ export class BrightnessAction extends EverydayAction {
 				screen = { level: r?.ok ? r.level : undefined, count: r?.count ?? 0, at: Date.now() };
 				this.ticker.invalidate();
 				for (const dial of this.dials.values()) {
-					void dial.setFeedback({ title: "Helligkeit", value: screen.level !== undefined ? `${screen.level} %` : "–", indicator: { value: screen.level ?? 0 } });
+					void dial.setFeedback({ title: tr("Helligkeit"), value: screen.level !== undefined ? `${screen.level} %` : "–", indicator: { value: screen.level ?? 0 } });
 				}
 			} while (this.#pending !== 0);
 		} finally {
@@ -424,7 +426,7 @@ function stationOf(settings: Settings): { id: string; name: string; url: string 
 	const station = STATIONS.find((s) => s.id === settings.station) ?? STATIONS[0]!;
 	if (station.id !== "custom") return station;
 	const url = (settings.url ?? "").trim();
-	return { id: `custom:${url}`, name: (settings.name ?? "").trim() || "Mein Sender", url: /^https?:\/\//i.test(url) ? url : "" };
+	return { id: `custom:${url}`, name: (settings.name ?? "").trim() || tr("Mein Sender"), url: /^https?:\/\//i.test(url) ? url : "" };
 }
 
 /** Internet radio: one press plays the station, the next stops it. One station at a time. */
@@ -432,7 +434,8 @@ function stationOf(settings: Settings): { id: string; name: string; url: string 
 export class RadioAction extends EverydayAction {
 	protected ticker = new Ticker(250, (key: AnyKey, t) => {
 		const station = stationOf(this.opts(key.id));
-		return radioKey(station.name, playing === station.id, t);
+		return radioKey(tr(station.name), playing === station.id, t);
+
 	});
 
 	constructor() {
@@ -464,7 +467,8 @@ let awakeUntil: number | undefined;
 
 function formatSpan(ms: number): string {
 	const minutes = Math.max(0, Math.round(ms / 60_000));
-	return minutes >= 60 ? `${Math.floor(minutes / 60)}:${String(minutes % 60).padStart(2, "0")} h` : `${minutes} min`;
+	return minutes >= 60 ? tr("{h}:{mm} h", { h: Math.floor(minutes / 60), mm: String(minutes % 60).padStart(2, "0") }) : tr("{n} min", { n: minutes });
+
 }
 
 /** Keeps the PC and the screen awake: downloads, presentations, a film. */
@@ -472,8 +476,8 @@ function formatSpan(ms: number): string {
 export class AwakeAction extends EverydayAction {
 	protected ticker = new Ticker(400, (_key: AnyKey, t) => {
 		if (awakeUntil !== undefined && Date.now() >= awakeUntil) this.set(false);
-		if (awakeSince === undefined) return coffeeKey(false, "Wach bleiben", t);
-		const label = awakeUntil !== undefined ? `wach · noch ${formatSpan(awakeUntil - Date.now())}` : `wach · ${formatSpan(Date.now() - awakeSince)}`;
+		if (awakeSince === undefined) return coffeeKey(false, tr("Wach bleiben"), t);
+		const label = awakeUntil !== undefined ? tr("wach · noch {time}", { time: formatSpan(awakeUntil - Date.now()) }) : tr("wach · {time}", { time: formatSpan(Date.now() - awakeSince) });
 		return coffeeKey(true, label, t);
 	});
 
@@ -508,7 +512,7 @@ setInterval(() => {
 	if (left <= 60_000 && !warned) {
 		warned = true;
 		center.raise(
-			{ level: "wait", title: offHow === "shutdown" ? "PC geht gleich aus" : "PC schläft gleich ein", source: "Ausschalt-Timer", detail: "In einer Minute. Taste am Timer gedrückt halten bricht ab." },
+			{ level: "wait", title: offHow === "shutdown" ? tr("PC geht gleich aus") : tr("PC schläft gleich ein"), source: tr("Ausschalt-Timer"), detail: tr("In einer Minute. Taste am Timer gedrückt halten bricht ab.") },
 			{ immediate: true },
 		);
 	}
@@ -529,8 +533,8 @@ export class SleepTimerAction extends EverydayAction {
 		const s = this.opts(key.id);
 		const minutes = Number(s.minutes ?? 30) || 30;
 		const sleep = (s.how ?? "shutdown") === "sleep";
-		if (offAt === undefined) return hammockKey(`${sleep ? "Schlaf" : "PC aus"} · ${minutes} min`, t);
-		return moonKey(`${sleep ? "schläft" : "aus"} in ${formatSpan(offAt - Date.now())}`, t, { tone: C_HONEY, border: C_HONEY });
+		if (offAt === undefined) return hammockKey(sleep ? tr("Schlaf · {n} min", { n: minutes }) : tr("PC aus · {n} min", { n: minutes }), t);
+		return moonKey(sleep ? tr("schläft in {time}", { time: formatSpan(offAt - Date.now()) }) : tr("aus in {time}", { time: formatSpan(offAt - Date.now()) }), t, { tone: C_HONEY, border: C_HONEY });
 	});
 
 	constructor() {
@@ -588,7 +592,7 @@ async function watchSteam(): Promise<void> {
 			loading.delete(appId);
 			// Small patches are not worth a word.
 			if (before.total >= 300 * 1024 * 1024) {
-				center.raise({ level: "wait", title: `${now.name} ist fertig`, source: "Steam", detail: "Download abgeschlossen. Viel Spaß!", url: `steam://rungameid/${appId}` }, { immediate: true });
+				center.raise({ level: "wait", title: tr("{name} ist fertig", { name: now.name }), source: "Steam", detail: tr("Download abgeschlossen. Viel Spaß!"), url: `steam://rungameid/${appId}` }, { immediate: true });
 			}
 		} else if (!now) {
 			loading.delete(appId);
@@ -607,7 +611,8 @@ if (isWindows) {
 export class SteamDownloadsAction extends EverydayAction {
 	protected ticker = new Ticker(500, (_key: AnyKey, t) => {
 		const d = steamLoads[0];
-		if (!d) return signKey({ title: "Steam lädt", value: "nichts", sub: "alles aktuell", t, phase: 4.2 });
+		if (!d) return signKey({ title: tr("Steam lädt"), value: tr("nichts"), sub: tr("alles aktuell"), t, phase: 4.2 });
+
 		const share = d.done / d.total;
 		return signKey({ title: d.name, value: `${Math.floor(share * 100)} %`, bar: share, t, phase: 4.2, tone: "leaf" });
 	});

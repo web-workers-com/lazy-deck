@@ -5,6 +5,7 @@
  */
 import type { AlertCenter } from "./alerts.js";
 import { cli } from "./system.js";
+import { tr } from "./i18n.js";
 
 export type GitHubState = {
 	available: boolean;
@@ -67,7 +68,8 @@ export class GitHubWatcher {
 		if (newest) {
 			this.center.raise({
 				level: "wait",
-				title: fresh.length > 1 ? `${fresh.length} Reviews warten` : "Review wartet",
+				title: fresh.length > 1 ? tr("{n} Reviews warten", { n: fresh.length }) : tr("Review wartet"),
+
 				source: `GitHub · ${newest.repo.split("/").pop()} #${newest.number}`,
 				detail: newest.title,
 				url: fresh.length > 1 ? "https://github.com/pulls/review-requested" : newest.url,

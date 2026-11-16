@@ -2,6 +2,7 @@
 import type { Alert, Level } from "../alerts.js";
 import { BRANCH, sloth } from "./sloth.js";
 import { BODY, C, keyImage, pill, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
 export type SlothKeyOptions = { alert: Alert | undefined; t: number; now?: number };
 
@@ -26,7 +27,8 @@ export function slothKey(o: SlothKeyOptions): string {
 	let label = "";
 	if (alert && snoozed) {
 		const minutes = Math.max(1, Math.ceil((alert.snoozedUntil! - now) / 60_000));
-		label = pill(`noch ${minutes} min`, C.pillDark, C.honey);
+		label = pill(tr("noch {n} min", { n: minutes }), C.pillDark, C.honey);
+
 	} else if (alert) {
 		label = pill(alert.title, tone, C.night);
 	}
@@ -49,8 +51,8 @@ export function testKey(level: Level): string {
 	return keyImage(
 		`<rect width="120" height="120" fill="url(#ldKey)"/>` +
 			`<path d="M22 16 h76 a10 10 0 0 1 10 10 v44 a10 10 0 0 1 -10 10 h-58 l-16 12 l4 -12 h-6 a10 10 0 0 1 -10 -10 v-44 a10 10 0 0 1 10 -10 z" fill="${tone}"/>` +
-			text(error ? "Hilfe!" : "Hey!", { x: 60, y: 58, size: 28, max: 80, fill: C.night, weight: 700 }) +
-			pill(error ? "Test: Fehler" : "Test: Warten", C.pillDark, C.cream) +
+			text(error ? tr("Hilfe!") : tr("Hey!"), { x: 60, y: 58, size: 28, max: 80, fill: C.night, weight: 700 }) +
+			pill(error ? tr("Test: Fehler") : tr("Test: Warten"), C.pillDark, C.cream) +
 			`<rect x="1.5" y="1.5" width="117" height="117" rx="19" fill="none" stroke="#3A4A35" stroke-width="3"/>`,
 	);
 }

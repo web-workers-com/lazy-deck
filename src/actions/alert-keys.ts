@@ -19,6 +19,7 @@ import { roleAt } from "../roles.js";
 import { alertLeft, center, explainState, pomodoro } from "../runtime.js";
 import { openExternal } from "../system.js";
 import { Ticker } from "./ticker.js";
+import { tr } from "../i18n.js";
 
 /** Faultier: sleeps while all is calm, wakes and pulses when something waits. */
 @action({ UUID: "com.lazydeck.plugin.sloth" })
@@ -55,7 +56,7 @@ export class SlothAction extends SingletonAction {
 			// Nothing waiting: show what an alert looks like.
 			await ev.action.showOk();
 			center.raise(
-				{ level: "wait", title: "Hallo!", source: "Lazy Deck", detail: "So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste." },
+				{ level: "wait", title: tr("Hallo!"), source: "Lazy Deck", detail: tr("So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste.") },
 				{ immediate: true },
 			);
 		}
@@ -151,11 +152,12 @@ export class TestAction extends SingletonAction<TestSettings> {
 			error
 				? {
 						level: "error",
-						title: "Fehler 500",
+						title: tr("Fehler 500"),
 						source: "Deploy · prod",
 						detail: "TypeError: Cannot read properties of undefined (reading 'user') at session.ts:42",
 					}
-				: { level: "wait", title: "Review wartet", source: "GitHub · PR #42", url: "https://github.com/notifications" },
+				: { level: "wait", title: tr("Review wartet"), source: "GitHub · PR #42", url: "https://github.com/notifications" },
+
 			{ immediate: true },
 		);
 	}

@@ -7,6 +7,7 @@ import { frame, STEAM_BADGE } from "./apps.js";
 import { LOGOS, logoMark } from "./logos.js";
 import { BRANCH, sloth } from "./sloth.js";
 import { BODY, C, DISPLAY, esc, pill, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
 const INK = "#4A3426";
 const ROPE = "#C7A578";
@@ -162,7 +163,7 @@ export function signKey(o: SignOptions): string {
 // ---------------------------------------------------------------- scenes
 
 /** Clip: the clapperboard snaps shut, REC blinks. */
-export function clipKey(t: number, label = "Clip!"): string {
+export function clipKey(t: number, label = tr("Clip!")): string {
 	const p = (t % 2.8) / 2.8;
 	const angle = p < 0.45 ? -24 : p < 0.58 ? -24 + ((p - 0.45) / 0.13) * 24 : p < 0.72 ? 0 : -((p - 0.72) / 0.28) * 24;
 	return frame(
@@ -170,7 +171,8 @@ export function clipKey(t: number, label = "Clip!"): string {
 			`<text x="86" y="21.5" text-anchor="end" font-family="${BODY}" font-weight="600" font-size="9" fill="${C.coral}">REC</text>` +
 			`<rect x="28" y="46" width="66" height="40" rx="4" fill="#26272B" stroke="${C.cream}" stroke-width="1.5"/>` +
 			`<path d="M28 54 H94" stroke="${C.cream}" stroke-width="1" opacity="0.5"/>` +
-			`<text x="35" y="52" font-family="${BODY}" font-weight="600" font-size="5.5" fill="${C.cream}" opacity="0.8">SZENE 42 · TAKE 1</text>` +
+			`<text x="35" y="52" font-family="${BODY}" font-weight="600" font-size="5.5" fill="${C.cream}" opacity="0.8">${tr("SZENE 42 · TAKE 1")}</text>
+` +
 			`<text x="61" y="76" text-anchor="middle" font-family="${DISPLAY}" font-weight="700" font-size="17" fill="${C.cream}">CLIP!</text>` +
 			`<g transform="rotate(${q(angle)} 28 45)"><rect x="28" y="35" width="66" height="10" rx="2" fill="${C.cream}"/>` +
 			`<path d="M34 35 h8 l-5 10 h-8 z M50 35 h8 l-5 10 h-8 z M66 35 h8 l-5 10 h-8 z M82 35 h8 l-5 10 h-8 z" fill="#26272B"/></g>` +
@@ -327,7 +329,7 @@ export function vinylKey(dir: "next" | "previous", t: number): string {
 			`</g>` +
 			arrow +
 			(dir === "next" ? pawBottom(30, 84) : `<g transform="translate(120 0) scale(-1 1)">${pawBottom(30, 84)}</g>`) +
-			pill(dir === "next" ? "Weiter" : "Zurück", C.pillDark, C.cream),
+			pill(dir === "next" ? tr("Weiter") : tr("Zurück"), C.pillDark, C.cream),
 	);
 }
 

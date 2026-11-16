@@ -15,6 +15,7 @@ export const C = {
 	keyDark: "#1A2217",
 	pillDark: "#2E3D29",
 } as const;
+import { lang, tr, type Lang } from "../i18n.js";
 
 /** Fredoka is the brand face; the rest are what Stream Deck hosts usually have. */
 export const DISPLAY = "Fredoka, 'Segoe UI Rounded', 'Segoe UI', 'Arial Rounded MT Bold', Arial, sans-serif";
@@ -22,6 +23,17 @@ export const BODY = "Inter, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif";
 
 /** Average glyph width as a share of the font size, deliberately generous. */
 const GLYPH = { display: 0.6, body: 0.56 } as const;
+/** Chinese, Japanese and Korean glyphs are square: a full em each. */
+const WIDE = /[ᄀ-ᇿ⺀-鿿가-힯豈-﫿︰-﹏＀-｠￠-￦]/;
+
+/** System fonts with the glyphs a language needs, tried after the brand fonts. */
+const CJK: Partial<Record<Lang, string>> = {
+	ja: "'Yu Gothic UI', Meiryo, 'Hiragino Sans', ",
+	ko: "'Malgun Gothic', 'Apple SD Gothic Neo', ",
+	zh_CN: "'Microsoft YaHei', 'PingFang SC', ",
+	zh_TW: "'Microsoft JhengHei', 'PingFang TC', ",
+};
+const withCjk = (family: string) => family.replace("sans-serif", `${CJK[lang()] ?? ""}sans-serif`);
 
 export function esc(value: string): string {
 	return value.replace(/[&<>"']/g, (ch) => `&#${ch.charCodeAt(0)};`);
@@ -43,7 +55,7 @@ export type TextOptions = {
 
 /** Estimated width of `text` at `size`. */
 export function textWidth(text: string, size: number, face: "display" | "body" = "display"): number {
-	return [...text].length * size * GLYPH[face];
+	return [...text].reduce((w, ch) => w + (WIDE.test(ch) ? 1 : GLYPH[face]), 0) * size;
 }
 
 /**
@@ -55,9 +67,10 @@ export function text(value: string, o: TextOptions): string {
 	const face = o.face ?? "display";
 	const min = o.min ?? o.size * 0.7;
 	let size = o.size;
-	let line = value;
+	// Safety net: a German label that was not translated at its source.
+	let line = tr(value);
 	if (textWidth(line, size, face) > o.max) {
-		size = Math.max(min, Math.floor((o.max / ([...line].length * GLYPH[face])) * 10) / 10);
+		size = Math.max(min, Math.floor((o.max / textWidth(line, 1, face)) * 10) / 10);
 	}
 	while (textWidth(line, size, face) > o.max + 0.01 && [...line].length > 2) {
 		line = `${[...line].slice(0, -2).join("")}…`;
@@ -66,7 +79,8 @@ export function text(value: string, o: TextOptions): string {
 	const pin = width > o.max * 0.85 ? ` textLength="${Math.min(width, o.max).toFixed(1)}" lengthAdjust="spacingAndGlyphs"` : "";
 	return (
 		`<text x="${o.x.toFixed(1)}" y="${o.y.toFixed(1)}" text-anchor="${o.anchor ?? "middle"}" ` +
-		`font-family="${face === "display" ? DISPLAY : BODY}" font-weight="${o.weight ?? 600}" font-size="${size.toFixed(1)}" ` +
+		`font-family="${withCjk(face === "display" ? DISPLAY : BODY)}"
+ font-weight="${o.weight ?? 600}" font-size="${size.toFixed(1)}" ` +
 		`fill="${o.fill}"${pin}>${esc(line)}</text>`
 	);
 }

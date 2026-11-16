@@ -1,0 +1,872 @@
+{
+	"Name": "Lazy Deck",
+	"Description": "少按一點，多做一點。一隻住在你 Stream Deck 上的樹懶，有事需要你的時候會佔滿整個 Deck，另外還有音樂、Discord 和 Steam 的日常按鍵。完全不用設定。",
+	"Category": "Lazy Deck",
+	"com.lazydeck.plugin.sloth": {
+		"Name": "Sam",
+		"Tooltip": "一切平靜時就睡覺。有事情在等你時會醒來並跳動閃爍。按一下就把警報叫到整個 Deck 上。"
+	},
+	"com.lazydeck.plugin.test": {
+		"Name": "測試警報",
+		"Tooltip": "發出一個範例警報，讓你看看 Deck 會有什麼反應。"
+	},
+	"com.lazydeck.plugin.alert": {
+		"Name": "Alarm-Taste",
+		"Tooltip": "Teil des Alarm-Profils."
+	},
+	"com.lazydeck.plugin.mic": {
+		"Name": "麥克風",
+		"Tooltip": "一次幫所有 App 把系統麥克風靜音：Discord、Teams、Zoom、OBS。按鍵會顯示真實狀態。"
+	},
+	"com.lazydeck.plugin.output": {
+		"Name": "切換輸出",
+		"Tooltip": "在你的裝置之間切換聲音輸出：耳機、喇叭、螢幕。虛擬裝置（Voicemod、Loopback …）會被略過。或者剛好選兩個。"
+	},
+	"com.lazydeck.plugin.media": {
+		"Name": "音樂",
+		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+	},
+	"com.lazydeck.plugin.media.playpause": {
+		"Name": "播放／暫停",
+		"Tooltip": "播放或暫停你的音樂：Spotify、YouTube、瀏覽器和大部分播放器。有東西在播放時，Sam 的眼睛是張開的。"
+	},
+	"com.lazydeck.plugin.media.previous": {
+		"Name": "上一首",
+		"Tooltip": "上一首。"
+	},
+	"com.lazydeck.plugin.media.next": {
+		"Name": "下一首",
+		"Tooltip": "下一首。"
+	},
+	"com.lazydeck.plugin.media.volumedown": {
+		"Name": "調小音量",
+		"Tooltip": "把整體音量調小，並顯示目前音量。"
+	},
+	"com.lazydeck.plugin.media.volumeup": {
+		"Name": "調大音量",
+		"Tooltip": "把整體音量調大，並顯示目前音量。"
+	},
+	"com.lazydeck.plugin.media.mute": {
+		"Name": "音量／靜音",
+		"Tooltip": "用樹枝上的牌子顯示音量。按一下靜音或取消靜音。"
+	},
+	"com.lazydeck.plugin.nowplaying": {
+		"Name": "正在播放",
+		"Tooltip": "顯示正在播放內容的封面和標題（Spotify、YouTube、瀏覽器 …）。按一下：播放／暫停。"
+	},
+	"com.lazydeck.plugin.radio": {
+		"Name": "廣播",
+		"Tooltip": "播放廣播電台，按一下開，再按一下關。不用安裝任何東西，也不用帳號。"
+	},
+	"com.lazydeck.plugin.appvolume": {
+		"Name": "App 音量",
+		"Tooltip": "只針對單一 App 調大聲、調小聲或靜音：前景的遊戲、Discord、Spotify、瀏覽器 … 或是全部一起。在旋鈕上：轉動和按下。"
+	},
+	"com.lazydeck.plugin.appvolume.fgdown": {
+		"Name": "遊戲小聲一點",
+		"Tooltip": "只把遊戲（或前景的 App）調小聲，Discord 和音樂維持不變。"
+	},
+	"com.lazydeck.plugin.appvolume.fgup": {
+		"Name": "遊戲大聲一點",
+		"Tooltip": "只把遊戲（或前景的 App）調大聲。"
+	},
+	"com.lazydeck.plugin.appvolume.spotifymute": {
+		"Name": "Spotify 靜音",
+		"Tooltip": "只把 Spotify 靜音或取消靜音。"
+	},
+	"com.lazydeck.plugin.appmic": {
+		"Name": "App 麥克風",
+		"Tooltip": "只把單一 App 的麥克風靜音，例如 Teams、Zoom 或瀏覽器裡的 Meet。其他 App 還是聽得到你。按鍵會顯示真實狀態。"
+	},
+	"com.lazydeck.plugin.appmic.teams": {
+		"Name": "Teams 麥克風",
+		"Tooltip": "只把 Microsoft Teams 的麥克風靜音。"
+	},
+	"com.lazydeck.plugin.appmic.zoom": {
+		"Name": "Zoom 麥克風",
+		"Tooltip": "只把 Zoom 的麥克風靜音。"
+	},
+	"com.lazydeck.plugin.appmic.browser": {
+		"Name": "Meet 麥克風（瀏覽器）",
+		"Tooltip": "把瀏覽器裡的麥克風靜音，例如 Google Meet 或 Jitsi。"
+	},
+	"com.lazydeck.plugin.discord": {
+		"Name": "Discord",
+		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+	},
+	"com.lazydeck.plugin.discord.mute": {
+		"Name": "Discord 麥克風",
+		"Tooltip": "只把 Discord 靜音，不管那邊選的是哪支麥克風。按鍵會顯示真實狀態。"
+	},
+	"com.lazydeck.plugin.discord.deafen": {
+		"Name": "Discord 拒聽",
+		"Tooltip": "Discord 什麼都聽不到也送不出去：聲音和麥克風一起關掉。"
+	},
+	"com.lazydeck.plugin.discord.open": {
+		"Name": "開啟 Discord",
+		"Tooltip": "開啟 Discord。"
+	},
+	"com.lazydeck.plugin.steam": {
+		"Name": "Steam",
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+	},
+	"com.lazydeck.plugin.steam.last": {
+		"Name": "最近玩過",
+		"Tooltip": "啟動你最近玩的 Steam 遊戲。"
+	},
+	"com.lazydeck.plugin.steam.friends": {
+		"Name": "Steam 好友",
+		"Tooltip": "開啟 Steam 的好友清單。"
+	},
+	"com.lazydeck.plugin.steam.library": {
+		"Name": "Steam 收藏庫",
+		"Tooltip": "開啟你的 Steam 收藏庫。"
+	},
+	"com.lazydeck.plugin.steam.bigpicture": {
+		"Name": "Steam Big Picture",
+		"Tooltip": "以 Big Picture 模式啟動 Steam，適合電視和手把。"
+	},
+	"com.lazydeck.plugin.steam.store": {
+		"Name": "Steam 商店",
+		"Tooltip": "開啟 Steam 商店。"
+	},
+	"com.lazydeck.plugin.steamdownloads": {
+		"Name": "Steam 下載",
+		"Tooltip": "Steam 的下載進度到哪了。大型下載完成時，就算沒有這個按鍵，Sam 也會通知你。"
+	},
+	"com.lazydeck.plugin.gamebar": {
+		"Name": "Gaming",
+		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+	},
+	"com.lazydeck.plugin.gamebar.clip": {
+		"Name": "儲存最後 30 秒",
+		"Tooltip": "用 Windows Xbox Game Bar 儲存最後 30 秒。"
+	},
+	"com.lazydeck.plugin.gamebar.record": {
+		"Name": "開始／停止錄影",
+		"Tooltip": "用 Windows Xbox Game Bar 開始或停止錄影。"
+	},
+	"com.lazydeck.plugin.gamebar.shot": {
+		"Name": "遊戲截圖",
+		"Tooltip": "用 Windows Xbox Game Bar 擷取遊戲畫面。"
+	},
+	"com.lazydeck.plugin.gamebar.open": {
+		"Name": "開啟 Game Bar",
+		"Tooltip": "開啟 Windows Xbox Game Bar。"
+	},
+	"com.lazydeck.plugin.brightness": {
+		"Name": "亮度",
+		"Tooltip": "讓螢幕變亮或變暗，外接螢幕也可以（透過 DDC/CI，跟 Twinkle Tray 一樣）。在旋鈕上：轉一轉就好。"
+	},
+	"com.lazydeck.plugin.brightness.down": {
+		"Name": "調暗",
+		"Tooltip": "所有螢幕變暗，外接螢幕也一樣。"
+	},
+	"com.lazydeck.plugin.brightness.up": {
+		"Name": "調亮",
+		"Tooltip": "所有螢幕變亮，外接螢幕也一樣。"
+	},
+	"com.lazydeck.plugin.windows": {
+		"Name": "Windows",
+		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+	},
+	"com.lazydeck.plugin.windows.screenshot": {
+		"Name": "截圖（選取範圍）",
+		"Tooltip": "擷取一塊區域的畫面。"
+	},
+	"com.lazydeck.plugin.windows.lock": {
+		"Name": "鎖定螢幕",
+		"Tooltip": "鎖定螢幕。"
+	},
+	"com.lazydeck.plugin.windows.monitoroff": {
+		"Name": "關閉螢幕",
+		"Tooltip": "把螢幕關掉。"
+	},
+	"com.lazydeck.plugin.windows.sleep": {
+		"Name": "睡眠",
+		"Tooltip": "讓電腦進入睡眠。為了保險起見，要按兩下。"
+	},
+	"com.lazydeck.plugin.windows.darkmode": {
+		"Name": "切換深色模式",
+		"Tooltip": "切換深色模式。"
+	},
+	"com.lazydeck.plugin.windows.recyclebin": {
+		"Name": "清理資源回收筒",
+		"Tooltip": "清理資源回收筒。為了保險起見，要按兩下。"
+	},
+	"com.lazydeck.plugin.windows.desktop": {
+		"Name": "顯示桌面",
+		"Tooltip": "顯示桌面。"
+	},
+	"com.lazydeck.plugin.windows.settings": {
+		"Name": "設定",
+		"Tooltip": "開啟設定。"
+	},
+	"com.lazydeck.plugin.windows.taskmanager": {
+		"Name": "工作管理員",
+		"Tooltip": "開啟工作管理員。"
+	},
+	"com.lazydeck.plugin.window": {
+		"Name": "Fenster",
+		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+	},
+	"com.lazydeck.plugin.window.snapleft": {
+		"Name": "貼齊左側",
+		"Tooltip": "把視窗貼齊左側。"
+	},
+	"com.lazydeck.plugin.window.snapright": {
+		"Name": "貼齊右側",
+		"Tooltip": "把視窗貼齊右側。"
+	},
+	"com.lazydeck.plugin.window.maximize": {
+		"Name": "最大化",
+		"Tooltip": "把視窗最大化。"
+	},
+	"com.lazydeck.plugin.window.minimize": {
+		"Name": "最小化",
+		"Tooltip": "把視窗最小化。"
+	},
+	"com.lazydeck.plugin.window.vdleft": {
+		"Name": "左邊的虛擬桌面",
+		"Tooltip": "切換到左邊的虛擬桌面。"
+	},
+	"com.lazydeck.plugin.window.vdright": {
+		"Name": "右邊的虛擬桌面",
+		"Tooltip": "切換到右邊的虛擬桌面。"
+	},
+	"com.lazydeck.plugin.window.taskview": {
+		"Name": "工作檢視",
+		"Tooltip": "工作檢視。"
+	},
+	"com.lazydeck.plugin.window.project": {
+		"Name": "投影（第二個螢幕）",
+		"Tooltip": "投影到第二個螢幕。"
+	},
+	"com.lazydeck.plugin.awake": {
+		"Name": "保持清醒",
+		"Tooltip": "按鍵開著的時候，電腦和螢幕都不會進入睡眠：適合下載、簡報、看電影。"
+	},
+	"com.lazydeck.plugin.sleeptimer": {
+		"Name": "關機計時器",
+		"Tooltip": "30、60 或 90 分鐘後讓電腦關機或睡眠，例如晚上看電影的時候。再按一次：多加 30 分鐘；長按：取消。前一分鐘 Sam 會提醒你。"
+	},
+	"com.lazydeck.plugin.clock": {
+		"Name": "時鐘",
+		"Tooltip": "時間、星期、日期和週數。"
+	},
+	"com.lazydeck.plugin.weather": {
+		"Name": "天氣",
+		"Tooltip": "你所在地的天氣，不用設定。位置來自你的 IP 位址（ipwho.is），天氣資料來自 Open-Meteo。"
+	},
+	"com.lazydeck.plugin.timer": {
+		"Name": "計時器",
+		"Tooltip": "廚房計時器：按一下開始／暫停，長按重設。時間到了 Sam 會通知你。"
+	},
+	"com.lazydeck.plugin.stopwatch": {
+		"Name": "碼錶",
+		"Tooltip": "按一下開始／停止，長按重設。"
+	},
+	"com.lazydeck.plugin.countdown": {
+		"Name": "Countdown",
+		"Tooltip": "距離下班或週末還有多久。"
+	},
+	"com.lazydeck.plugin.countdown.feierabend": {
+		"Name": "距離下班",
+		"Tooltip": "距離下班還有多久（預設下午 5 點，可以調整）。"
+	},
+	"com.lazydeck.plugin.countdown.weekend": {
+		"Name": "距離週末",
+		"Tooltip": "距離星期五下班還有多久。"
+	},
+	"com.lazydeck.plugin.reminder": {
+		"Name": "提醒",
+		"Tooltip": "定時提醒你喝水或起來動一動。按一下就代表完成了。"
+	},
+	"com.lazydeck.plugin.reminder.water": {
+		"Name": "喝水",
+		"Tooltip": "每小時提醒你喝水。按一下代表喝過了。"
+	},
+	"com.lazydeck.plugin.reminder.move": {
+		"Name": "動一動",
+		"Tooltip": "每 45 分鐘提醒你起來動一動。按一下代表動過了。"
+	},
+	"com.lazydeck.plugin.internet": {
+		"Name": "網路",
+		"Tooltip": "顯示你的網路反應有多快。斷線 30 秒的話，Sam 會通知你。"
+	},
+	"com.lazydeck.plugin.wifi": {
+		"Name": "Wi-Fi",
+		"Tooltip": "Wi-Fi 名稱和訊號強度。"
+	},
+	"com.lazydeck.plugin.battery": {
+		"Name": "電池",
+		"Tooltip": "電池電量和是否正在充電（筆電）。桌機的話：顯示接市電。"
+	},
+	"com.lazydeck.plugin.apps": {
+		"Name": "App starten",
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+	},
+	"com.lazydeck.plugin.apps.spotify": {
+		"Name": "啟動 Spotify",
+		"Tooltip": "按一下就啟動 Spotify。"
+	},
+	"com.lazydeck.plugin.apps.discord": {
+		"Name": "啟動 Discord",
+		"Tooltip": "按一下就啟動 Discord。"
+	},
+	"com.lazydeck.plugin.apps.steam": {
+		"Name": "啟動 Steam",
+		"Tooltip": "按一下就啟動 Steam。"
+	},
+	"com.lazydeck.plugin.apps.whatsapp": {
+		"Name": "啟動 WhatsApp",
+		"Tooltip": "按一下就啟動 WhatsApp。"
+	},
+	"com.lazydeck.plugin.apps.teams": {
+		"Name": "啟動 Microsoft Teams",
+		"Tooltip": "按一下就啟動 Microsoft Teams。"
+	},
+	"com.lazydeck.plugin.apps.obs": {
+		"Name": "啟動 OBS Studio",
+		"Tooltip": "按一下就啟動 OBS Studio。"
+	},
+	"com.lazydeck.plugin.apps.explorer": {
+		"Name": "啟動檔案總管",
+		"Tooltip": "按一下就啟動檔案總管。"
+	},
+	"com.lazydeck.plugin.apps.terminal": {
+		"Name": "啟動終端機",
+		"Tooltip": "按一下就啟動終端機。"
+	},
+	"com.lazydeck.plugin.apps.notepad": {
+		"Name": "啟動記事本",
+		"Tooltip": "按一下就啟動記事本。"
+	},
+	"com.lazydeck.plugin.apps.telegram": {
+		"Name": "啟動 Telegram",
+		"Tooltip": "按一下就啟動 Telegram。"
+	},
+	"com.lazydeck.plugin.website": {
+		"Name": "Webseite",
+		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+	},
+	"com.lazydeck.plugin.website.youtube": {
+		"Name": "開啟 YouTube",
+		"Tooltip": "在瀏覽器中開啟 YouTube。"
+	},
+	"com.lazydeck.plugin.website.netflix": {
+		"Name": "開啟 Netflix",
+		"Tooltip": "在瀏覽器中開啟 Netflix。"
+	},
+	"com.lazydeck.plugin.website.twitch": {
+		"Name": "開啟 Twitch",
+		"Tooltip": "在瀏覽器中開啟 Twitch。"
+	},
+	"com.lazydeck.plugin.website.gmail": {
+		"Name": "開啟 Gmail",
+		"Tooltip": "在瀏覽器中開啟 Gmail。"
+	},
+	"com.lazydeck.plugin.website.whatsappweb": {
+		"Name": "開啟 WhatsApp Web",
+		"Tooltip": "在瀏覽器中開啟 WhatsApp Web。"
+	},
+	"com.lazydeck.plugin.website.prime": {
+		"Name": "開啟 Prime Video",
+		"Tooltip": "在瀏覽器中開啟 Prime Video。"
+	},
+	"com.lazydeck.plugin.website.disney": {
+		"Name": "開啟 Disney+",
+		"Tooltip": "在瀏覽器中開啟 Disney+。"
+	},
+	"com.lazydeck.plugin.website.claude": {
+		"Name": "開啟 Claude",
+		"Tooltip": "在瀏覽器中開啟 Claude。"
+	},
+	"com.lazydeck.plugin.website.maps": {
+		"Name": "開啟 Google Maps",
+		"Tooltip": "在瀏覽器中開啟 Google Maps。"
+	},
+	"com.lazydeck.plugin.website.deepl": {
+		"Name": "開啟 DeepL 翻譯",
+		"Tooltip": "在瀏覽器中開啟 DeepL 翻譯。"
+	},
+	"com.lazydeck.plugin.website.chatgpt": {
+		"Name": "開啟 ChatGPT",
+		"Tooltip": "在瀏覽器中開啟 ChatGPT。"
+	},
+	"com.lazydeck.plugin.website.gemini": {
+		"Name": "開啟 Gemini",
+		"Tooltip": "在瀏覽器中開啟 Gemini。"
+	},
+	"com.lazydeck.plugin.website.grok": {
+		"Name": "開啟 Grok",
+		"Tooltip": "在瀏覽器中開啟 Grok。"
+	},
+	"com.lazydeck.plugin.website.telegramweb": {
+		"Name": "開啟 Telegram Web",
+		"Tooltip": "在瀏覽器中開啟 Telegram Web。"
+	},
+	"com.lazydeck.plugin.folder": {
+		"Name": "Ordner",
+		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+	},
+	"com.lazydeck.plugin.folder.downloads": {
+		"Name": "下載資料夾",
+		"Tooltip": "開啟你的「下載」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.documents": {
+		"Name": "文件資料夾",
+		"Tooltip": "開啟你的「文件」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.pictures": {
+		"Name": "圖片資料夾",
+		"Tooltip": "開啟你的「圖片」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.desktop": {
+		"Name": "桌面資料夾",
+		"Tooltip": "開啟你的「桌面」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.music": {
+		"Name": "音樂資料夾",
+		"Tooltip": "開啟你的「音樂」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.videos": {
+		"Name": "影片資料夾",
+		"Tooltip": "開啟你的「影片」資料夾。"
+	},
+	"com.lazydeck.plugin.folder.home": {
+		"Name": "使用者資料夾",
+		"Tooltip": "開啟你的使用者資料夾。"
+	},
+	"com.lazydeck.plugin.tools": {
+		"Name": "Werkzeuge",
+		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+	},
+	"com.lazydeck.plugin.tools.clipboard": {
+		"Name": "剪貼簿歷程記錄",
+		"Tooltip": "剪貼簿歷程記錄。"
+	},
+	"com.lazydeck.plugin.tools.emoji": {
+		"Name": "表情符號選擇器",
+		"Tooltip": "表情符號選擇器。"
+	},
+	"com.lazydeck.plugin.tools.notifications": {
+		"Name": "Windows 通知",
+		"Tooltip": "Windows 通知中心。"
+	},
+	"com.lazydeck.plugin.tools.calculator": {
+		"Name": "小算盤",
+		"Tooltip": "小算盤。"
+	},
+	"com.lazydeck.plugin.tools.pastedate": {
+		"Name": "貼上今天的日期",
+		"Tooltip": "貼上今天的日期。"
+	},
+	"com.lazydeck.plugin.tools.password": {
+		"Name": "產生密碼",
+		"Tooltip": "產生一組密碼並複製到剪貼簿。"
+	},
+	"com.lazydeck.plugin.chance": {
+		"Name": "Münze & Würfel",
+		"Tooltip": "擲硬幣（正面是 Sam）或擲骰子。給所有你不想自己做的決定。"
+	},
+	"com.lazydeck.plugin.chance.coin": {
+		"Name": "擲硬幣",
+		"Tooltip": "正面或反面。正面是 Sam。"
+	},
+	"com.lazydeck.plugin.chance.dice": {
+		"Name": "骰子",
+		"Tooltip": "擲出 1 到 6 的數字。"
+	},
+	"com.lazydeck.plugin.system": {
+		"Name": "系統",
+		"Tooltip": "CPU 和記憶體。按一下開啟工作管理員。"
+	},
+	"com.lazydeck.plugin.pomodoro": {
+		"Name": "番茄鐘",
+		"Tooltip": "專注 25 分鐘，休息 5 分鐘。按一下：開始／暫停；長按：重設。時間到了 Sam 會通知你。"
+	},
+	"com.lazydeck.plugin.github": {
+		"Name": "GitHub",
+		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+	},
+	"com.lazydeck.plugin.github.notifications": {
+		"Name": "GitHub 通知",
+		"Tooltip": "未讀的 GitHub 通知。使用你已經登入的 gh CLI。"
+	},
+	"com.lazydeck.plugin.github.reviews": {
+		"Name": "GitHub 審查",
+		"Tooltip": "等你處理的審查。有新的就會發出警報。"
+	},
+	"Localization": {
+		"{d}.{m}. · KW {w}": "{m}/{d} · 第{w}週",
+		"{day} {d}.{m}. · alles ruhig": "{day} {m}/{d} · 一切平靜",
+		"{h}:{mm} h": "{h}:{mm}",
+		"{n} min": "{n} 分鐘",
+		"{n} min um": "{n} 分鐘到",
+		"{n} Reviews warten": "{n} 個審查",
+		"{n} Tage": "{n} 天",
+		"{name} ist fertig": "{name} 完成了",
+		"{name} still": "{name} 無聲",
+		"{name} stumm": "{name} 靜音",
+		"1 Minute": "1 分鐘",
+		"1 Stunde": "1 小時",
+		"1,5 Stunden": "1.5 小時",
+		"10 Minuten": "10 分鐘",
+		"15 Minuten": "15 分鐘",
+		"1LIVE": "1LIVE",
+		"2 Stunden": "2 小時",
+		"20 Minuten": "20 分鐘",
+		"25 Minuten geschafft. 5 Minuten durchatmen.": "25 分鐘搞定了，休息 5 分鐘喘口氣吧。",
+		"3 Minuten": "3 分鐘",
+		"30 Minuten": "30 分鐘",
+		"4 Stunden": "4 小時",
+		"45 Minuten": "45 分鐘",
+		"5 Minuten": "5 分鐘",
+		"80s80s": "80s80s",
+		"Ablage": "剪貼簿",
+		"Akku": "電池",
+		"Akku lädt": "充電中",
+		"Aktion": "動作",
+		"Alarm aus jedem Skript auslösen:": "從任何腳本觸發警報：",
+		"Alle": "每隔",
+		"Alle Fenster": "所有視窗",
+		"alles aktuell": "都是最新",
+		"Alles ruhig": "一切平靜",
+		"an": "開",
+		"angehalten": "已暫停",
+		"Ansehen": "查看",
+		"Antenne Bayern": "Antenne Bayern",
+		"App": "App",
+		"Art": "類型",
+		"Aufgabenansicht": "工作檢視",
+		"Aufnahme": "錄影",
+		"Aufnahme an/aus": "開始／停止錄影",
+		"Aufstehen, strecken, einmal durchatmen.": "站起來，伸個懶腰，深呼吸一下。",
+		"aus in {time}": "{time} 後關機",
+		"Ausschalt-Timer": "關機計時器",
+		"Automatisch (alle echten Geräte)": "自動（所有實體裝置）",
+		"Bayern 3": "Bayern 3",
+		"Benutzerordner": "使用者資料夾",
+		"Bewegen": "動一動",
+		"Bewölkt": "多雲",
+		"Bibliothek": "收藏庫",
+		"Big Picture": "Big Picture",
+		"bigFM": "bigFM",
+		"Bilder": "圖片",
+		"Bildschirm aus": "關螢幕",
+		"Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen.": "讓螢幕變亮或變暗，外接螢幕也可以（透過 DDC/CI，跟 Twinkle Tray 一樣）。在旋鈕上：轉一轉就好。",
+		"Bildschirm sperren": "鎖定螢幕",
+		"Bis": "到",
+		"bis Feierabend": "距離下班",
+		"bis ich wieder drücke": "直到我再按一次",
+		"bis Wochenende": "距離週末",
+		"Browser": "瀏覽器",
+		"Browser (Chrome, Edge, Firefox …)": "瀏覽器（Chrome、Edge、Firefox …）",
+		"ChatGPT": "ChatGPT",
+		"Chillout (Antenne)": "Chillout (Antenne)",
+		"Claude": "Claude",
+		"Clip!": "剪輯！",
+		"Dann": "然後",
+		"Dark Mode umschalten": "切換深色模式",
+		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "只要一切平靜，樹懶就會呼呼大睡。有警報時，牠會醒來並跳動閃爍。等待中的警報 2 分鐘後會佔滿整個 Deck，錯誤則是馬上佔滿。按一下就能立刻把警報叫到 Deck 上。",
+		"Datum": "日期",
+		"Dauer": "時間長度",
+		"DeepL Übersetzer": "DeepL 翻譯",
+		"Dein Timer ist abgelaufen.": "你的計時器時間到了。",
+		"denkt …": "思考中 …",
+		"Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme.": "按鍵開著的時候，電腦和螢幕都不會進入睡眠：適合下載、簡報、看電影。",
+		"Desktop": "桌面",
+		"Desktop ←": "桌面 ←",
+		"Desktop →": "桌面 →",
+		"Desktop zeigen": "顯示桌面",
+		"Details": "詳細資料",
+		"Deutschlandfunk": "Deutschlandfunk",
+		"Di": "週二",
+		"Die Pause ist um.": "休息結束囉。",
+		"Dienstag": "星期二",
+		"Discord": "Discord",
+		"Discord Mikro": "Discord 麥克風",
+		"Discord öffnen": "開啟 Discord",
+		"Discord stumm": "Discord 靜音",
+		"Discord taub": "Discord 拒聽",
+		"Discord Ton": "Discord 聲音",
+		"Disney+": "Disney+",
+		"Do": "週四",
+		"Dokumente": "文件",
+		"Donnerstag": "星期四",
+		"Download abgeschlossen. Viel Spaß!": "下載完成，玩得開心！",
+		"Downloads": "下載",
+		"drücken = an": "按一下 = 開",
+		"drücken = los": "按一下 = 開始",
+		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "模擬系統的媒體鍵：Spotify、YouTube、瀏覽器和大部分播放器都聽得懂。",
+		"du bist live": "你正在直播",
+		"Dunkel": "暗",
+		"Dunkler": "調暗",
+		"Editor": "記事本",
+		"Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.": "廚房計時器：按一下開始／暫停，長按重設。時間到了 Sam 會通知你。",
+		"Eigene App (Prozessname)": "自訂 App（處理程序名稱）",
+		"Eigener Sender (Stream-Link)": "自訂電台（串流連結）",
+		"Ein Glas Wasser, dann geht's weiter.": "喝杯水，然後繼續。",
+		"Einstellungen": "設定",
+		"Emoji": "表情符號",
+		"Emoji-Auswahl": "表情符號選擇器",
+		"Energiesparen": "睡眠",
+		"Energiesparen (zweimal drücken)": "睡眠（按兩下）",
+		"Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.": "定時提醒你喝水或起來動一動。按一下就代表完成了。",
+		"Erinnerung": "提醒",
+		"Erkläre auf Deutsch in höchstens fünf kurzen Sätzen, was diese Meldung wahrscheinlich bedeutet und was ich als Nächstes prüfen sollte. Keine Einleitung, keine Rückfragen.": "請用繁體中文（台灣用語），最多五個簡短的句子，說明這則訊息大概是什麼意思，以及我接下來應該檢查什麼。不要開場白，也不要反問。",
+		"Erklären": "解釋",
+		"Erledigt": "完成",
+		"es brennt": "失火了",
+		"Explorer": "檔案總管",
+		"Fehler": "錯誤",
+		"Fehler (Koralle)": "錯誤（珊瑚色）",
+		"Fehler 500": "錯誤 500",
+		"Feierabend": "下班",
+		"Feierabend!": "下班囉！",
+		"Fertig!": "完成！",
+		"Fokus": "專注",
+		"Fokus · {n}": "專注 · {n}",
+		"Fokus starten": "開始專注",
+		"Fr": "週五",
+		"Freitag": "星期五",
+		"Freunde": "好友",
+		"Für „Erklären“ nutzt Lazy Deck die Claude-CLI, wenn sie installiert ist. Sie wurde nicht gefunden oder hat nicht geantwortet.": "「解釋」功能會使用已安裝的 Claude CLI。但找不到它，或它沒有回應。",
+		"Game Bar": "Game Bar",
+		"Game Bar öffnen": "開啟 Game Bar",
+		"geht hier nicht": "這裡不支援",
+		"geht nicht": "無法使用",
+		"geht so": "普通",
+		"Gemini": "Gemini",
+		"geöffnet": "已開啟",
+		"gerade eben": "剛剛",
+		"Gerät A": "裝置 A",
+		"Gerät B": "裝置 B",
+		"Gesamt (alles, was rauskommt)": "整體（所有輸出的聲音）",
+		"Gewitter": "雷雨",
+		"GitHub-Reviews": "GitHub 審查",
+		"GitHub-Reviews, die auf dich warten": "等你處理的 GitHub 審查",
+		"GitHub: nicht da": "找不到 GitHub",
+		"Gmail": "Gmail",
+		"Google Maps": "Google Maps",
+		"Grok": "Grok",
+		"Groß": "大",
+		"Hallo!": "哈囉！",
+		"halten = neu": "長按 = 重設",
+		"Headset": "耳麥",
+		"Heiter": "晴時多雲",
+		"Hell": "亮",
+		"Heller": "調亮",
+		"Helligkeit": "亮度",
+		"Herunterfahren": "關機",
+		"Heutiges Datum einfügen": "貼上今天的日期",
+		"Hey!": "嘿！",
+		"Hilfe!": "救命！",
+		"hr3": "hr3",
+		"I Love Radio": "I Love Radio",
+		"Ich": "我",
+		"in {time}": "{time} 後",
+		"In einer Minute. Taste am Timer gedrückt halten bricht ab.": "再一分鐘。長按計時器按鍵可以取消。",
+		"Installieren: npm install -g @anthropic-ai/claude-code, dann einmal \"claude\" starten und anmelden.": "安裝方式：npm install -g @anthropic-ai/claude-code，然後執行一次 \"claude\" 並登入。",
+		"Interface": "介面",
+		"Internet": "網路",
+		"Internet weg": "網路斷了",
+		"Kabel oder aus": "有線或關閉",
+		"Karte": "地圖",
+		"kein Akku": "沒有電池",
+		"Kein Spiel": "沒有遊戲",
+		"keine Antwort": "沒有回應",
+		"keiner hört dich": "沒人聽得到",
+		"keins": "無",
+		"Klein": "小",
+		"Kopf": "正面",
+		"Kopfhörer": "耳機",
+		"kopiert ✓": "已複製 ✓",
+		"Kurz bewegen": "起來動一下",
+		"Lade Geräte …": "正在載入裝置 …",
+		"langsam": "慢",
+		"Lauter": "大聲",
+		"Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.": "只針對單一 App 調大聲、調小聲或靜音：前景的遊戲、Discord、Spotify、瀏覽器 … 或是全部一起。在旋鈕上：轉動和按下。",
+		"Lautsprecher": "喇叭",
+		"Lautstärke": "音量",
+		"Lazy Deck erklärt": "Lazy Deck 解釋",
+		"Lazy Deck liest deine lokale Steam-Bibliothek, ohne Login. Die Taste zeigt das Spiel, das du zuletzt gespielt hast.": "Lazy Deck 會讀取你電腦上的 Steam 收藏庫，不需要登入。按鍵會顯示你最近玩過的遊戲。",
+		"Leer!": "清空了！",
+		"Leiser": "小聲",
+		"Letzte 30 s speichern": "儲存最後 30 秒",
+		"Letzte Meldung": "最新訊息",
+		"Links": "左",
+		"Links andocken": "貼齊左側",
+		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "立刻觸發一個範例警報，並切換到警報設定檔。",
+		"Maximieren": "最大化",
+		"Mein Sender": "我的電台",
+		"Meldung": "訊息",
+		"Mi": "週三",
+		"Microsoft Teams": "Microsoft Teams",
+		"Mikro": "麥克風",
+		"Mikro an": "麥克風開",
+		"Mikro stumm": "麥克風靜音",
+		"Minimieren": "最小化",
+		"Mit Link für „Ansehen“:": "附上「查看」用的連結：",
+		"Mitteilungen": "通知",
+		"Mittwoch": "星期三",
+		"Mo": "週一",
+		"Monitor": "螢幕",
+		"Montag": "星期一",
+		"Münzwurf": "擲硬幣",
+		"Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will.": "擲硬幣（正面是 Sam）或擲骰子。給所有你不想自己做的決定。",
+		"Musik": "音樂",
+		"Nach": "多久後",
+		"Name": "名稱",
+		"NDR 2": "NDR 2",
+		"Nebel": "起霧",
+		"Netflix": "Netflix",
+		"Netz": "網路",
+		"Netzwerk": "網路",
+		"nichts": "無",
+		"Nichts läuft": "沒在播放",
+		"noch {n} min": "還有 {n} 分",
+		"Nochmal?": "再一次？",
+		"nur bei Eigene App, z. B. obs64": "僅限自訂 App，例如 obs64",
+		"nur bei Eigene App, z. B. vlc": "僅限自訂 App，例如 vlc",
+		"nur bei Eigener Sender: https://…": "僅限自訂電台：https://…",
+		"Nutzt die GitHub-CLI „gh“ (auch in WSL), mit der du schon angemeldet bist. Alle 2 Minuten wird nachgesehen; neue Review-Anfragen lösen einen Alarm aus.": "使用你已登入的 GitHub CLI「gh」（WSL 裡的也可以）。每 2 分鐘檢查一次；有新的審查請求就會發出警報。",
+		"OBS": "OBS",
+		"OBS Studio": "OBS Studio",
+		"Offline!": "離線了！",
+		"Papierkorb": "資源回收筒",
+		"Papierkorb {n}": "回收筒 {n}",
+		"Papierkorb leeren (zweimal drücken)": "清理資源回收筒（按兩下）",
+		"Passwort": "密碼",
+		"Passwort erzeugen (in die Zwischenablage)": "產生密碼（複製到剪貼簿）",
+		"Pause": "暫停",
+		"Pause!": "休息一下！",
+		"pausiert": "已暫停",
+		"PC aus · {n} min": "關機 · {n} 分",
+		"PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid.": "30、60 或 90 分鐘後讓電腦關機或睡眠，例如晚上看電影的時候。再按一次：多加 30 分鐘；長按：取消。前一分鐘 Sam 會提醒你。",
+		"PC geht gleich aus": "電腦快關機了",
+		"PC schläft gleich ein": "電腦快睡著了",
+		"Play": "播放",
+		"Play / Pause": "播放／暫停",
+		"Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.": "少按一點，多做一點。一隻住在你 Stream Deck 上的樹懶，有事需要你的時候會佔滿整個 Deck，另外還有音樂、Discord 和 Steam 的日常按鍵。完全不用設定。",
+		"Prime Video": "Prime Video",
+		"Projizieren": "投影",
+		"Projizieren (2. Bildschirm)": "投影（第二個螢幕）",
+		"Prozessname": "處理程序名稱",
+		"prüft …": "檢查中 …",
+		"Puh, heiß": "呼，好熱",
+		"Quelle": "來源",
+		"Radio Bob": "Radio Bob",
+		"radioeins": "radioeins",
+		"Rechner": "小算盤",
+		"Rechts": "右",
+		"Rechts andocken": "貼齊右側",
+		"Regen": "下雨",
+		"Review wartet": "審查等你",
+		"Rock Antenne": "Rock Antenne",
+		"Sa": "週六",
+		"Samstag": "星期六",
+		"Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand.": "只把單一 App 的麥克風靜音，例如 Teams、Zoom 或瀏覽器裡的 Meet。其他 App 還是聽得到你。按鍵會顯示真實狀態。",
+		"Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.": "在你的裝置之間切換聲音輸出：耳機、喇叭、螢幕。虛擬裝置（Voicemod、Loopback …）會被略過。或者剛好選兩個。",
+		"Schaltet nur Discord stumm, direkt in Windows, egal welches Mikro in Discord gewählt ist. Dafür muss nichts eingestellt werden. Discords eigenes Stumm-Symbol bleibt dabei aus, die Taste zeigt den echten Zustand. Taub schaltet Discords Ton und Mikro zusammen.": "直接在 Windows 裡只把 Discord 靜音，不管 Discord 選的是哪支麥克風。完全不用設定。Discord 本身的靜音圖示不會亮，按鍵會顯示真實狀態。拒聽會同時關掉 Discord 的聲音和麥克風。",
+		"schau mal": "看一下",
+		"Schau mal": "看一下",
+		"Schlaf · {n} min": "睡眠 · {n} 分",
+		"Schlafen": "睡眠",
+		"schläft in {time}": "{time} 後睡眠",
+		"schlummert · noch {n} min": "打盹中 · 還有 {n} 分鐘",
+		"Schnee": "下雪",
+		"schnell": "快",
+		"Screenshot": "截圖",
+		"Screenshot (Ausschnitt)": "截圖（選取範圍）",
+		"seit {n} h": "{n} 小時前",
+		"seit {n} min": "{n} 分鐘前",
+		"Seit 30 Sekunden keine Verbindung ins Internet.": "已經 30 秒連不上網路了。",
+		"Sender": "電台",
+		"Shop": "商店",
+		"Slack": "Slack",
+		"So": "週日",
+		"So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste.": "有事情等你處理時，Sam 就會這樣通知你。按查看、稍後，或隨便按一個鍵都行。",
+		"Sonnig": "晴天",
+		"Sonntag": "星期日",
+		"Später": "稍後",
+		"Sperren": "鎖定",
+		"Spiel": "遊戲",
+		"Spiel / App im Vordergrund": "前景的遊戲／App",
+		"Spiel-Screenshot": "遊戲截圖",
+		"Spielen": "開始玩",
+		"Spielfoto": "遊戲截圖",
+		"Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.": "播放廣播電台，按一下開，再按一下關。不用安裝任何東西，也不用帳號。",
+		"Spotify": "Spotify",
+		"Standard (60 / 45 min)": "預設（60 / 45 分鐘）",
+		"Steam": "Steam",
+		"Steam lädt": "Steam 下載中",
+		"still": "無聲",
+		"Stoppuhr": "碼錶",
+		"Stream-Link": "串流連結",
+		"Strom": "電源",
+		"stumm": "靜音",
+		"Stumm": "靜音",
+		"Stumm an/aus": "靜音開／關",
+		"SWR3": "SWR3",
+		"System": "系統",
+		"SZENE 42 · TAKE 1": "SCENE 42 · TAKE 1",
+		"Task-Manager": "工作管理員",
+		"Taste": "按鍵",
+		"Taub schalten": "拒聽",
+		"Teams": "Teams",
+		"Telegram": "Telegram",
+		"Telegram Web": "Telegram Web",
+		"Terminal": "終端機",
+		"Test: Fehler": "測試：錯誤",
+		"Test: Warten": "測試：等待",
+		"Timer": "計時器",
+		"Timer läuft": "計時中",
+		"Timer pausiert": "計時暫停",
+		"Ton aus": "靜音",
+		"Ton ist aus": "聲音已關",
+		"Ton über": "聲音輸出",
+		"Trinken": "喝水",
+		"Twitch": "Twitch",
+		"Übersetzen": "翻譯",
+		"Uhrzeit": "時間",
+		"unbekannt": "不明",
+		"Ungelesene GitHub-Mitteilungen": "未讀的 GitHub 通知",
+		"Videos": "影片",
+		"virtuell": "虛擬",
+		"Virtueller Desktop links": "左邊的虛擬桌面",
+		"Virtueller Desktop rechts": "右邊的虛擬桌面",
+		"wach · {time}": "清醒 · {time}",
+		"wach · noch {time}": "清醒 · 還有 {time}",
+		"Wach bleiben": "保持清醒",
+		"Wartet auf dich (Honig)": "等你處理（蜂蜜色）",
+		"Was": "什麼",
+		"WDR 2": "WDR 2",
+		"Weiter": "下一首",
+		"Weiter geht's": "繼續加油",
+		"Wetter": "天氣",
+		"WhatsApp": "WhatsApp",
+		"WhatsApp Web": "WhatsApp Web",
+		"Wie lange": "多久",
+		"Wie lange noch bis Feierabend oder Wochenende.": "距離下班或週末還有多久。",
+		"Windows-Mitteilungen (Infocenter)": "Windows 通知（通知中心）",
+		"wird geladen": "載入中",
+		"WLAN": "Wi-Fi",
+		"Wochenende (Freitag)": "週末（星期五）",
+		"Wochenende!": "週末囉！",
+		"Wolkig": "陰天",
+		"Woran": "提醒什麼",
+		"Würfel": "骰子",
+		"Würfeln": "擲骰子",
+		"YouTube": "YouTube",
+		"Zahl": "反面",
+		"Zeigt": "顯示",
+		"Zeit zu trinken": "該喝水了",
+		"Zoom": "Zoom",
+		"Zuletzt gespielt starten": "啟動最近玩的遊戲",
+		"Zurück": "上一首",
+		"Zurücknehmen:": "撤銷：",
+		"Zwischenablage-Verlauf": "剪貼簿歷程記錄"
+	}
+}

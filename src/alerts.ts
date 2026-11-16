@@ -5,6 +5,7 @@
  * profile. Waiting alerts climb to stage 2 after a delay; errors start there.
  */
 export type Level = "wait" | "error";
+import { tr } from "./i18n.js";
 
 export type AlertInput = {
 	level?: Level;
@@ -115,7 +116,8 @@ export class AlertCenter {
 		const alert: Alert = {
 			id: this.#nextId++,
 			level,
-			title: clean(input.title, 80) ?? (level === "error" ? "Fehler" : "Schau mal"),
+			title: clean(input.title, 80) ?? (level === "error" ? tr("Fehler") : tr("Schau mal"))
+,
 			source: clean(input.source, 60),
 			detail: clean(input.detail, 2000),
 			url: safeUrl(input.url),

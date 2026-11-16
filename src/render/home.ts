@@ -5,8 +5,9 @@ import { frame, ICONS } from "./apps.js";
 import { BRANCH, sloth } from "./sloth.js";
 import { signKey } from "./scenes.js";
 import { C, pill, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
-const DAYS = ["Sonntag", "Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag"];
+const DAYS = () => [tr("Sonntag"), tr("Montag"), tr("Dienstag"), tr("Mittwoch"), tr("Donnerstag"), tr("Freitag"), tr("Samstag")];
 
 /** Seconds, for keys whose ticker passes no time: signs sway with it. */
 const now = () => Date.now() / 1000;
@@ -16,9 +17,9 @@ export function clockKey(date: Date): string {
 	const hh = String(date.getHours()).padStart(2, "0");
 	const mm = String(date.getMinutes()).padStart(2, "0");
 	return signKey({
-		title: DAYS[date.getDay()]!,
+		title: DAYS()[date.getDay()]!,
 		value: `${hh}:${mm}`,
-		sub: `${date.getDate()}.${date.getMonth() + 1}. · KW ${isoWeek(date)}`,
+		sub: tr("{d}.{m}. · KW {w}", { d: date.getDate(), m: date.getMonth() + 1, w: isoWeek(date) }),
 		t: date.getTime() / 1000,
 		phase: 0.7,
 	});
@@ -54,29 +55,29 @@ function skyArt(sky: Sky, t: number, day: boolean): string {
 export type WeatherView = { temp: number; sky: Sky; word: string; place?: string; day: boolean };
 
 export function weatherKey(w: WeatherView | undefined, t: number): string {
-	if (!w) return signKey({ title: "Wetter", value: "…", sub: "wird geladen", t, phase: 1.4 });
-	return signKey({ title: w.place ?? "Wetter", value: `${Math.round(w.temp)}°`, sub: w.word, art: skyArt(w.sky, t, w.day).replaceAll(C.cream, C.fur).replaceAll("#B9B2A8", "#A08A70"), t, phase: 1.4 });
+	if (!w) return signKey({ title: tr("Wetter"), value: "…", sub: tr("wird geladen"), t, phase: 1.4 });
+	return signKey({ title: w.place ?? tr("Wetter"), value: `${Math.round(w.temp)}°`, sub: w.word, art: skyArt(w.sky, t, w.day).replaceAll(C.cream, C.fur).replaceAll("#B9B2A8", "#A08A70"), t, phase: 1.4 });
 }
 
 /** Internet: latency, or a panicking sloth when it is gone. */
 export function netKey(ms: number | null | undefined, t: number): string {
 	if (ms === null) {
-		return frame(BRANCH + sloth({ mood: "panic", t }) + pill("Offline!", C.coral, C.night), C.coral);
+		return frame(BRANCH + sloth({ mood: "panic", t }) + pill(tr("Offline!"), C.coral, C.night), C.coral);
 	}
-	const word = ms === undefined ? "prüft …" : ms < 60 ? "schnell" : ms < 150 ? "geht so" : "langsam";
-	return signKey({ title: "Internet", value: ms === undefined ? "…" : `${ms} ms`, sub: word, t, phase: 3.1, tone: ms !== undefined && ms >= 150 ? "honey" : "cream" });
+	const word = ms === undefined ? tr("prüft …") : ms < 60 ? tr("schnell") : ms < 150 ? tr("geht so") : tr("langsam");
+	return signKey({ title: tr("Internet"), value: ms === undefined ? "…" : `${ms} ms`, sub: word, t, phase: 3.1, tone: ms !== undefined && ms >= 150 ? "honey" : "cream" });
 }
 
 export function wifiKey(info: { ssid: string; signal: number } | undefined | null): string {
-	if (info === null) return signKey({ title: "WLAN", value: "keins", sub: "Kabel oder aus", t: now(), phase: 3.6 });
-	return signKey({ title: info?.ssid ?? "WLAN", value: info ? `${info.signal} %` : "…", bar: info ? info.signal / 100 : undefined, t: now(), phase: 3.6 });
+	if (info === null) return signKey({ title: tr("WLAN"), value: tr("keins"), sub: tr("Kabel oder aus"), t: now(), phase: 3.6 });
+	return signKey({ title: info?.ssid ?? tr("WLAN"), value: info ? `${info.signal} %` : "…", bar: info ? info.signal / 100 : undefined, t: now(), phase: 3.6 });
 }
 
 export function batteryKey(b: { percent: number; charging: boolean } | null | undefined): string {
-	if (b === null) return signKey({ title: "Strom", value: "Netz", sub: "kein Akku", t: now(), phase: 4.4 });
+	if (b === null) return signKey({ title: tr("Strom"), value: tr("Netz"), sub: tr("kein Akku"), t: now(), phase: 4.4 });
 	const p = b?.percent ?? 0;
 	return signKey({
-		title: b?.charging ? "Akku lädt" : "Akku",
+		title: b?.charging ? tr("Akku lädt") : tr("Akku"),
 		value: b ? `${p} %` : "…",
 		bar: b ? p / 100 : undefined,
 		tone: b && p <= 15 && !b.charging ? "coral" : "cream",
@@ -100,41 +101,41 @@ function ring(progress: number, tone: string, center: string, label: string, lab
 
 export function timerKey(o: { minutes: number; left: number; running: boolean; started: boolean }): string {
 	const t = now();
-	if (!o.started) return signKey({ title: "Timer", value: `${o.minutes} min`, sub: "drücken = los", t, phase: 5.2 });
+	if (!o.started) return signKey({ title: tr("Timer"), value: tr("{n} min", { n: o.minutes }), sub: tr("drücken = los"), t, phase: 5.2 });
 	const done = o.left <= 0;
-	if (done) return signKey({ title: "Timer", value: "Fertig!", sub: "halten = neu", tone: "coral", t, phase: 5.2 });
-	return signKey({ title: o.running ? "Timer läuft" : "Timer pausiert", value: formatLeft(o.left), bar: o.left / (o.minutes * 60_000), tone: o.running ? "leaf" : "cream", t, phase: 5.2 });
+	if (done) return signKey({ title: tr("Timer"), value: tr("Fertig!"), sub: tr("halten = neu"), tone: "coral", t, phase: 5.2 });
+	return signKey({ title: o.running ? tr("Timer läuft") : tr("Timer pausiert"), value: formatLeft(o.left), bar: o.left / (o.minutes * 60_000), tone: o.running ? "leaf" : "cream", t, phase: 5.2 });
 }
 
 export function stopwatchKey(ms: number, running: boolean): string {
 	const seconds = (ms / 1000) % 60;
-	return ring(seconds / 60, running ? C.leaf : "#6B6F63", formatClock(ms), running ? "Stoppuhr" : ms ? "angehalten" : "Stoppuhr", undefined, running ? C.leaf : undefined);
+	return ring(seconds / 60, running ? C.leaf : "#6B6F63", formatClock(ms), running ? tr("Stoppuhr") : ms ? tr("angehalten") : tr("Stoppuhr"), undefined, running ? C.leaf : undefined);
 }
 
 export function countdownKey(kind: "feierabend" | "weekend", left: number, t: number): string {
-	const label = kind === "feierabend" ? "Feierabend" : "Wochenende";
 	if (left <= 0) {
 		return frame(
 			`<rect width="120" height="120" fill="#16203A"/>` +
 				BRANCH +
 				sloth({ mood: "sleep", t }) +
 				`<path d="M96 30 a8 8 0 1 0 6 10 a6 6 0 1 1 -6 -10 z" fill="${C.cream}"/>` +
-				pill(`${label}!`, C.honey, C.night),
+				pill(kind === "feierabend" ? tr("Feierabend!") : tr("Wochenende!"), C.honey, C.night),
+
 			C.honey,
 		);
 	}
 	const span = kind === "feierabend" ? 9 * 3600_000 : 5 * 86_400_000;
-	return signKey({ title: `bis ${label}`, value: formatLeft(left), bar: 1 - left / span, t, phase: 5.9 });
+	return signKey({ title: kind === "feierabend" ? tr("bis Feierabend") : tr("bis Wochenende"), value: formatLeft(left), bar: 1 - left / span, t, phase: 5.9 });
 }
 
 export function reminderKey(kind: "water" | "move", left: number, due: boolean, t: number): string {
-	const word = kind === "water" ? "Trinken" : "Bewegen";
+	const word = kind === "water" ? tr("Trinken") : tr("Bewegen");
 	const icon = kind === "water" ? ICONS.glass! : ICONS.stretch!;
 	if (due) {
 		const bob = q(-3 + swing(t, 1.2) * 6);
 		return frame(`<g transform="translate(0 ${bob})">${icon}</g>` + pill(`${word}!`, C.honey, C.night), C.honey);
 	}
-	return frame(`<g transform="translate(60 2) scale(0.78) translate(-60 0)">${icon}</g>` + text(`in ${formatLeft(left)}`, { x: 60, y: 86, size: 13, max: 96, fill: "#B9B2A8", face: "body" }) + pill(word, C.pillDark, C.cream));
+	return frame(`<g transform="translate(60 2) scale(0.78) translate(-60 0)">${icon}</g>` + text(tr("in {time}", { time: formatLeft(left) }), { x: 60, y: 86, size: 13, max: 96, fill: "#B9B2A8", face: "body" }) + pill(word, C.pillDark, C.cream));
 }
 
 /** Coin: heads shows the sloth. Spinning while `spin` runs 0..1. */
@@ -152,7 +153,7 @@ export function coinKey(result: "Kopf" | "Zahl" | undefined, spin: number | unde
 		`<g transform="translate(60 46) scale(${q(scaleX, 0.05)} 1) translate(-60 -46)">` +
 			`<circle cx="60" cy="46" r="32" fill="#E9C46A" stroke="#B8892F" stroke-width="5"/>` +
 			`<clipPath id="coin"><circle cx="60" cy="46" r="28"/></clipPath><g clip-path="url(#coin)">${inner}</g></g>` +
-			pill(flipping ? "…" : (result ?? "Münzwurf"), C.pillDark, C.cream),
+			pill(flipping ? "…" : tr(result ?? "Münzwurf"), C.pillDark, C.cream),
 	);
 }
 
@@ -172,6 +173,7 @@ export function diceKey(value: number | undefined, spin: number | undefined): st
 	const pips = PIPS[shown]!.map(([x, y]) => `<circle cx="${60 + x * 14}" cy="${46 + y * 14}" r="5.5" fill="${C.night}"/>`).join("");
 	return frame(
 		`<g transform="rotate(${angle} 60 46)"><rect x="32" y="18" width="56" height="56" rx="12" fill="${C.cream}"/>${pips}</g>` +
-			pill(rolling ? "…" : value ? `${value}` : "Würfeln", C.pillDark, C.cream),
+			pill(rolling ? "…" : value ? `${value}` : tr("Würfeln"), C.pillDark, C.cream),
+
 	);
 }

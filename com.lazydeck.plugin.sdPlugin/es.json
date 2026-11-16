@@ -1,0 +1,872 @@
+{
+	"Name": "Lazy Deck",
+	"Description": "Press less. Ship more. Un perezoso en tu Stream Deck que ocupa todo el deck cuando algo te necesita, más teclas para el día a día: música, Discord y Steam. Nada que configurar.",
+	"Category": "Lazy Deck",
+	"com.lazydeck.plugin.sloth": {
+		"Name": "Sam",
+		"Tooltip": "Duerme mientras todo está tranquilo. Se despierta y parpadea cuando algo te espera. Al pulsarla, la alarma ocupa todo el deck."
+	},
+	"com.lazydeck.plugin.test": {
+		"Name": "Probar alarma",
+		"Tooltip": "Lanza una alarma de ejemplo para que veas cómo reacciona el deck."
+	},
+	"com.lazydeck.plugin.alert": {
+		"Name": "Alarm-Taste",
+		"Tooltip": "Teil des Alarm-Profils."
+	},
+	"com.lazydeck.plugin.mic": {
+		"Name": "Micrófono",
+		"Tooltip": "Silencia el micrófono del sistema en todas las apps a la vez: Discord, Teams, Zoom, OBS. La tecla muestra el estado real."
+	},
+	"com.lazydeck.plugin.output": {
+		"Name": "Cambiar salida",
+		"Tooltip": "Cambia el sonido entre tus dispositivos: auriculares, altavoces, monitor. Los dispositivos virtuales (Voicemod, Loopback…) se saltan. O elige exactamente dos."
+	},
+	"com.lazydeck.plugin.media": {
+		"Name": "Música",
+		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+	},
+	"com.lazydeck.plugin.media.playpause": {
+		"Name": "Play / Pausa",
+		"Tooltip": "Pone o pausa la música: Spotify, YouTube, el navegador y la mayoría de reproductores. Si algo suena, Sam tiene los ojos abiertos."
+	},
+	"com.lazydeck.plugin.media.previous": {
+		"Name": "Anterior",
+		"Tooltip": "Canción anterior."
+	},
+	"com.lazydeck.plugin.media.next": {
+		"Name": "Siguiente",
+		"Tooltip": "Canción siguiente."
+	},
+	"com.lazydeck.plugin.media.volumedown": {
+		"Name": "Bajar volumen",
+		"Tooltip": "Baja el volumen de todo y muestra en qué nivel está."
+	},
+	"com.lazydeck.plugin.media.volumeup": {
+		"Name": "Subir volumen",
+		"Tooltip": "Sube el volumen de todo y muestra en qué nivel está."
+	},
+	"com.lazydeck.plugin.media.mute": {
+		"Name": "Volumen / Silencio",
+		"Tooltip": "Muestra el volumen como un cartel en la rama. Al pulsarla, quita el sonido y lo vuelve a poner."
+	},
+	"com.lazydeck.plugin.nowplaying": {
+		"Name": "Sonando ahora",
+		"Tooltip": "Muestra la portada y el título de lo que suena (Spotify, YouTube, navegador…). Pulsar: play/pausa."
+	},
+	"com.lazydeck.plugin.radio": {
+		"Name": "Radio",
+		"Tooltip": "Pone una emisora de radio: una pulsación la enciende, otra la apaga. Nada que instalar, sin cuenta."
+	},
+	"com.lazydeck.plugin.appvolume": {
+		"Name": "Volumen de app",
+		"Tooltip": "Más alto, más bajo o en silencio, solo para una app: el juego en primer plano, Discord, Spotify, el navegador… o todo junto. En un dial: gira y pulsa."
+	},
+	"com.lazydeck.plugin.appvolume.fgdown": {
+		"Name": "Bajar juego",
+		"Tooltip": "Baja solo el juego (o la app en primer plano); Discord y la música se quedan igual."
+	},
+	"com.lazydeck.plugin.appvolume.fgup": {
+		"Name": "Subir juego",
+		"Tooltip": "Sube solo el juego (o la app en primer plano)."
+	},
+	"com.lazydeck.plugin.appvolume.spotifymute": {
+		"Name": "Silenciar Spotify",
+		"Tooltip": "Silencia solo Spotify y lo vuelve a activar."
+	},
+	"com.lazydeck.plugin.appmic": {
+		"Name": "Micro de app",
+		"Tooltip": "Silencia el micro solo para una app, p. ej. Teams, Zoom o Meet en el navegador. Las demás apps te siguen oyendo. La tecla muestra el estado real."
+	},
+	"com.lazydeck.plugin.appmic.teams": {
+		"Name": "Micro de Teams",
+		"Tooltip": "Silencia solo el micro en Microsoft Teams."
+	},
+	"com.lazydeck.plugin.appmic.zoom": {
+		"Name": "Micro de Zoom",
+		"Tooltip": "Silencia solo el micro en Zoom."
+	},
+	"com.lazydeck.plugin.appmic.browser": {
+		"Name": "Micro de Meet (navegador)",
+		"Tooltip": "Silencia el micro en el navegador, p. ej. en Google Meet o Jitsi."
+	},
+	"com.lazydeck.plugin.discord": {
+		"Name": "Discord",
+		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+	},
+	"com.lazydeck.plugin.discord.mute": {
+		"Name": "Micro de Discord",
+		"Tooltip": "Silencia solo Discord, da igual qué micro tengas elegido allí. La tecla muestra el estado real."
+	},
+	"com.lazydeck.plugin.discord.deafen": {
+		"Name": "Ensordecer Discord",
+		"Tooltip": "Discord deja de oír y de enviar: sonido y micro apagados a la vez."
+	},
+	"com.lazydeck.plugin.discord.open": {
+		"Name": "Abrir Discord",
+		"Tooltip": "Abre Discord."
+	},
+	"com.lazydeck.plugin.steam": {
+		"Name": "Steam",
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+	},
+	"com.lazydeck.plugin.steam.last": {
+		"Name": "Último jugado",
+		"Tooltip": "Inicia el último juego de Steam al que jugaste."
+	},
+	"com.lazydeck.plugin.steam.friends": {
+		"Name": "Amigos de Steam",
+		"Tooltip": "Abre tu lista de amigos en Steam."
+	},
+	"com.lazydeck.plugin.steam.library": {
+		"Name": "Biblioteca de Steam",
+		"Tooltip": "Abre tu biblioteca de Steam."
+	},
+	"com.lazydeck.plugin.steam.bigpicture": {
+		"Name": "Steam Big Picture",
+		"Tooltip": "Inicia Steam en modo Big Picture, para la tele y el mando."
+	},
+	"com.lazydeck.plugin.steam.store": {
+		"Name": "Tienda de Steam",
+		"Tooltip": "Abre la tienda de Steam."
+	},
+	"com.lazydeck.plugin.steamdownloads": {
+		"Name": "Descargas de Steam",
+		"Tooltip": "Cuánto le falta a Steam para terminar de descargar. Cuando acaba una descarga grande, Sam te avisa, incluso sin esta tecla."
+	},
+	"com.lazydeck.plugin.gamebar": {
+		"Name": "Gaming",
+		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+	},
+	"com.lazydeck.plugin.gamebar.clip": {
+		"Name": "Guardar últimos 30 s",
+		"Tooltip": "Guarda los últimos 30 s con la Xbox Game Bar de Windows."
+	},
+	"com.lazydeck.plugin.gamebar.record": {
+		"Name": "Grabar sí/no",
+		"Tooltip": "Empieza o para la grabación con la Xbox Game Bar de Windows."
+	},
+	"com.lazydeck.plugin.gamebar.shot": {
+		"Name": "Captura del juego",
+		"Tooltip": "Hace una captura del juego con la Xbox Game Bar de Windows."
+	},
+	"com.lazydeck.plugin.gamebar.open": {
+		"Name": "Abrir Game Bar",
+		"Tooltip": "Abre la Xbox Game Bar de Windows."
+	},
+	"com.lazydeck.plugin.brightness": {
+		"Name": "Brillo",
+		"Tooltip": "Pantalla más clara o más oscura, también monitores externos (por DDC/CI, como Twinkle Tray). En un dial: gira."
+	},
+	"com.lazydeck.plugin.brightness.down": {
+		"Name": "Menos brillo",
+		"Tooltip": "Todas las pantallas más oscuras, también los monitores externos."
+	},
+	"com.lazydeck.plugin.brightness.up": {
+		"Name": "Más brillo",
+		"Tooltip": "Todas las pantallas más claras, también los monitores externos."
+	},
+	"com.lazydeck.plugin.windows": {
+		"Name": "Windows",
+		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+	},
+	"com.lazydeck.plugin.windows.screenshot": {
+		"Name": "Captura (recorte)",
+		"Tooltip": "Captura de pantalla de una zona."
+	},
+	"com.lazydeck.plugin.windows.lock": {
+		"Name": "Bloquear pantalla",
+		"Tooltip": "Bloquea la pantalla."
+	},
+	"com.lazydeck.plugin.windows.monitoroff": {
+		"Name": "Apagar pantalla",
+		"Tooltip": "Apaga la pantalla."
+	},
+	"com.lazydeck.plugin.windows.sleep": {
+		"Name": "Suspender",
+		"Tooltip": "Suspende el PC. Por seguridad, pulsa dos veces."
+	},
+	"com.lazydeck.plugin.windows.darkmode": {
+		"Name": "Modo oscuro",
+		"Tooltip": "Activa o desactiva el modo oscuro."
+	},
+	"com.lazydeck.plugin.windows.recyclebin": {
+		"Name": "Vaciar papelera",
+		"Tooltip": "Vacía la papelera. Por seguridad, pulsa dos veces."
+	},
+	"com.lazydeck.plugin.windows.desktop": {
+		"Name": "Mostrar escritorio",
+		"Tooltip": "Muestra el escritorio."
+	},
+	"com.lazydeck.plugin.windows.settings": {
+		"Name": "Configuración",
+		"Tooltip": "Abre la configuración."
+	},
+	"com.lazydeck.plugin.windows.taskmanager": {
+		"Name": "Administrador de tareas",
+		"Tooltip": "Abre el administrador de tareas."
+	},
+	"com.lazydeck.plugin.window": {
+		"Name": "Fenster",
+		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+	},
+	"com.lazydeck.plugin.window.snapleft": {
+		"Name": "Ajustar a la izquierda",
+		"Tooltip": "Ajusta la ventana a la izquierda."
+	},
+	"com.lazydeck.plugin.window.snapright": {
+		"Name": "Ajustar a la derecha",
+		"Tooltip": "Ajusta la ventana a la derecha."
+	},
+	"com.lazydeck.plugin.window.maximize": {
+		"Name": "Maximizar",
+		"Tooltip": "Maximiza la ventana."
+	},
+	"com.lazydeck.plugin.window.minimize": {
+		"Name": "Minimizar",
+		"Tooltip": "Minimiza la ventana."
+	},
+	"com.lazydeck.plugin.window.vdleft": {
+		"Name": "Escritorio virtual izq.",
+		"Tooltip": "Pasa al escritorio virtual de la izquierda."
+	},
+	"com.lazydeck.plugin.window.vdright": {
+		"Name": "Escritorio virtual der.",
+		"Tooltip": "Pasa al escritorio virtual de la derecha."
+	},
+	"com.lazydeck.plugin.window.taskview": {
+		"Name": "Vista de tareas",
+		"Tooltip": "Abre la vista de tareas."
+	},
+	"com.lazydeck.plugin.window.project": {
+		"Name": "Proyectar (2.ª pantalla)",
+		"Tooltip": "Proyectar en una segunda pantalla."
+	},
+	"com.lazydeck.plugin.awake": {
+		"Name": "Mantener despierto",
+		"Tooltip": "El PC y la pantalla no se duermen mientras la tecla esté activa: para descargas, presentaciones o pelis."
+	},
+	"com.lazydeck.plugin.sleeptimer": {
+		"Name": "Temporizador de apagado",
+		"Tooltip": "Apaga o suspende el PC en 30, 60 o 90 minutos, p. ej. viendo una peli por la noche. Pulsa otra vez: 30 minutos más; mantén: cancelar. Un minuto antes, Sam te avisa."
+	},
+	"com.lazydeck.plugin.clock": {
+		"Name": "Reloj",
+		"Tooltip": "Hora, día de la semana, fecha y número de semana."
+	},
+	"com.lazydeck.plugin.weather": {
+		"Name": "Tiempo",
+		"Tooltip": "El tiempo en tu zona, sin configurar nada. La ubicación sale de tu dirección IP (ipwho.is) y el tiempo, de Open-Meteo."
+	},
+	"com.lazydeck.plugin.timer": {
+		"Name": "Temporizador",
+		"Tooltip": "Temporizador de cocina: pulsar inicia/pausa, mantener reinicia. Cuando termina, Sam te avisa."
+	},
+	"com.lazydeck.plugin.stopwatch": {
+		"Name": "Cronómetro",
+		"Tooltip": "Pulsar inicia/para, mantener reinicia."
+	},
+	"com.lazydeck.plugin.countdown": {
+		"Name": "Countdown",
+		"Tooltip": "Cuánto falta para salir del curro o para el finde."
+	},
+	"com.lazydeck.plugin.countdown.feierabend": {
+		"Name": "Hasta salir del curro",
+		"Tooltip": "Cuánto falta para terminar la jornada (17:00, ajustable)."
+	},
+	"com.lazydeck.plugin.countdown.weekend": {
+		"Name": "Hasta el finde",
+		"Tooltip": "Cuánto falta para salir del curro el viernes."
+	},
+	"com.lazydeck.plugin.reminder": {
+		"Name": "Recordatorio",
+		"Tooltip": "Te recuerda a menudo beber o moverte. Pulsar significa hecho."
+	},
+	"com.lazydeck.plugin.reminder.water": {
+		"Name": "Beber agua",
+		"Tooltip": "Te recuerda beber cada hora. Pulsar significa hecho."
+	},
+	"com.lazydeck.plugin.reminder.move": {
+		"Name": "Moverse",
+		"Tooltip": "Te recuerda moverte cada 45 minutos. Pulsar significa hecho."
+	},
+	"com.lazydeck.plugin.internet": {
+		"Name": "Internet",
+		"Tooltip": "Muestra lo rápido que responde internet. Si se cae 30 segundos, Sam te avisa."
+	},
+	"com.lazydeck.plugin.wifi": {
+		"Name": "Wi-Fi",
+		"Tooltip": "Nombre de la red Wi-Fi e intensidad de la señal."
+	},
+	"com.lazydeck.plugin.battery": {
+		"Name": "Batería",
+		"Tooltip": "Nivel de batería y si está cargando (portátiles). En un PC de sobremesa: corriente."
+	},
+	"com.lazydeck.plugin.apps": {
+		"Name": "App starten",
+		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, Teams, OBS, Explorer, Terminal, Editor."
+	},
+	"com.lazydeck.plugin.apps.spotify": {
+		"Name": "Abrir Spotify",
+		"Tooltip": "Abre Spotify con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.discord": {
+		"Name": "Abrir Discord",
+		"Tooltip": "Abre Discord con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.steam": {
+		"Name": "Abrir Steam",
+		"Tooltip": "Abre Steam con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.whatsapp": {
+		"Name": "Abrir WhatsApp",
+		"Tooltip": "Abre WhatsApp con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.teams": {
+		"Name": "Abrir Microsoft Teams",
+		"Tooltip": "Abre Microsoft Teams con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.obs": {
+		"Name": "Abrir OBS Studio",
+		"Tooltip": "Abre OBS Studio con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.explorer": {
+		"Name": "Abrir Explorador",
+		"Tooltip": "Abre el Explorador de archivos con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.terminal": {
+		"Name": "Abrir Terminal",
+		"Tooltip": "Abre Terminal con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.notepad": {
+		"Name": "Abrir Bloc de notas",
+		"Tooltip": "Abre el Bloc de notas con una pulsación."
+	},
+	"com.lazydeck.plugin.apps.telegram": {
+		"Name": "Abrir Telegram",
+		"Tooltip": "Abre Telegram con una pulsación."
+	},
+	"com.lazydeck.plugin.website": {
+		"Name": "Webseite",
+		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+	},
+	"com.lazydeck.plugin.website.youtube": {
+		"Name": "Abrir YouTube",
+		"Tooltip": "Abre YouTube en el navegador."
+	},
+	"com.lazydeck.plugin.website.netflix": {
+		"Name": "Abrir Netflix",
+		"Tooltip": "Abre Netflix en el navegador."
+	},
+	"com.lazydeck.plugin.website.twitch": {
+		"Name": "Abrir Twitch",
+		"Tooltip": "Abre Twitch en el navegador."
+	},
+	"com.lazydeck.plugin.website.gmail": {
+		"Name": "Abrir Gmail",
+		"Tooltip": "Abre Gmail en el navegador."
+	},
+	"com.lazydeck.plugin.website.whatsappweb": {
+		"Name": "Abrir WhatsApp Web",
+		"Tooltip": "Abre WhatsApp Web en el navegador."
+	},
+	"com.lazydeck.plugin.website.prime": {
+		"Name": "Abrir Prime Video",
+		"Tooltip": "Abre Prime Video en el navegador."
+	},
+	"com.lazydeck.plugin.website.disney": {
+		"Name": "Abrir Disney+",
+		"Tooltip": "Abre Disney+ en el navegador."
+	},
+	"com.lazydeck.plugin.website.claude": {
+		"Name": "Abrir Claude",
+		"Tooltip": "Abre Claude en el navegador."
+	},
+	"com.lazydeck.plugin.website.maps": {
+		"Name": "Abrir Google Maps",
+		"Tooltip": "Abre Google Maps en el navegador."
+	},
+	"com.lazydeck.plugin.website.deepl": {
+		"Name": "Abrir traductor DeepL",
+		"Tooltip": "Abre el traductor DeepL en el navegador."
+	},
+	"com.lazydeck.plugin.website.chatgpt": {
+		"Name": "Abrir ChatGPT",
+		"Tooltip": "Abre ChatGPT en el navegador."
+	},
+	"com.lazydeck.plugin.website.gemini": {
+		"Name": "Abrir Gemini",
+		"Tooltip": "Abre Gemini en el navegador."
+	},
+	"com.lazydeck.plugin.website.grok": {
+		"Name": "Abrir Grok",
+		"Tooltip": "Abre Grok en el navegador."
+	},
+	"com.lazydeck.plugin.website.telegramweb": {
+		"Name": "Abrir Telegram Web",
+		"Tooltip": "Abre Telegram Web en el navegador."
+	},
+	"com.lazydeck.plugin.folder": {
+		"Name": "Ordner",
+		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+	},
+	"com.lazydeck.plugin.folder.downloads": {
+		"Name": "Carpeta Descargas",
+		"Tooltip": "Abre la carpeta Descargas."
+	},
+	"com.lazydeck.plugin.folder.documents": {
+		"Name": "Carpeta Documentos",
+		"Tooltip": "Abre la carpeta Documentos."
+	},
+	"com.lazydeck.plugin.folder.pictures": {
+		"Name": "Carpeta Imágenes",
+		"Tooltip": "Abre la carpeta Imágenes."
+	},
+	"com.lazydeck.plugin.folder.desktop": {
+		"Name": "Carpeta Escritorio",
+		"Tooltip": "Abre la carpeta Escritorio."
+	},
+	"com.lazydeck.plugin.folder.music": {
+		"Name": "Carpeta Música",
+		"Tooltip": "Abre la carpeta Música."
+	},
+	"com.lazydeck.plugin.folder.videos": {
+		"Name": "Carpeta Vídeos",
+		"Tooltip": "Abre la carpeta Vídeos."
+	},
+	"com.lazydeck.plugin.folder.home": {
+		"Name": "Carpeta de usuario",
+		"Tooltip": "Abre tu carpeta de usuario."
+	},
+	"com.lazydeck.plugin.tools": {
+		"Name": "Werkzeuge",
+		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+	},
+	"com.lazydeck.plugin.tools.clipboard": {
+		"Name": "Historial del portapapeles",
+		"Tooltip": "Abre el historial del portapapeles."
+	},
+	"com.lazydeck.plugin.tools.emoji": {
+		"Name": "Selector de emojis",
+		"Tooltip": "Abre el selector de emojis."
+	},
+	"com.lazydeck.plugin.tools.notifications": {
+		"Name": "Notificaciones de Windows",
+		"Tooltip": "Abre el centro de notificaciones de Windows."
+	},
+	"com.lazydeck.plugin.tools.calculator": {
+		"Name": "Calculadora",
+		"Tooltip": "Abre la calculadora."
+	},
+	"com.lazydeck.plugin.tools.pastedate": {
+		"Name": "Pegar fecha de hoy",
+		"Tooltip": "Pega la fecha de hoy."
+	},
+	"com.lazydeck.plugin.tools.password": {
+		"Name": "Generar contraseña",
+		"Tooltip": "Genera una contraseña y la copia al portapapeles."
+	},
+	"com.lazydeck.plugin.chance": {
+		"Name": "Münze & Würfel",
+		"Tooltip": "Cara o cruz (la cara muestra a Sam) o dado. Para todas las decisiones que no quieres tomar tú."
+	},
+	"com.lazydeck.plugin.chance.coin": {
+		"Name": "Cara o cruz",
+		"Tooltip": "Lanza una moneda. La cara muestra a Sam."
+	},
+	"com.lazydeck.plugin.chance.dice": {
+		"Name": "Dado",
+		"Tooltip": "Tira un dado del 1 al 6."
+	},
+	"com.lazydeck.plugin.system": {
+		"Name": "Sistema",
+		"Tooltip": "CPU y memoria RAM. Al pulsarla se abre el administrador de tareas."
+	},
+	"com.lazydeck.plugin.pomodoro": {
+		"Name": "Pomodoro",
+		"Tooltip": "25 minutos de concentración, 5 de descanso. Pulsar: iniciar/pausar; mantener: reiniciar. Sam te avisa cuando se acaba el tiempo."
+	},
+	"com.lazydeck.plugin.github": {
+		"Name": "GitHub",
+		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+	},
+	"com.lazydeck.plugin.github.notifications": {
+		"Name": "Notificaciones de GitHub",
+		"Tooltip": "Notificaciones de GitHub sin leer. Usa la gh-CLI con la que has iniciado sesión."
+	},
+	"com.lazydeck.plugin.github.reviews": {
+		"Name": "Revisiones de GitHub",
+		"Tooltip": "Revisiones que te esperan. Las nuevas disparan una alarma."
+	},
+	"Localization": {
+		"{d}.{m}. · KW {w}": "{d}/{m} · Sem. {w}",
+		"{day} {d}.{m}. · alles ruhig": "{day} {d}/{m} · todo en paz",
+		"{h}:{mm} h": "{h}:{mm} h",
+		"{n} min": "{n} min",
+		"{n} min um": "Fin: {n} min",
+		"{n} Reviews warten": "{n} revisiones",
+		"{n} Tage": "{n} días",
+		"{name} ist fertig": "{name} terminó",
+		"{name} still": "{name} callado",
+		"{name} stumm": "{name} mudo",
+		"1 Minute": "1 minuto",
+		"1 Stunde": "1 hora",
+		"1,5 Stunden": "1,5 horas",
+		"10 Minuten": "10 minutos",
+		"15 Minuten": "15 minutos",
+		"1LIVE": "1LIVE",
+		"2 Stunden": "2 horas",
+		"20 Minuten": "20 minutos",
+		"25 Minuten geschafft. 5 Minuten durchatmen.": "25 minutos hechos. 5 minutos para respirar.",
+		"3 Minuten": "3 minutos",
+		"30 Minuten": "30 minutos",
+		"4 Stunden": "4 horas",
+		"45 Minuten": "45 minutos",
+		"5 Minuten": "5 minutos",
+		"80s80s": "80s80s",
+		"Ablage": "Bandeja",
+		"Akku": "Batería",
+		"Akku lädt": "Cargando",
+		"Aktion": "Acción",
+		"Alarm aus jedem Skript auslösen:": "Lanza una alarma desde cualquier script:",
+		"Alle": "Cada",
+		"Alle Fenster": "Ventanas",
+		"alles aktuell": "todo al día",
+		"Alles ruhig": "Todo en paz",
+		"an": "on",
+		"angehalten": "pausado",
+		"Ansehen": "Ver",
+		"Antenne Bayern": "Antenne Bayern",
+		"App": "App",
+		"Art": "Tipo",
+		"Aufgabenansicht": "Vista de tareas",
+		"Aufnahme": "Grabar",
+		"Aufnahme an/aus": "Grabar sí/no",
+		"Aufstehen, strecken, einmal durchatmen.": "Levántate, estírate, respira hondo.",
+		"aus in {time}": "apaga en {time}",
+		"Ausschalt-Timer": "Temporizador de apagado",
+		"Automatisch (alle echten Geräte)": "Automático (todos los dispositivos reales)",
+		"Bayern 3": "Bayern 3",
+		"Benutzerordner": "Carpeta de usuario",
+		"Bewegen": "Moverse",
+		"Bewölkt": "Nublado",
+		"Bibliothek": "Biblioteca",
+		"Big Picture": "Big Picture",
+		"bigFM": "bigFM",
+		"Bilder": "Imágenes",
+		"Bildschirm aus": "Pantalla off",
+		"Bildschirm heller oder dunkler, auch externe Monitore (über DDC/CI, wie Twinkle Tray). Auf einem Drehregler: drehen.": "Pantalla más clara o más oscura, también monitores externos (por DDC/CI, como Twinkle Tray). En un dial: gira.",
+		"Bildschirm sperren": "Bloquear pantalla",
+		"Bis": "Hasta",
+		"bis Feierabend": "hasta salir",
+		"bis ich wieder drücke": "hasta que vuelva a pulsar",
+		"bis Wochenende": "al finde",
+		"Browser": "Navegador",
+		"Browser (Chrome, Edge, Firefox …)": "Navegador (Chrome, Edge, Firefox…)",
+		"ChatGPT": "ChatGPT",
+		"Chillout (Antenne)": "Chillout (Antenne)",
+		"Claude": "Claude",
+		"Clip!": "¡Clip!",
+		"Dann": "Luego",
+		"Dark Mode umschalten": "Cambiar modo oscuro",
+		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "El perezoso duerme mientras todo está tranquilo. Si llega una alarma, se despierta y parpadea. Las alarmas en espera ocupan todo el deck tras 2 minutos, los errores al instante. Al pulsarlo, la alarma pasa al deck de inmediato.",
+		"Datum": "Fecha",
+		"Dauer": "Duración",
+		"DeepL Übersetzer": "Traductor DeepL",
+		"Dein Timer ist abgelaufen.": "Tu temporizador ha terminado.",
+		"denkt …": "pensando…",
+		"Der PC und der Bildschirm schlafen nicht ein, solange die Taste an ist: für Downloads, Präsentationen, Filme.": "El PC y la pantalla no se duermen mientras la tecla esté activa: para descargas, presentaciones, pelis.",
+		"Desktop": "Escritorio",
+		"Desktop ←": "Escrit. ←",
+		"Desktop →": "Escrit. →",
+		"Desktop zeigen": "Mostrar escritorio",
+		"Details": "Detalles",
+		"Deutschlandfunk": "Deutschlandfunk",
+		"Di": "Mar",
+		"Die Pause ist um.": "Se acabó la pausa.",
+		"Dienstag": "Martes",
+		"Discord": "Discord",
+		"Discord Mikro": "Micro Discord",
+		"Discord öffnen": "Abrir Discord",
+		"Discord stumm": "Discord mudo",
+		"Discord taub": "Discord sordo",
+		"Discord Ton": "Sonido Discord",
+		"Disney+": "Disney+",
+		"Do": "Jue",
+		"Dokumente": "Documentos",
+		"Donnerstag": "Jueves",
+		"Download abgeschlossen. Viel Spaß!": "Descarga terminada. ¡A disfrutar!",
+		"Downloads": "Descargas",
+		"drücken = an": "pulsa = on",
+		"drücken = los": "pulsa = ya",
+		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "Pulsa las teclas multimedia de tu sistema: Spotify, YouTube, el navegador y la mayoría de reproductores las obedecen.",
+		"du bist live": "estás en vivo",
+		"Dunkel": "Oscuro",
+		"Dunkler": "Más oscuro",
+		"Editor": "Editor",
+		"Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.": "Temporizador: pulsar inicia/pausa, mantener reinicia. Cuando termina, Sam te avisa.",
+		"Eigene App (Prozessname)": "App propia (nombre del proceso)",
+		"Eigener Sender (Stream-Link)": "Emisora propia (enlace de stream)",
+		"Ein Glas Wasser, dann geht's weiter.": "Un vaso de agua y seguimos.",
+		"Einstellungen": "Ajustes",
+		"Emoji": "Emoji",
+		"Emoji-Auswahl": "Selector de emojis",
+		"Energiesparen": "Suspender",
+		"Energiesparen (zweimal drücken)": "Suspender (pulsa dos veces)",
+		"Erinnert dich regelmäßig ans Trinken oder Bewegen. Drücken heißt erledigt.": "Te recuerda a menudo beber o moverte. Pulsar significa hecho.",
+		"Erinnerung": "Recordatorio",
+		"Erkläre auf Deutsch in höchstens fünf kurzen Sätzen, was diese Meldung wahrscheinlich bedeutet und was ich als Nächstes prüfen sollte. Keine Einleitung, keine Rückfragen.": "Explica en español en cinco frases cortas como máximo qué significa probablemente este mensaje y qué debería revisar a continuación. Sin introducción, sin preguntas.",
+		"Erklären": "Explicar",
+		"Erledigt": "Hecho",
+		"es brennt": "arde",
+		"Explorer": "Explorador",
+		"Fehler": "Error",
+		"Fehler (Koralle)": "Error (coral)",
+		"Fehler 500": "Error 500",
+		"Feierabend": "Fin del curro",
+		"Feierabend!": "¡A casa!",
+		"Fertig!": "¡Listo!",
+		"Fokus": "Foco",
+		"Fokus · {n}": "Foco · {n}",
+		"Fokus starten": "Empezar foco",
+		"Fr": "Vie",
+		"Freitag": "Viernes",
+		"Freunde": "Amigos",
+		"Für „Erklären“ nutzt Lazy Deck die Claude-CLI, wenn sie installiert ist. Sie wurde nicht gefunden oder hat nicht geantwortet.": "Para «Explicar», Lazy Deck usa la CLI de Claude si está instalada. No se encontró o no respondió.",
+		"Game Bar": "Game Bar",
+		"Game Bar öffnen": "Abrir Game Bar",
+		"geht hier nicht": "aquí no va",
+		"geht nicht": "no va",
+		"geht so": "regular",
+		"Gemini": "Gemini",
+		"geöffnet": "abierto",
+		"gerade eben": "justo ahora",
+		"Gerät A": "Dispositivo A",
+		"Gerät B": "Dispositivo B",
+		"Gesamt (alles, was rauskommt)": "General (todo lo que suena)",
+		"Gewitter": "Tormenta",
+		"GitHub-Reviews": "Reviews GitHub",
+		"GitHub-Reviews, die auf dich warten": "Revisiones de GitHub que te esperan",
+		"GitHub: nicht da": "GitHub: no está",
+		"Gmail": "Gmail",
+		"Google Maps": "Google Maps",
+		"Grok": "Grok",
+		"Groß": "Grande",
+		"Hallo!": "¡Hola!",
+		"halten = neu": "mantén = otra",
+		"Headset": "Headset",
+		"Heiter": "Despejado",
+		"Hell": "Claro",
+		"Heller": "Más claro",
+		"Helligkeit": "Brillo",
+		"Herunterfahren": "Apagar",
+		"Heutiges Datum einfügen": "Insertar fecha de hoy",
+		"Hey!": "¡Ey!",
+		"Hilfe!": "¡Socorro!",
+		"hr3": "hr3",
+		"I Love Radio": "I Love Radio",
+		"Ich": "Yo",
+		"in {time}": "en {time}",
+		"In einer Minute. Taste am Timer gedrückt halten bricht ab.": "En un minuto. Mantén pulsada la tecla del temporizador para cancelar.",
+		"Installieren: npm install -g @anthropic-ai/claude-code, dann einmal \"claude\" starten und anmelden.": "Instalar: npm install -g @anthropic-ai/claude-code, luego inicia \"claude\" una vez e inicia sesión.",
+		"Interface": "Interfaz",
+		"Internet": "Internet",
+		"Internet weg": "Sin internet",
+		"Kabel oder aus": "cable o nada",
+		"Karte": "Mapa",
+		"kein Akku": "sin batería",
+		"Kein Spiel": "Sin juego",
+		"keine Antwort": "sin respuesta",
+		"keiner hört dich": "nadie te oye",
+		"keins": "ninguna",
+		"Klein": "Pequeño",
+		"Kopf": "Cara",
+		"Kopfhörer": "Auriculares",
+		"kopiert ✓": "copiado ✓",
+		"Kurz bewegen": "Muévete",
+		"Lade Geräte …": "Cargando dispositivos…",
+		"langsam": "lento",
+		"Lauter": "Subir",
+		"Lauter, leiser oder stumm, nur für eine App: das Spiel im Vordergrund, Discord, Spotify, Browser … oder alles zusammen. Auf einem Drehregler: drehen und drücken.": "Más alto, más bajo o en silencio, solo para una app: el juego en primer plano, Discord, Spotify, el navegador… o todo junto. En un dial: gira y pulsa.",
+		"Lautsprecher": "Altavoces",
+		"Lautstärke": "Volumen",
+		"Lazy Deck erklärt": "Lazy Deck explica",
+		"Lazy Deck liest deine lokale Steam-Bibliothek, ohne Login. Die Taste zeigt das Spiel, das du zuletzt gespielt hast.": "Lazy Deck lee tu biblioteca local de Steam, sin iniciar sesión. La tecla muestra el último juego al que jugaste.",
+		"Leer!": "¡Vacía!",
+		"Leiser": "Bajar",
+		"Letzte 30 s speichern": "Guardar últimos 30 s",
+		"Letzte Meldung": "Último aviso",
+		"Links": "Izquierda",
+		"Links andocken": "Ajustar a la izquierda",
+		"Löst sofort einen Beispiel-Alarm aus und schaltet aufs Alarm-Profil.": "Lanza al momento una alarma de ejemplo y cambia al perfil de alarma.",
+		"Maximieren": "Maximizar",
+		"Mein Sender": "Mi emisora",
+		"Meldung": "Mensaje",
+		"Mi": "Mié",
+		"Microsoft Teams": "Microsoft Teams",
+		"Mikro": "Micro",
+		"Mikro an": "Micro on",
+		"Mikro stumm": "Silenciar micro",
+		"Minimieren": "Minimizar",
+		"Mit Link für „Ansehen“:": "Con enlace para «Ver»:",
+		"Mitteilungen": "Avisos",
+		"Mittwoch": "Miércoles",
+		"Mo": "Lun",
+		"Monitor": "Monitor",
+		"Montag": "Lunes",
+		"Münzwurf": "Cara o cruz",
+		"Münzwurf (Kopf zeigt Sam) oder Würfel. Für alle Entscheidungen, die man nicht selbst treffen will.": "Cara o cruz (la cara muestra a Sam) o dado. Para todas las decisiones que no quieres tomar tú.",
+		"Musik": "Música",
+		"Nach": "Tras",
+		"Name": "Nombre",
+		"NDR 2": "NDR 2",
+		"Nebel": "Niebla",
+		"Netflix": "Netflix",
+		"Netz": "Red",
+		"Netzwerk": "Red",
+		"nichts": "nada",
+		"Nichts läuft": "Nada suena",
+		"noch {n} min": "quedan {n} min",
+		"Nochmal?": "¿Otra vez?",
+		"nur bei Eigene App, z. B. obs64": "solo con App propia, p. ej. obs64",
+		"nur bei Eigene App, z. B. vlc": "solo con App propia, p. ej. vlc",
+		"nur bei Eigener Sender: https://…": "solo con Emisora propia: https://…",
+		"Nutzt die GitHub-CLI „gh“ (auch in WSL), mit der du schon angemeldet bist. Alle 2 Minuten wird nachgesehen; neue Review-Anfragen lösen einen Alarm aus.": "Usa la CLI de GitHub «gh» (también en WSL) con la que ya has iniciado sesión. Se comprueba cada 2 minutos; las nuevas solicitudes de revisión lanzan una alarma.",
+		"OBS": "OBS",
+		"OBS Studio": "OBS Studio",
+		"Offline!": "¡Sin red!",
+		"Papierkorb": "Papelera",
+		"Papierkorb {n}": "Papelera {n}",
+		"Papierkorb leeren (zweimal drücken)": "Vaciar papelera (pulsa dos veces)",
+		"Passwort": "Contraseña",
+		"Passwort erzeugen (in die Zwischenablage)": "Generar contraseña (al portapapeles)",
+		"Pause": "Pausa",
+		"Pause!": "¡Pausa!",
+		"pausiert": "pausado",
+		"PC aus · {n} min": "PC off · {n} min",
+		"PC aus oder schlafen in 30, 60 oder 90 Minuten, z. B. abends beim Film. Nochmal drücken: 30 Minuten mehr, halten: abbrechen. Eine Minute vorher sagt Sam Bescheid.": "Apaga o suspende el PC en 30, 60 o 90 minutos, p. ej. por la noche viendo una peli. Pulsa otra vez: 30 minutos más; mantén: cancelar. Un minuto antes, Sam te avisa.",
+		"PC geht gleich aus": "El PC se apaga ya",
+		"PC schläft gleich ein": "El PC se duerme ya",
+		"Play": "Play",
+		"Play / Pause": "Play / Pausa",
+		"Press less. Ship more. A sloth on your Stream Deck that takes over the whole deck when something needs you, plus everyday keys for music, Discord and Steam. Nothing to set up.": "Press less. Ship more. Un perezoso en tu Stream Deck que ocupa todo el deck cuando algo te necesita, más teclas para el día a día: música, Discord y Steam. Nada que configurar.",
+		"Prime Video": "Prime Video",
+		"Projizieren": "Proyectar",
+		"Projizieren (2. Bildschirm)": "Proyectar (2.ª pantalla)",
+		"Prozessname": "Nombre del proceso",
+		"prüft …": "probando…",
+		"Puh, heiß": "¡Uf, calor!",
+		"Quelle": "Fuente",
+		"Radio Bob": "Radio Bob",
+		"radioeins": "radioeins",
+		"Rechner": "Calculadora",
+		"Rechts": "Derecha",
+		"Rechts andocken": "Ajustar a la derecha",
+		"Regen": "Lluvia",
+		"Review wartet": "Review espera",
+		"Rock Antenne": "Rock Antenne",
+		"Sa": "Sáb",
+		"Samstag": "Sábado",
+		"Schaltet das Mikro nur für eine App stumm, z. B. Teams, Zoom oder Meet im Browser. Andere Apps hören dich weiter. Die Taste zeigt den echten Zustand.": "Silencia el micro solo para una app, p. ej. Teams, Zoom o Meet en el navegador. Las demás apps te siguen oyendo. La tecla muestra el estado real.",
+		"Schaltet den Ton zwischen deinen Geräten um: Kopfhörer, Lautsprecher, Monitor. Virtuelle Geräte (Voicemod, Loopback …) werden übersprungen. Oder wähle genau zwei.": "Cambia el sonido entre tus dispositivos: auriculares, altavoces, monitor. Los dispositivos virtuales (Voicemod, Loopback…) se saltan. O elige exactamente dos.",
+		"Schaltet nur Discord stumm, direkt in Windows, egal welches Mikro in Discord gewählt ist. Dafür muss nichts eingestellt werden. Discords eigenes Stumm-Symbol bleibt dabei aus, die Taste zeigt den echten Zustand. Taub schaltet Discords Ton und Mikro zusammen.": "Silencia solo Discord, directamente en Windows, da igual qué micro tengas elegido en Discord. No hace falta configurar nada. El icono de silencio de Discord no se enciende, pero la tecla muestra el estado real. Ensordecer apaga a la vez el sonido y el micro de Discord.",
+		"schau mal": "mira",
+		"Schau mal": "Mira",
+		"Schlaf · {n} min": "Dormir · {n} min",
+		"Schlafen": "Dormir",
+		"schläft in {time}": "duerme en {time}",
+		"schlummert · noch {n} min": "dormita · quedan {n} min",
+		"Schnee": "Nieve",
+		"schnell": "rápido",
+		"Screenshot": "Captura",
+		"Screenshot (Ausschnitt)": "Captura (recorte)",
+		"seit {n} h": "hace {n} h",
+		"seit {n} min": "hace {n} min",
+		"Seit 30 Sekunden keine Verbindung ins Internet.": "Sin conexión a internet desde hace 30 segundos.",
+		"Sender": "Emisora",
+		"Shop": "Tienda",
+		"Slack": "Slack",
+		"So": "Dom",
+		"So meldet sich Sam, wenn etwas auf dich wartet. Ansehen, Später oder einfach irgendeine Taste.": "Así te avisa Sam cuando algo te espera. Ver, Luego o cualquier tecla.",
+		"Sonnig": "Soleado",
+		"Sonntag": "Domingo",
+		"Später": "Luego",
+		"Sperren": "Bloquear",
+		"Spiel": "Juego",
+		"Spiel / App im Vordergrund": "Juego / app en primer plano",
+		"Spiel-Screenshot": "Captura del juego",
+		"Spielen": "Jugar",
+		"Spielfoto": "Foto juego",
+		"Spielt einen Radiosender, ein Druck an, ein Druck aus. Nichts zu installieren, kein Konto.": "Pone una emisora de radio: una pulsación la enciende, otra la apaga. Nada que instalar, sin cuenta.",
+		"Spotify": "Spotify",
+		"Standard (60 / 45 min)": "Por defecto (60 / 45 min)",
+		"Steam": "Steam",
+		"Steam lädt": "Steam descarga",
+		"still": "callado",
+		"Stoppuhr": "Cronómetro",
+		"Stream-Link": "Enlace de stream",
+		"Strom": "Energía",
+		"stumm": "mudo",
+		"Stumm": "Mudo",
+		"Stumm an/aus": "Silencio sí/no",
+		"SWR3": "SWR3",
+		"System": "Sistema",
+		"SZENE 42 · TAKE 1": "ESCENA 42 · TOMA 1",
+		"Task-Manager": "Tareas",
+		"Taste": "Tecla",
+		"Taub schalten": "Ensordecer",
+		"Teams": "Teams",
+		"Telegram": "Telegram",
+		"Telegram Web": "Telegram Web",
+		"Terminal": "Terminal",
+		"Test: Fehler": "Test: error",
+		"Test: Warten": "Test: espera",
+		"Timer": "Timer",
+		"Timer läuft": "Timer activo",
+		"Timer pausiert": "Timer pausado",
+		"Ton aus": "Sin sonido",
+		"Ton ist aus": "Silenciado",
+		"Ton über": "Sonido por",
+		"Trinken": "Beber",
+		"Twitch": "Twitch",
+		"Übersetzen": "Traducir",
+		"Uhrzeit": "Hora",
+		"unbekannt": "desconocido",
+		"Ungelesene GitHub-Mitteilungen": "Avisos de GitHub sin leer",
+		"Videos": "Vídeos",
+		"virtuell": "virtual",
+		"Virtueller Desktop links": "Escritorio virtual izquierda",
+		"Virtueller Desktop rechts": "Escritorio virtual derecha",
+		"wach · {time}": "despierto · {time}",
+		"wach · noch {time}": "despierto · {time} más",
+		"Wach bleiben": "Despierto",
+		"Wartet auf dich (Honig)": "Esperándote (miel)",
+		"Was": "Qué",
+		"WDR 2": "WDR 2",
+		"Weiter": "Siguiente",
+		"Weiter geht's": "Seguimos",
+		"Wetter": "Tiempo",
+		"WhatsApp": "WhatsApp",
+		"WhatsApp Web": "WhatsApp Web",
+		"Wie lange": "Cuánto",
+		"Wie lange noch bis Feierabend oder Wochenende.": "Cuánto falta para salir del curro o para el finde.",
+		"Windows-Mitteilungen (Infocenter)": "Avisos de Windows (centro de actividades)",
+		"wird geladen": "cargando",
+		"WLAN": "Wi-Fi",
+		"Wochenende (Freitag)": "Finde (viernes)",
+		"Wochenende!": "¡Finde!",
+		"Wolkig": "Nublado",
+		"Woran": "Recordar",
+		"Würfel": "Dado",
+		"Würfeln": "Tirar dado",
+		"YouTube": "YouTube",
+		"Zahl": "Cruz",
+		"Zeigt": "Muestra",
+		"Zeit zu trinken": "Hora de beber",
+		"Zoom": "Zoom",
+		"Zuletzt gespielt starten": "Jugar al último",
+		"Zurück": "Anterior",
+		"Zurücknehmen:": "Deshacer:",
+		"Zwischenablage-Verlauf": "Historial del portapapeles"
+	}
+}

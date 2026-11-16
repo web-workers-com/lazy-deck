@@ -9,9 +9,14 @@ import { GROUP_ACTIONS } from "./actions/table.js";
 import { variantActions } from "./actions/variants.js";
 import { center, github, pomodoro } from "./runtime.js";
 import { startServer } from "./server.js";
-import { shutdown } from "./system.js";
+import { pluginDir, shutdown } from "./system.js";
+import { setLanguage, tr } from "./i18n.js";
 
 streamDeck.logger.setLevel("info");
+
+// Every text the plugin draws follows Stream Deck's language.
+const language = setLanguage(streamDeck.info.application.language, pluginDir());
+streamDeck.logger.info(`language: ${language}`);
 
 process.on("unhandledRejection", (reason) => {
 	streamDeck.logger.error(`unhandled rejection: ${reason instanceof Error ? reason.stack : String(reason)}`);
@@ -48,8 +53,9 @@ setInterval(() => {
 	if (ended) {
 		center.raise(
 			ended === "focus"
-				? { level: "wait", title: "Pause!", source: "Pomodoro", detail: "25 Minuten geschafft. 5 Minuten durchatmen." }
-				: { level: "wait", title: "Weiter geht's", source: "Pomodoro", detail: "Die Pause ist um." },
+				? { level: "wait", title: tr("Pause!"), source: "Pomodoro", detail: tr("25 Minuten geschafft. 5 Minuten durchatmen.") }
+				: { level: "wait", title: tr("Weiter geht's"), source: "Pomodoro", detail: tr("Die Pause ist um.") },
+
 			{ immediate: true },
 		);
 	}

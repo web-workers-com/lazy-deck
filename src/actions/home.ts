@@ -17,6 +17,7 @@ import { batteryKey, clockKey, coinKey, countdownKey, diceKey, netKey, reminderK
 import { center } from "../runtime.js";
 import { isMac, isWindows, openExternal, ps, run } from "../system.js";
 import { Ticker } from "./ticker.js";
+import { tr } from "../i18n.js";
 
 type AnyKey = KeyAction<any>;
 
@@ -131,7 +132,7 @@ async function checkNet(): Promise<void> {
 		if (misses >= 3) {
 			latency = null;
 			if (offlineAlert === undefined) {
-				offlineAlert = center.raise({ level: "error", title: "Internet weg", source: "Netzwerk", detail: "Seit 30 Sekunden keine Verbindung ins Internet." })?.id;
+				offlineAlert = center.raise({ level: "error", title: tr("Internet weg"), source: tr("Netzwerk"), detail: tr("Seit 30 Sekunden keine Verbindung ins Internet.") })?.id;
 			}
 		}
 	} else {
@@ -228,7 +229,7 @@ setInterval(() => {
 		if (timer.work.running && !timer.rang && timer.work.elapsed() >= timer.minutes * 60_000) {
 			timer.rang = true;
 			timer.work.toggle();
-			center.raise({ level: "wait", title: `${timer.minutes} min um`, source: "Timer", detail: "Dein Timer ist abgelaufen." }, { immediate: true });
+			center.raise({ level: "wait", title: tr("{n} min um", { n: timer.minutes }), source: tr("Timer"), detail: tr("Dein Timer ist abgelaufen.") }, { immediate: true });
 		}
 	}
 }, 500).unref?.();
@@ -323,9 +324,10 @@ setInterval(() => {
 			r.due = true;
 			r.alertId = center.raise({
 				level: "wait",
-				title: kind === "water" ? "Zeit zu trinken" : "Kurz bewegen",
-				source: "Erinnerung",
-				detail: kind === "water" ? "Ein Glas Wasser, dann geht's weiter." : "Aufstehen, strecken, einmal durchatmen.",
+				title: kind === "water" ? tr("Zeit zu trinken") : tr("Kurz bewegen"),
+				source: tr("Erinnerung"),
+				detail: kind === "water" ? tr("Ein Glas Wasser, dann geht's weiter.") : tr("Aufstehen, strecken, einmal durchatmen."),
+
 			})?.id;
 		}
 	}
@@ -389,6 +391,7 @@ class ChanceAction extends LiveAction<ChanceSettings> {
 		const state = chance.get(key.id);
 		const spin = state ? Math.min(1, (Date.now() - state.started) / 1200) : undefined;
 		if (mode === "dice") return diceKey(state?.value, spin);
+		// Shown through tr(): N("Kopf"), N("Zahl")
 		return coinKey(state ? (state.value === 1 ? "Kopf" : "Zahl") : undefined, spin);
 	});
 	override onKeyDown(ev: KeyDownEvent<ChanceSettings>): void {

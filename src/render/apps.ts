@@ -6,6 +6,7 @@ import { logoTile } from "./logos.js";
 import { tomatoKey } from "./scenes.js";
 import { BRANCH, sloth } from "./sloth.js";
 import { C, keyImage, pill, q, swing, text } from "./svg.js";
+import { tr } from "../i18n.js";
 
 export const frame = (inner: string, border = "#3A4A35") =>
 	keyImage(
@@ -88,7 +89,7 @@ export function iconKey(icon: keyof typeof ICONS | string, label: string, border
 }
 
 /** Play/Pause gets the sloth with headphones, nodding along. */
-export function musicKey(t: number, label = "Play / Pause", playing = true): string {
+export function musicKey(t: number, label = tr("Play / Pause"), playing = true): string {
 	const nod = playing ? q(-3 + swing(t, 1.6) * 6) : "0";
 	const note = (phase: number, x: number) => {
 		const p = ((t + phase) % 3) / 3;
@@ -108,19 +109,19 @@ export function musicKey(t: number, label = "Play / Pause", playing = true): str
 /** The last played Steam game, with its own header art when Steam has it. */
 export function gameKey(name: string | undefined, image: string | undefined): string {
 	if (!name) {
-		return iconKey("controller", "Kein Spiel");
+		return iconKey("controller", tr("Kein Spiel"));
 	}
 	const art = image
 		? `<image href="${image}" x="-36" y="0" width="192" height="90" preserveAspectRatio="xMidYMid slice"/>` +
 			`<rect y="70" width="120" height="50" fill="#151C13"/>`
 		: `<g transform="translate(0 -6)">${ICONS.controller}</g>` +
 			text(name, { x: 60, y: 86, size: 13, max: 100, fill: C.cream });
-	return frame(art + pill("Spielen", C.leaf, C.night));
+	return frame(art + pill(tr("Spielen"), C.leaf, C.night));
 }
 
 /** Volume keys show where the level is. */
 export function volumeKey(kind: "volumeUp" | "volumeDown" | "mute", level: number | undefined, muted: boolean): string {
-	const label = kind === "volumeUp" ? "Lauter" : kind === "volumeDown" ? "Leiser" : muted ? "Ton ist aus" : "Ton aus";
+	const label = kind === "volumeUp" ? tr("Lauter") : kind === "volumeDown" ? tr("Leiser") : muted ? tr("Ton ist aus") : tr("Ton aus");
 	const icon = kind;
 	let meter = "";
 	if (level !== undefined) {
@@ -128,7 +129,7 @@ export function volumeKey(kind: "volumeUp" | "volumeDown" | "mute", level: numbe
 		meter =
 			`<rect x="18" y="62" width="84" height="6" rx="3" fill="#0E130C"/>` +
 			`<rect x="18" y="62" width="${width}" height="6" rx="3" fill="${muted ? C.coral : C.honey}"/>` +
-			text(muted ? "stumm" : `${level} %`, { x: 60, y: 87, size: 15, max: 90, fill: C.cream });
+			text(muted ? tr("stumm") : `${level} %`, { x: 60, y: 87, size: 15, max: 90, fill: C.cream });
 	}
 	return frame(
 		`<g transform="translate(60 4) scale(0.62) translate(-60 0)">${ICONS[icon]}</g>` + meter + pill(label, muted ? C.coral : C.pillDark, muted ? C.night : C.cream),
@@ -139,10 +140,10 @@ export function volumeKey(kind: "volumeUp" | "volumeDown" | "mute", level: numbe
 /** Microphone for the whole system: the sloth covers its mouth when muted. */
 export function micKey(muted: boolean | undefined, t: number, label?: string): string {
 	if (muted === undefined) {
-		return frame(`<g opacity="0.55">${BRANCH + sloth({ mood: "sleep", t })}</g>` + pill(label ?? "Mikro", C.pillDark, C.cream));
+		return frame(`<g opacity="0.55">${BRANCH + sloth({ mood: "sleep", t })}</g>` + pill(label ?? tr("Mikro"), C.pillDark, C.cream));
 	}
 	return frame(
-		BRANCH + sloth({ mood: muted ? "sleep" : "awake", t, paw: muted }) + pill(label ?? (muted ? "Stumm" : "Mikro an"), muted ? C.coral : C.leaf, C.night),
+		BRANCH + sloth({ mood: muted ? "sleep" : "awake", t, paw: muted }) + pill(label ?? (muted ? tr("Stumm") : tr("Mikro an")), muted ? C.coral : C.leaf, C.night),
 		muted ? C.coral : C.leaf,
 	);
 }
@@ -152,7 +153,7 @@ export type NowPlayingView = { title?: string | null; artist?: string; art?: str
 /** What is playing: the cover, the title, and whether it runs. */
 export function nowPlayingKey(np: NowPlayingView | undefined, t: number): string {
 	if (!np?.title) {
-		return musicKey(t, "Nichts läuft", false);
+		return musicKey(t, tr("Nichts läuft"), false);
 	}
 	if (!np.art) {
 		return musicKey(t, np.title, np.playing);
@@ -181,7 +182,7 @@ export function statsKey(cpu: number, ram: number, t: number): string {
 		`<rect x="16" y="${y + 6}" width="${Math.round((88 * value) / 100)}" height="8" rx="4" fill="${meterTone(value)}"/>`;
 	const hot = cpu >= 85;
 	const drop = hot ? `<path transform="translate(0 ${q(((t % 1.2) / 1.2) * 8)})" d="M98 12 q4 6 0 8 q-4 -2 0 -8 z" fill="#9FD3EA"/>` : "";
-	return frame(row("CPU", cpu, 30) + row("RAM", ram, 64) + drop + pill(hot ? "Puh, heiß" : "System", hot ? C.coral : C.pillDark, hot ? C.night : C.cream), hot ? C.coral : undefined);
+	return frame(row("CPU", cpu, 30) + row("RAM", ram, 64) + drop + pill(hot ? tr("Puh, heiß") : tr("System"), hot ? C.coral : C.pillDark, hot ? C.night : C.cream), hot ? C.coral : undefined);
 }
 
 export type PomodoroView = { phase: "idle" | "focus" | "break"; left: number; progress: number; paused: boolean; rounds: number };
@@ -190,7 +191,7 @@ export type PomodoroView = { phase: "idle" | "focus" | "break"; left: number; pr
 export function pomodoroKey(p: PomodoroView): string {
 	const minutes = Math.ceil(p.left / 60_000);
 	const center = p.phase === "idle" ? "25" : p.paused ? "II" : String(minutes);
-	const label = p.phase === "idle" ? "Fokus starten" : p.paused ? "pausiert" : p.phase === "break" ? "Pause" : `Fokus · ${p.rounds + 1}`;
+	const label = p.phase === "idle" ? tr("Fokus starten") : p.paused ? tr("pausiert") : p.phase === "break" ? tr("Pause") : tr("Fokus · {n}", { n: p.rounds + 1 });
 	const tone = p.phase === "break" ? C.sky : C.leaf;
 	return tomatoKey({ center, label, progress: p.phase === "idle" ? 0 : p.progress, tone, labelTone: p.phase === "idle" ? undefined : tone });
 }
@@ -198,7 +199,8 @@ export function pomodoroKey(p: PomodoroView): string {
 /** GitHub counters: unread notifications or reviews waiting for you. */
 export function githubKey(mode: "notifications" | "reviews", count: number | undefined, available: boolean): string {
 	const icon = mode === "notifications" ? "bell" : "review";
-	const label = !available ? "GitHub: nicht da" : mode === "notifications" ? "GitHub" : "GitHub-Reviews";
+	const label = !available ? tr("GitHub: nicht da") : mode === "notifications" ? "GitHub" : tr("GitHub-Reviews");
+
 	const badge =
 		available && count
 			? `<circle cx="90" cy="26" r="15" fill="${C.coral}"/>` + text(count > 99 ? "99+" : String(count), { x: 90, y: 31.5, size: 14, max: 24, fill: C.night, weight: 700 })

@@ -162,7 +162,7 @@ Every model comes with a ready-made profile, alarm profile included. Sam always 
 2. Double-click it. Stream Deck installs the plugin along with the **Lazy Deck** profile and its alarm profile. Requires Stream Deck 7.6 or newer.
 3. Pick the **Lazy Deck** profile and press the alarm test key to meet Sam.
 
-Heads-up: the key names inside Stream Deck are German for now (the website speaks eight languages).
+Lazy Deck speaks the same eight languages as Stream Deck: English, German, Spanish, French, Japanese, Korean, Simplified and Traditional Chinese. It follows the language you set in Stream Deck.
 
 ## Build it yourself
 

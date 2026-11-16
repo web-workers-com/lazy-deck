@@ -15,18 +15,19 @@ import { controllerKey, earsKey, headphonesKey, listenKey, signKey, vinylKey } f
 import { headerImage, installedGames, steamRoot, type Game } from "../steam.js";
 import { appAudio, audio, isWindows, nowPlaying, openExternal, pressMediaKey, type AudioState, type MediaKey } from "../system.js";
 import { Ticker } from "./ticker.js";
+import { N, tr } from "../i18n.js";
 
 // ---------------------------------------------------------------- Musik
 
 type MediaSettings = { key?: MediaKey };
 
 const MEDIA_LABEL: Record<MediaKey, [string, string]> = {
-	playpause: ["playpause", "Play / Pause"],
-	next: ["next", "Weiter"],
-	previous: ["previous", "Zurück"],
-	volumeUp: ["volumeUp", "Lauter"],
-	volumeDown: ["volumeDown", "Leiser"],
-	mute: ["mute", "Ton aus"],
+	playpause: ["playpause", N("Play / Pause")],
+	next: ["next", N("Weiter")],
+	previous: ["previous", N("Zurück")],
+	volumeUp: ["volumeUp", N("Lauter")],
+	volumeDown: ["volumeDown", N("Leiser")],
+	mute: ["mute", N("Ton aus")],
 };
 
 const mediaKeyOf = (settings: MediaSettings): MediaKey => (settings.key && settings.key in MEDIA_LABEL ? settings.key : "playpause");
@@ -38,17 +39,17 @@ export class MediaAction extends SingletonAction<MediaSettings> {
 	#ticker = new Ticker(250, (key: KeyAction<MediaSettings>, t) => {
 		const which = mediaKeyOf(this.#settings.get(key.id) ?? {});
 		if (which === "playpause") {
-			return musicKey(t, this.#playing ? "Play / Pause" : "Play", this.#playing);
+			return musicKey(t, this.#playing ? tr("Play / Pause") : tr("Play"), this.#playing);
 		}
 		const level = this.#speaker?.ok ? this.#speaker.level : undefined;
 		const muted = this.#speaker?.ok ? this.#speaker.muted : false;
 		if (which === "mute") {
 			return muted
-				? signKey({ title: "Lautstärke", value: "Ton aus", sub: "drücken = an", tone: "coral", t, phase: 3.5 })
-				: signKey({ title: "Lautstärke", value: level === undefined ? "…" : `${level} %`, bar: level === undefined ? undefined : level / 100, t, phase: 3.5 });
+				? signKey({ title: tr("Lautstärke"), value: tr("Ton aus"), sub: tr("drücken = an"), tone: "coral", t, phase: 3.5 })
+				: signKey({ title: tr("Lautstärke"), value: level === undefined ? "…" : `${level} %`, bar: level === undefined ? undefined : level / 100, t, phase: 3.5 });
 		}
 		if (which === "volumeUp" || which === "volumeDown") {
-			return listenKey({ level, muted, dir: which === "volumeUp" ? "up" : "down", label: `${MEDIA_LABEL[which][1]}${level !== undefined ? ` · ${level} %` : ""}`, t });
+			return listenKey({ level, muted, dir: which === "volumeUp" ? "up" : "down", label: `${tr(MEDIA_LABEL[which][1])}${level !== undefined ? ` · ${level} %` : ""}`, t });
 		}
 		return vinylKey(which, t);
 	});
@@ -145,10 +146,10 @@ export class DiscordAction extends SingletonAction<DiscordSettings> {
 			mode === "open"
 				? logoKey("discord", "Discord")
 				: mode === "mute"
-					? overlay(micKey(off, 1, off ? "Discord stumm" : "Discord Mikro"), logoBadge("discord"))
+					? overlay(micKey(off, 1, off ? tr("Discord stumm") : tr("Discord Mikro")), logoBadge("discord"))
 					: off
-						? overlay(earsKey("Discord taub", 1), logoBadge("discord", "left"))
-						: overlay(headphonesKey(false, "Discord Ton", 1), logoBadge("discord"));
+						? overlay(earsKey(tr("Discord taub"), 1), logoBadge("discord", "left"))
+						: overlay(headphonesKey(false, tr("Discord Ton"), 1), logoBadge("discord"));
 		return action.setImage(image);
 	}
 
@@ -182,12 +183,13 @@ export class DiscordAction extends SingletonAction<DiscordSettings> {
 type SteamSettings = { mode?: "last" | "library" | "friends" | "bigpicture" | "store" | "downloads" };
 
 const STEAM_PAGES = {
-	library: ["steam://open/games", "controller", "Bibliothek"],
-	friends: ["steam://open/friends", "friends", "Freunde"],
-	bigpicture: ["steam://open/bigpicture", "tv", "Big Picture"],
-	store: ["steam://store", "cart", "Shop"],
-	downloads: ["steam://open/downloads", "download", "Downloads"],
+	library: ["steam://open/games", "controller", N("Bibliothek")],
+	friends: ["steam://open/friends", "friends", N("Freunde")],
+	bigpicture: ["steam://open/bigpicture", "tv", N("Big Picture")],
+	store: ["steam://store", "cart", N("Shop")],
+	downloads: ["steam://open/downloads", "download", N("Downloads")],
 } as const;
+
 
 /** Steam: start the game you played last, or open library, friends, Big Picture. */
 @action({ UUID: "com.lazydeck.plugin.steam" })
@@ -217,7 +219,7 @@ export class SteamAction extends SingletonAction<SteamSettings> {
 			return;
 		}
 		const [, icon, label] = STEAM_PAGES[mode];
-		await action.setImage(steamKey(icon, label));
+		await action.setImage(steamKey(icon, tr(label)));
 	}
 
 	override async onWillAppear(ev: WillAppearEvent<SteamSettings>): Promise<void> {
