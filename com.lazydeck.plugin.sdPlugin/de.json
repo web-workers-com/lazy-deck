@@ -108,7 +108,7 @@
 	},
 	"com.lazydeck.plugin.steam": {
 		"Name": "Steam",
-		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde, Shop oder Big Picture."
 	},
 	"com.lazydeck.plugin.steam.last": {
 		"Name": "Zuletzt gespielt",
@@ -258,6 +258,10 @@
 		"Name": "Wetter",
 		"Tooltip": "Wetter für deinen Ort, ohne Einrichtung. Der Ort kommt aus deiner IP-Adresse (ipwho.is), das Wetter von Open-Meteo."
 	},
+	"com.lazydeck.plugin.timers": {
+		"Name": "Timer & Countdown",
+		"Tooltip": "Eieruhr, Stoppuhr oder Countdown bis Feierabend und Wochenende."
+	},
 	"com.lazydeck.plugin.timer": {
 		"Name": "Timer",
 		"Tooltip": "Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam."
@@ -289,6 +293,10 @@
 	"com.lazydeck.plugin.reminder.move": {
 		"Name": "Bewegen",
 		"Tooltip": "Erinnert dich alle 45 Minuten, dich zu bewegen. Drücken heißt erledigt."
+	},
+	"com.lazydeck.plugin.status": {
+		"Name": "Status",
+		"Tooltip": "Zeigt live, wie es deinem PC geht: Internet, WLAN, Akku oder CPU und Arbeitsspeicher."
 	},
 	"com.lazydeck.plugin.internet": {
 		"Name": "Internet",

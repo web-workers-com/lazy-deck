@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8" />
+<title>Lazy Deck</title>
+<script src="./libs/locales.js"></script>
+<script src="./libs/i18n.js"></script>
+<script src="./libs/sdpi-components.js"></script>
+<style>.hint{color:#9d9a94;font-size:11px;line-height:1.5;padding:4px 0 8px}</style>
+</head>
+<body>
+<sdpi-item label="Zeigt"><sdpi-select setting="show" default="internet"><option value="internet">Internet</option><option value="wifi">WLAN</option><option value="battery">Akku</option><option value="system">CPU &amp; Arbeitsspeicher</option></sdpi-select></sdpi-item>
+<div class="pick" data-for="internet" hidden><div class="hint">Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.</div></div>
+<div class="pick" data-for="wifi" hidden><div class="hint">WLAN-Name und Signalstärke.</div></div>
+<div class="pick" data-for="battery" hidden><div class="hint">Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.</div></div>
+<div class="pick" data-for="system" hidden><div class="hint">CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.</div></div>
+<script>
+(() => {
+	const update = (v) => document.querySelectorAll(".pick").forEach((el) => { el.hidden = el.dataset.for !== (v || "internet"); });
+	update();
+	SDPIComponents.useSettings("show", update);
+	document.querySelector('sdpi-select[setting="show"]').addEventListener("valuechange", (ev) => update(ev.target.value));
+})();
+</script>
+</body>
+</html>

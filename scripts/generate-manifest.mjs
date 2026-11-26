@@ -7,7 +7,7 @@ import { readFile, writeFile } from "node:fs/promises";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
-import { AUDIO_APPS, GROUPS, HIDDEN_BASES, LIST_ORDER, STATIONS, VARIANTS, variantUuid } from "../.build/catalog.js";
+import { AUDIO_APPS, GROUPS, HIDDEN_BASES, LIST_ORDER, ROUTERS, STATIONS, VARIANTS, variantUuid } from "../.build/catalog.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "com.lazydeck.plugin.sdPlugin");
 const manifestPath = join(root, "manifest.json");
@@ -132,10 +132,13 @@ for (const [uuid, name, tooltip, body, dial] of EVERYDAY) {
 	if (body) await writeFile(join(root, "ui", `${uuid}.html`), page(`${body}\n<div class="hint">${tooltip}</div>`));
 }
 
-// Standalone keys: every command as its own entry, nothing to choose.
+// Standalone keys: every command as its own entry. They stay for profiles
+// and older setups, but leave the list: the grouped action has them as options.
+const variantIds = new Set();
 for (const v of VARIANTS) {
 	const uuid = variantUuid(v);
 	const folder = uuid.replace("com.lazydeck.plugin.", "");
+	variantIds.add(uuid);
 	upsert({
 		UUID: uuid,
 		Name: v.name,
@@ -147,10 +150,52 @@ for (const v of VARIANTS) {
 	});
 }
 
-// The pick-one actions stay for older profiles, but leave the list.
+// Combined actions (catalog ROUTERS): pick which live key this one shows.
+// The fields of each choice show only while it is picked.
+const LIVE_FIELDS = {
+	timer: select("Dauer", "minutes", [["10", "10 Minuten"], ["1", "1 Minute"], ["3", "3 Minuten"], ["5", "5 Minuten"], ["15", "15 Minuten"], ["20", "20 Minuten"], ["30", "30 Minuten"], ["45", "45 Minuten"], ["60", "1 Stunde"]]),
+	countdown:
+		select("Bis", "mode", [["feierabend", "Feierabend"], ["weekend", "Wochenende (Freitag)"]]) +
+		`\n<sdpi-item label="Uhrzeit"><sdpi-textfield setting="time" placeholder="17:00" default="17:00"></sdpi-textfield></sdpi-item>`,
+};
+const HINTS = {
+	internet: "Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.",
+	wifi: "WLAN-Name und Signalstärke.",
+	battery: "Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.",
+	system: "CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.",
+	timer: "Eieruhr: drücken startet/pausiert, halten setzt zurück. Wenn sie abläuft, meldet sich Sam.",
+	stopwatch: "Drücken startet/stoppt, halten setzt zurück.",
+	countdown: "Wie lange noch bis Feierabend oder Wochenende.",
+};
+for (const r of ROUTERS) {
+	upsert({
+		UUID: `com.lazydeck.plugin.${r.uuid}`,
+		Name: r.name,
+		Tooltip: r.tooltip,
+		Icon: `imgs/actions/${r.uuid}/icon`,
+		Controllers: ["Keypad"],
+		PropertyInspectorPath: `ui/${r.uuid}.html`,
+		UserTitleEnabled: false,
+		States: [{ Image: `imgs/actions/${r.uuid}/key`, ShowTitle: false }],
+	});
+	const parts = r.choices.map(
+		(c) => `<div class="pick" data-for="${c.id}" hidden>${LIVE_FIELDS[c.id] ? `${LIVE_FIELDS[c.id]}\n` : ""}<div class="hint">${HINTS[c.id]}</div></div>`,
+	);
+	const show = `<script>
+(() => {
+	const update = (v) => document.querySelectorAll(".pick").forEach((el) => { el.hidden = el.dataset.for !== (v || "${r.choices[0].id}"); });
+	update();
+	SDPIComponents.useSettings("${r.setting}", update);
+	document.querySelector('sdpi-select[setting="${r.setting}"]').addEventListener("valuechange", (ev) => update(ev.target.value));
+})();
+</script>`;
+	await writeFile(join(root, "ui", `${r.uuid}.html`), page(`${select("Zeigt", r.setting, r.choices.map((c) => [c.id, c.name]))}\n${parts.join("\n")}\n${show}`));
+}
+
+// Out of the list: the hidden bases and every standalone key.
 for (const a of manifest.Actions) {
 	const base = a.UUID.replace("com.lazydeck.plugin.", "");
-	if (HIDDEN_BASES.includes(base)) a.VisibleInActionsList = false;
+	if (HIDDEN_BASES.includes(base) || variantIds.has(a.UUID)) a.VisibleInActionsList = false;
 	else delete a.VisibleInActionsList;
 }
 

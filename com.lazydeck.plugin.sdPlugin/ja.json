@@ -23,8 +23,8 @@
 		"Tooltip": "ヘッドホン、スピーカー、モニターのあいだで音の出力先を切り替えます。仮想デバイス（Voicemod、Loopback など）はスキップ。ちょうど 2 つを選ぶこともできます。"
 	},
 	"com.lazydeck.plugin.media": {
-		"Name": "ミュージック",
-		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+		"Name": "音楽",
+		"Tooltip": "再生/一時停止、次へ、前へ、音量。Spotify、YouTube、ブラウザーなど、ほとんどのプレーヤーで使えます。"
 	},
 	"com.lazydeck.plugin.media.playpause": {
 		"Name": "再生 / 一時停止",
@@ -92,7 +92,7 @@
 	},
 	"com.lazydeck.plugin.discord": {
 		"Name": "Discord",
-		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+		"Tooltip": "マイクのミュート、スピーカーミュート、Discord を開く。Discord で選んだマイクに関係なく、Discord だけをミュートします。"
 	},
 	"com.lazydeck.plugin.discord.mute": {
 		"Name": "Discord マイク",
@@ -108,7 +108,7 @@
 	},
 	"com.lazydeck.plugin.steam": {
 		"Name": "Steam",
-		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+		"Tooltip": "最後に遊んだゲームを起動、またはライブラリ、フレンド、ストア、Big Picture を開きます。"
 	},
 	"com.lazydeck.plugin.steam.last": {
 		"Name": "最近プレイしたゲーム",
@@ -135,8 +135,8 @@
 		"Tooltip": "Steam のダウンロードの進み具合。大きなダウンロードが終わると、このキーがなくても Sam が知らせます。"
 	},
 	"com.lazydeck.plugin.gamebar": {
-		"Name": "Gaming",
-		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+		"Name": "ゲーム",
+		"Tooltip": "Xbox Game Bar：直前の 30 秒を保存、録画の開始/停止、ゲームのスクリーンショット、Game Bar を開く。"
 	},
 	"com.lazydeck.plugin.gamebar.clip": {
 		"Name": "直前の 30 秒を保存",
@@ -168,7 +168,7 @@
 	},
 	"com.lazydeck.plugin.windows": {
 		"Name": "Windows",
-		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+		"Tooltip": "ロック、画面オフ、スリープ、ダークモード、ごみ箱、スクリーンショット、デスクトップ、設定、タスク マネージャー。"
 	},
 	"com.lazydeck.plugin.windows.screenshot": {
 		"Name": "スクショ（範囲指定）",
@@ -207,8 +207,8 @@
 		"Tooltip": "タスク マネージャーを開きます。"
 	},
 	"com.lazydeck.plugin.window": {
-		"Name": "Fenster",
-		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+		"Name": "ウィンドウ",
+		"Tooltip": "ウィンドウのスナップ、最大化、最小化、仮想デスクトップ、タスク ビュー、表示切り替え。"
 	},
 	"com.lazydeck.plugin.window.snapleft": {
 		"Name": "左にスナップ",
@@ -258,6 +258,10 @@
 		"Name": "天気",
 		"Tooltip": "設定なしで、今いる場所の天気を表示します。場所は IP アドレス（ipwho.is）から、天気は Open-Meteo から取得します。"
 	},
+	"com.lazydeck.plugin.timers": {
+		"Name": "タイマー",
+		"Tooltip": "キッチンタイマー、ストップウォッチ、または終業や週末までのカウントダウン。"
+	},
 	"com.lazydeck.plugin.timer": {
 		"Name": "タイマー",
 		"Tooltip": "キッチンタイマー：押してスタート / 一時停止、長押しでリセット。時間になると Sam が知らせます。"
@@ -267,7 +271,7 @@
 		"Tooltip": "押してスタート / ストップ、長押しでリセット。"
 	},
 	"com.lazydeck.plugin.countdown": {
-		"Name": "Countdown",
+		"Name": "カウントダウン",
 		"Tooltip": "定時や週末まであとどれくらいかを表示します。"
 	},
 	"com.lazydeck.plugin.countdown.feierabend": {
@@ -280,7 +284,7 @@
 	},
 	"com.lazydeck.plugin.reminder": {
 		"Name": "リマインダー",
-		"Tooltip": "水分補給や体を動かすことを定期的にお知らせします。押せば完了です。"
+		"Tooltip": "水分補給や体を動かすことを定期的に知らせます。押すと完了です。"
 	},
 	"com.lazydeck.plugin.reminder.water": {
 		"Name": "水分補給",
@@ -289,6 +293,10 @@
 	"com.lazydeck.plugin.reminder.move": {
 		"Name": "体を動かす",
 		"Tooltip": "45 分ごとに体を動かすようお知らせします。押せば完了です。"
+	},
+	"com.lazydeck.plugin.status": {
+		"Name": "ステータス",
+		"Tooltip": "PC の状態をリアルタイムで表示：インターネット、Wi-Fi、バッテリー、CPU とメモリ。"
 	},
 	"com.lazydeck.plugin.internet": {
 		"Name": "インターネット",
@@ -303,8 +311,8 @@
 		"Tooltip": "バッテリー残量と充電中かどうか（ノート PC）。デスクトップ PC では電源接続を表示します。"
 	},
 	"com.lazydeck.plugin.apps": {
-		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
+		"Name": "アプリを起動",
+		"Tooltip": "ワンタッチでアプリを起動：Spotify、Discord、Steam、WhatsApp、Telegram、WeChat、LINE、KakaoTalk、Teams、OBS、エクスプローラー、ターミナル、メモ帳。"
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Spotify を起動",
@@ -359,8 +367,8 @@
 		"Tooltip": "ワンプッシュで KakaoTalk を起動します。"
 	},
 	"com.lazydeck.plugin.website": {
-		"Name": "Webseite",
-		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+		"Name": "ウェブサイト",
+		"Tooltip": "ブラウザーでサイトを開きます：YouTube、Netflix、Twitch、Gmail、WhatsApp Web、Telegram Web、Prime Video、Disney+、Claude、ChatGPT、Gemini、Grok、Google マップ、DeepL。"
 	},
 	"com.lazydeck.plugin.website.youtube": {
 		"Name": "YouTube を開く",
@@ -419,8 +427,8 @@
 		"Tooltip": "ブラウザーで Telegram Web を開きます。"
 	},
 	"com.lazydeck.plugin.folder": {
-		"Name": "Ordner",
-		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+		"Name": "フォルダー",
+		"Tooltip": "ダウンロード、ドキュメント、ピクチャ、デスクトップ、ミュージック、ビデオ、ユーザーフォルダーを開きます。"
 	},
 	"com.lazydeck.plugin.folder.downloads": {
 		"Name": "ダウンロード フォルダー",
@@ -451,8 +459,8 @@
 		"Tooltip": "ユーザー フォルダーを開きます。"
 	},
 	"com.lazydeck.plugin.tools": {
-		"Name": "Werkzeuge",
-		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+		"Name": "ツール",
+		"Tooltip": "クリップボード履歴、絵文字、通知、電卓、今日の日付を貼り付け、安全なパスワード。"
 	},
 	"com.lazydeck.plugin.tools.clipboard": {
 		"Name": "クリップボード履歴",
@@ -479,8 +487,8 @@
 		"Tooltip": "パスワードを生成してクリップボードにコピーします。"
 	},
 	"com.lazydeck.plugin.chance": {
-		"Name": "Münze & Würfel",
-		"Tooltip": "コイントス（表は Sam）またはサイコロ。自分で決めたくないことは全部おまかせ。"
+		"Name": "コインとサイコロ",
+		"Tooltip": "コイン投げ（表は Sam）かサイコロ。自分で決めたくないときに。"
 	},
 	"com.lazydeck.plugin.chance.coin": {
 		"Name": "コイントス",
@@ -500,7 +508,7 @@
 	},
 	"com.lazydeck.plugin.github": {
 		"Name": "GitHub",
-		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+		"Tooltip": "未読の通知や、あなたを待っているレビュー。ログイン済みの gh CLI を使います。新しいレビュー依頼でアラームが鳴ります。"
 	},
 	"com.lazydeck.plugin.github.notifications": {
 		"Name": "GitHub の通知",
@@ -539,6 +547,7 @@
 		"Ablage": "コピー履歴",
 		"Akku": "電池",
 		"Akku lädt": "充電中",
+		"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "バッテリー残量と充電中かどうか（ノート PC）。デスクトップでは電源接続と表示。",
 		"Aktion": "アクション",
 		"Alarm aus jedem Skript auslösen:": "どんなスクリプトからでもアラームを出せます：",
 		"Alle": "間隔",
@@ -579,6 +588,9 @@
 		"Chillout (Antenne)": "Chillout (Antenne)",
 		"Claude": "Claude",
 		"Clip!": "クリップ！",
+		"Countdown": "カウントダウン",
+		"CPU & Arbeitsspeicher": "CPU とメモリ",
+		"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU とメモリ。押すとタスク マネージャーが開きます。",
 		"Dann": "その後",
 		"Dark Mode umschalten": "ダークモード切り替え",
 		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "何もないあいだ、ナマケモノは寝ています。アラームが来ると目を覚まして脈打ちます。待ち状態のアラームは 2 分後に、エラーはすぐにデッキ全体に広がります。押すとすぐにアラームをデッキに表示します。",
@@ -611,6 +623,7 @@
 		"Downloads": "ダウンロード",
 		"drücken = an": "押す＝オン",
 		"drücken = los": "押す＝開始",
+		"Drücken startet/stoppt, halten setzt zurück.": "押すと開始/停止、長押しでリセット。",
 		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "システムのメディアキーを押します。Spotify、YouTube、ブラウザーなど、ほとんどのプレーヤーが反応します。",
 		"du bist live": "配信中",
 		"Dunkel": "ダーク",
@@ -836,6 +849,7 @@
 		"Test: Fehler": "テスト:エラー",
 		"Test: Warten": "テスト:待機",
 		"Timer": "タイマー",
+		"Timer (Eieruhr)": "タイマー",
 		"Timer läuft": "タイマー作動",
 		"Timer pausiert": "タイマー停止",
 		"Ton aus": "消音",
@@ -868,6 +882,7 @@
 		"Windows-Mitteilungen (Infocenter)": "Windows の通知（通知センター）",
 		"wird geladen": "読み込み中",
 		"WLAN": "Wi-Fi",
+		"WLAN-Name und Signalstärke.": "Wi-Fi の名前と電波の強さ。",
 		"Wochenende (Freitag)": "週末（金曜日）",
 		"Wochenende!": "週末だ！",
 		"Wolkig": "薄曇り",
@@ -877,6 +892,7 @@
 		"YouTube": "YouTube",
 		"Zahl": "裏",
 		"Zeigt": "表示",
+		"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "インターネットの応答速度を表示。30 秒途切れると Sam が知らせます。",
 		"Zeit zu trinken": "水を飲む時間",
 		"Zoom": "Zoom",
 		"Zuletzt gespielt starten": "最近プレイしたゲームを起動",

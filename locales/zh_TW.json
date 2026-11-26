@@ -370,5 +370,13 @@
 	"Zwischenablage-Verlauf": "剪貼簿歷程記錄",
 	"WeChat": "WeChat",
 	"LINE": "LINE",
-	"KakaoTalk": "KakaoTalk"
+	"KakaoTalk": "KakaoTalk",
+	"Countdown": "倒數計時",
+	"Timer (Eieruhr)": "計時器",
+	"CPU & Arbeitsspeicher": "CPU 和記憶體",
+	"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU 和記憶體。按下開啟工作管理員。",
+	"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "電池電量及是否在充電（筆電）。桌機：交流電源。",
+	"Drücken startet/stoppt, halten setzt zurück.": "按下開始/停止，長按重設。",
+	"WLAN-Name und Signalstärke.": "Wi-Fi 名稱和訊號強度。",
+	"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "顯示網路回應速度。斷線 30 秒時 Sam 會提醒你。"
 }

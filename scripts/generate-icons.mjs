@@ -19,6 +19,7 @@ import { diceKey } from "../.build/render/home.js";
 import { logoKey as logoKeyV, steamKey } from "../.build/render/apps.js";
 import { logoKey, tileKey } from "../.build/render/apps.js";
 import { blanketKey, clipKey, coffeeKey, controllerKey, hammockKey, knobKey, radioKey, signKey, viewfinderKey } from "../.build/render/scenes.js";
+import { categoryIcon, listIcon } from "./list-icons.mjs";
 import { batteryKey, clockKey, coinKey, countdownKey, netKey, reminderKey, stopwatchKey, timerKey, weatherKey, wifiKey } from "../.build/render/home.js";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..", "com.lazydeck.plugin.sdPlugin", "imgs");
@@ -42,11 +43,8 @@ const logo = Buffer.from(
 );
 await pair(logo, 256, join(root, "plugin", "marketplace"));
 
-// Category icon: the sloth face alone, small.
-const face = Buffer.from(
-	`<svg xmlns="http://www.w3.org/2000/svg" viewBox="20 30 80 72"><defs>${DEFS}</defs>${sloth({ mood: "sleep", t: 0 })}</svg>`,
-);
-await pair(face, 28, join(root, "plugin", "category-icon"));
+// Category icon: Sam's face as a white line drawing (Elgato: monochrome white).
+await pair(categoryIcon(), 28, join(root, "plugin", "category-icon"));
 
 const keys = {
 	sloth: slothKey({ alert: undefined, t: 1 }),
@@ -129,9 +127,13 @@ const variantKey = (v) => {
 };
 for (const v of VARIANTS) keys[variantUuid(v).replace("com.lazydeck.plugin.", "")] = variantKey(v);
 keys.windows = viewfinderKey("Screenshot", 0);
+// Combined actions: the first live key they can show.
+keys.status = netKey(24, 0);
+keys.timers = timerKey({ minutes: 10, left: 600000, running: false, started: false });
 
 for (const [name, uri] of Object.entries(keys)) {
 	await pair(svgOf(uri), 72, join(root, "actions", name, "key"));
-	await pair(svgOf(uri), 20, join(root, "actions", name, "icon"));
+	// Action list: white line icons, not the colourful key (Elgato guidelines).
+	await pair(listIcon(name), 20, join(root, "actions", name, "icon"));
 }
 console.log("icons written");

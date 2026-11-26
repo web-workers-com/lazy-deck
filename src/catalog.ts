@@ -242,12 +242,50 @@ export const VARIANTS: Variant[] = [
 	...GROUPS.flatMap((g) => g.choices.map((c) => ({ base: g.uuid, id: c.id, name: groupName(g, c), tooltip: groupTip(g, c), settings: { [g.setting]: c.id } }))),
 ];
 
-/** Actions that stay for older profiles but leave the list: their commands are standalone now. */
-export const HIDDEN_BASES = ["alert", "windows", "window", "tools", "gamebar", "apps", "website", "folder", "media", "discord", "steam", "github", "countdown", "reminder", "chance"];
+/**
+ * Actions that keep working (older profiles, the alarm profile) but leave the
+ * action list. Elgato wants few actions with options in the settings page, so
+ * the standalone keys (VARIANTS) are hidden too, and the live keys below are
+ * offered through one combined action each (ROUTERS).
+ */
+export const HIDDEN_BASES = ["alert", "internet", "wifi", "battery", "system", "timer", "stopwatch", "countdown"];
+
+/**
+ * One action in the list that shows one of several existing actions, picked
+ * in its settings page. Every event goes to the picked action, so the keys
+ * behave exactly like the actions they stand for.
+ */
+export type Router = { uuid: string; name: string; tooltip: string; setting: string; choices: { id: string; base: string; name: string }[] };
+
+export const ROUTERS: Router[] = [
+	{
+		uuid: "status",
+		name: "Status",
+		tooltip: "Zeigt live, wie es deinem PC geht: Internet, WLAN, Akku oder CPU und Arbeitsspeicher.",
+		setting: "show",
+		choices: [
+			{ id: "internet", base: "internet", name: "Internet" },
+			{ id: "wifi", base: "wifi", name: "WLAN" },
+			{ id: "battery", base: "battery", name: "Akku" },
+			{ id: "system", base: "system", name: "CPU & Arbeitsspeicher" },
+		],
+	},
+	{
+		uuid: "timers",
+		name: "Timer & Countdown",
+		tooltip: "Eieruhr, Stoppuhr oder Countdown bis Feierabend und Wochenende.",
+		setting: "kind",
+		choices: [
+			{ id: "timer", base: "timer", name: "Timer (Eieruhr)" },
+			{ id: "stopwatch", base: "stopwatch", name: "Stoppuhr" },
+			{ id: "countdown", base: "countdown", name: "Countdown" },
+		],
+	},
+];
 
 /** Order of the action list: by topic, everyday first. */
 export const LIST_ORDER = [
 	"sloth", "test", "alert", "mic", "output", "media", "nowplaying", "radio", "appvolume", "appmic", "discord", "steam", "steamdownloads", "gamebar",
-	"brightness", "windows", "window", "awake", "sleeptimer", "clock", "weather", "timer", "stopwatch", "countdown", "reminder", "internet", "wifi", "battery",
+	"brightness", "windows", "window", "awake", "sleeptimer", "clock", "weather", "timers", "timer", "stopwatch", "countdown", "reminder", "status", "internet", "wifi", "battery",
 	"apps", "website", "folder", "tools", "chance", "system", "pomodoro", "github",
 ];

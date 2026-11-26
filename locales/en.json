@@ -370,5 +370,13 @@
 	"Zwischenablage-Verlauf": "Clipboard history",
 	"WeChat": "WeChat",
 	"LINE": "LINE",
-	"KakaoTalk": "KakaoTalk"
+	"KakaoTalk": "KakaoTalk",
+	"Countdown": "Countdown",
+	"Timer (Eieruhr)": "Timer (kitchen timer)",
+	"CPU & Arbeitsspeicher": "CPU & memory",
+	"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU and memory. Press to open Task Manager.",
+	"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "Battery level and whether it's charging (laptops). On a desktop PC: mains power.",
+	"Drücken startet/stoppt, halten setzt zurück.": "Press to start/stop, hold to reset.",
+	"WLAN-Name und Signalstärke.": "Wi-Fi name and signal strength.",
+	"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "Shows how fast the internet responds. If it's gone for 30 seconds, Sam lets you know."
 }

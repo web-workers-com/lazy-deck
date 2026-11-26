@@ -24,7 +24,7 @@
 	},
 	"com.lazydeck.plugin.media": {
 		"Name": "Music",
-		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+		"Tooltip": "Play/pause, next, previous, volume. Works with Spotify, YouTube, the browser and most players."
 	},
 	"com.lazydeck.plugin.media.playpause": {
 		"Name": "Play / Pause",
@@ -92,7 +92,7 @@
 	},
 	"com.lazydeck.plugin.discord": {
 		"Name": "Discord",
-		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+		"Tooltip": "Mute your mic, deafen, or open Discord. Mutes only Discord, whichever mic is selected there."
 	},
 	"com.lazydeck.plugin.discord.mute": {
 		"Name": "Discord mic",
@@ -108,7 +108,7 @@
 	},
 	"com.lazydeck.plugin.steam": {
 		"Name": "Steam",
-		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+		"Tooltip": "Starts your last played game, or opens your library, friends, store or Big Picture."
 	},
 	"com.lazydeck.plugin.steam.last": {
 		"Name": "Last played",
@@ -136,7 +136,7 @@
 	},
 	"com.lazydeck.plugin.gamebar": {
 		"Name": "Gaming",
-		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+		"Tooltip": "Xbox Game Bar: save the last 30 seconds, start/stop recording, game screenshot, open Game Bar."
 	},
 	"com.lazydeck.plugin.gamebar.clip": {
 		"Name": "Save last 30 s",
@@ -168,7 +168,7 @@
 	},
 	"com.lazydeck.plugin.windows": {
 		"Name": "Windows",
-		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+		"Tooltip": "Lock, screen off, sleep, dark mode, recycle bin, screenshot, desktop, settings, Task Manager."
 	},
 	"com.lazydeck.plugin.windows.screenshot": {
 		"Name": "Screenshot (area)",
@@ -207,8 +207,8 @@
 		"Tooltip": "Open Task Manager."
 	},
 	"com.lazydeck.plugin.window": {
-		"Name": "Fenster",
-		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+		"Name": "Window",
+		"Tooltip": "Snap, maximize or minimize windows, virtual desktops, Task View, project to a second screen."
 	},
 	"com.lazydeck.plugin.window.snapleft": {
 		"Name": "Snap left",
@@ -258,6 +258,10 @@
 		"Name": "Weather",
 		"Tooltip": "Weather for where you are, no setup. Your location comes from your IP address (ipwho.is), the weather from Open-Meteo."
 	},
+	"com.lazydeck.plugin.timers": {
+		"Name": "Timer & countdown",
+		"Tooltip": "Kitchen timer, stopwatch, or a countdown to the end of the workday or the weekend."
+	},
 	"com.lazydeck.plugin.timer": {
 		"Name": "Timer",
 		"Tooltip": "Kitchen timer: press to start/pause, hold to reset. When it runs out, Sam lets you know."
@@ -280,7 +284,7 @@
 	},
 	"com.lazydeck.plugin.reminder": {
 		"Name": "Reminder",
-		"Tooltip": "Reminds you to drink or move regularly. Pressing means done."
+		"Tooltip": "Reminds you to drink or move at regular intervals. Press it to mark it done."
 	},
 	"com.lazydeck.plugin.reminder.water": {
 		"Name": "Drink water",
@@ -289,6 +293,10 @@
 	"com.lazydeck.plugin.reminder.move": {
 		"Name": "Move",
 		"Tooltip": "Reminds you to move every 45 minutes. Press to mark it done."
+	},
+	"com.lazydeck.plugin.status": {
+		"Name": "Status",
+		"Tooltip": "Shows live how your PC is doing: internet, Wi-Fi, battery, or CPU and memory."
 	},
 	"com.lazydeck.plugin.internet": {
 		"Name": "Internet",
@@ -303,8 +311,8 @@
 		"Tooltip": "Battery level and whether it's charging (laptops). On a desktop: mains power."
 	},
 	"com.lazydeck.plugin.apps": {
-		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
+		"Name": "Launch app",
+		"Tooltip": "Starts an app with one press: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Notepad."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Launch Spotify",
@@ -359,8 +367,8 @@
 		"Tooltip": "Launches KakaoTalk with one press."
 	},
 	"com.lazydeck.plugin.website": {
-		"Name": "Webseite",
-		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+		"Name": "Website",
+		"Tooltip": "Opens a site in your browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
 	},
 	"com.lazydeck.plugin.website.youtube": {
 		"Name": "Open YouTube",
@@ -419,8 +427,8 @@
 		"Tooltip": "Opens Telegram Web in your browser."
 	},
 	"com.lazydeck.plugin.folder": {
-		"Name": "Ordner",
-		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+		"Name": "Folder",
+		"Tooltip": "Opens Downloads, Documents, Pictures, Desktop, Music, Videos or your user folder."
 	},
 	"com.lazydeck.plugin.folder.downloads": {
 		"Name": "Downloads folder",
@@ -451,8 +459,8 @@
 		"Tooltip": "Opens your user folder."
 	},
 	"com.lazydeck.plugin.tools": {
-		"Name": "Werkzeuge",
-		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+		"Name": "Tools",
+		"Tooltip": "Clipboard history, emoji, notifications, calculator, paste today's date, secure password."
 	},
 	"com.lazydeck.plugin.tools.clipboard": {
 		"Name": "Clipboard history",
@@ -479,8 +487,8 @@
 		"Tooltip": "Generates a password and copies it to the clipboard."
 	},
 	"com.lazydeck.plugin.chance": {
-		"Name": "Münze & Würfel",
-		"Tooltip": "Coin flip (heads shows Sam) or dice. For all the decisions you'd rather not make yourself."
+		"Name": "Coin & dice",
+		"Tooltip": "Coin flip (heads shows Sam) or dice. For every decision you'd rather not make yourself."
 	},
 	"com.lazydeck.plugin.chance.coin": {
 		"Name": "Coin flip",
@@ -500,7 +508,7 @@
 	},
 	"com.lazydeck.plugin.github": {
 		"Name": "GitHub",
-		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+		"Tooltip": "Unread notifications or reviews waiting for you. Uses the gh CLI you're already signed in to. New review requests raise an alarm."
 	},
 	"com.lazydeck.plugin.github.notifications": {
 		"Name": "GitHub notifications",
@@ -539,6 +547,7 @@
 		"Ablage": "Clipboard",
 		"Akku": "Battery",
 		"Akku lädt": "Charging",
+		"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "Battery level and whether it's charging (laptops). On a desktop PC: mains power.",
 		"Aktion": "Action",
 		"Alarm aus jedem Skript auslösen:": "Trigger an alert from any script:",
 		"Alle": "Every",
@@ -579,6 +588,9 @@
 		"Chillout (Antenne)": "Chillout (Antenne)",
 		"Claude": "Claude",
 		"Clip!": "Clip!",
+		"Countdown": "Countdown",
+		"CPU & Arbeitsspeicher": "CPU & memory",
+		"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU and memory. Press to open Task Manager.",
 		"Dann": "Then",
 		"Dark Mode umschalten": "Toggle dark mode",
 		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "The sloth sleeps as long as everything is calm. When an alert comes in, it wakes up and pulses. Waiting alerts take over the whole deck after 2 minutes, errors right away. Press it to bring the alert onto the deck right now.",
@@ -611,6 +623,7 @@
 		"Downloads": "Downloads",
 		"drücken = an": "press = on",
 		"drücken = los": "press = go",
+		"Drücken startet/stoppt, halten setzt zurück.": "Press to start/stop, hold to reset.",
 		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "Presses your system's media keys: Spotify, YouTube, browsers and most players listen to them.",
 		"du bist live": "you're live",
 		"Dunkel": "Dark",
@@ -836,6 +849,7 @@
 		"Test: Fehler": "Test: error",
 		"Test: Warten": "Test: wait",
 		"Timer": "Timer",
+		"Timer (Eieruhr)": "Timer (kitchen timer)",
 		"Timer läuft": "Timer on",
 		"Timer pausiert": "Timer paused",
 		"Ton aus": "Mute",
@@ -868,6 +882,7 @@
 		"Windows-Mitteilungen (Infocenter)": "Windows notifications (Action Center)",
 		"wird geladen": "loading",
 		"WLAN": "Wi-Fi",
+		"WLAN-Name und Signalstärke.": "Wi-Fi name and signal strength.",
 		"Wochenende (Freitag)": "Weekend (Friday)",
 		"Wochenende!": "Weekend!",
 		"Wolkig": "Cloudy",
@@ -877,6 +892,7 @@
 		"YouTube": "YouTube",
 		"Zahl": "Tails",
 		"Zeigt": "Shows",
+		"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "Shows how fast the internet responds. If it's gone for 30 seconds, Sam lets you know.",
 		"Zeit zu trinken": "Time to drink",
 		"Zoom": "Zoom",
 		"Zuletzt gespielt starten": "Launch last played",

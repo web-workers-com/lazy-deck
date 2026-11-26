@@ -370,5 +370,13 @@
 	"Zwischenablage-Verlauf": "クリップボード履歴",
 	"WeChat": "WeChat",
 	"LINE": "LINE",
-	"KakaoTalk": "KakaoTalk"
+	"KakaoTalk": "KakaoTalk",
+	"Countdown": "カウントダウン",
+	"Timer (Eieruhr)": "タイマー",
+	"CPU & Arbeitsspeicher": "CPU とメモリ",
+	"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU とメモリ。押すとタスク マネージャーが開きます。",
+	"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "バッテリー残量と充電中かどうか（ノート PC）。デスクトップでは電源接続と表示。",
+	"Drücken startet/stoppt, halten setzt zurück.": "押すと開始/停止、長押しでリセット。",
+	"WLAN-Name und Signalstärke.": "Wi-Fi の名前と電波の強さ。",
+	"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "インターネットの応答速度を表示。30 秒途切れると Sam が知らせます。"
 }

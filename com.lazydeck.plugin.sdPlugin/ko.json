@@ -24,7 +24,7 @@
 	},
 	"com.lazydeck.plugin.media": {
 		"Name": "음악",
-		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+		"Tooltip": "재생/일시정지, 다음, 이전, 볼륨. Spotify, YouTube, 브라우저 등 대부분의 플레이어에서 작동합니다."
 	},
 	"com.lazydeck.plugin.media.playpause": {
 		"Name": "재생 / 일시정지",
@@ -92,7 +92,7 @@
 	},
 	"com.lazydeck.plugin.discord": {
 		"Name": "Discord",
-		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+		"Tooltip": "마이크 음소거, 헤드셋 음소거 또는 Discord 열기. Discord에서 어떤 마이크를 쓰든 Discord만 음소거합니다."
 	},
 	"com.lazydeck.plugin.discord.mute": {
 		"Name": "Discord 마이크",
@@ -108,7 +108,7 @@
 	},
 	"com.lazydeck.plugin.steam": {
 		"Name": "Steam",
-		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+		"Tooltip": "마지막으로 플레이한 게임을 실행하거나 라이브러리, 친구, 상점, Big Picture를 엽니다."
 	},
 	"com.lazydeck.plugin.steam.last": {
 		"Name": "최근 플레이",
@@ -135,8 +135,8 @@
 		"Tooltip": "Steam 다운로드가 얼마나 진행됐는지 보여줘요. 큰 다운로드가 끝나면 이 키가 없어도 Sam이 알려줘요."
 	},
 	"com.lazydeck.plugin.gamebar": {
-		"Name": "Gaming",
-		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+		"Name": "게이밍",
+		"Tooltip": "Xbox Game Bar: 마지막 30초 저장, 녹화 시작/중지, 게임 스크린샷, Game Bar 열기."
 	},
 	"com.lazydeck.plugin.gamebar.clip": {
 		"Name": "최근 30초 저장",
@@ -168,7 +168,7 @@
 	},
 	"com.lazydeck.plugin.windows": {
 		"Name": "Windows",
-		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+		"Tooltip": "잠금, 화면 끄기, 절전, 다크 모드, 휴지통, 스크린샷, 바탕 화면, 설정, 작업 관리자."
 	},
 	"com.lazydeck.plugin.windows.screenshot": {
 		"Name": "스크린샷 (영역)",
@@ -207,8 +207,8 @@
 		"Tooltip": "작업 관리자를 열어요."
 	},
 	"com.lazydeck.plugin.window": {
-		"Name": "Fenster",
-		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+		"Name": "창",
+		"Tooltip": "창 맞추기, 최대화, 최소화, 가상 데스크톱, 작업 보기, 화면 투사."
 	},
 	"com.lazydeck.plugin.window.snapleft": {
 		"Name": "왼쪽에 맞추기",
@@ -258,6 +258,10 @@
 		"Name": "날씨",
 		"Tooltip": "설정 없이 내가 있는 곳의 날씨. 위치는 IP 주소로(ipwho.is), 날씨는 Open-Meteo에서 가져와요."
 	},
+	"com.lazydeck.plugin.timers": {
+		"Name": "타이머",
+		"Tooltip": "키친 타이머, 스톱워치 또는 퇴근·주말까지 카운트다운."
+	},
 	"com.lazydeck.plugin.timer": {
 		"Name": "타이머",
 		"Tooltip": "주방 타이머: 누르면 시작/일시정지, 길게 누르면 초기화. 시간이 다 되면 Sam이 알려줘요."
@@ -267,7 +271,7 @@
 		"Tooltip": "누르면 시작/정지, 길게 누르면 초기화."
 	},
 	"com.lazydeck.plugin.countdown": {
-		"Name": "Countdown",
+		"Name": "카운트다운",
 		"Tooltip": "퇴근이나 주말까지 얼마나 남았는지 보여줘요."
 	},
 	"com.lazydeck.plugin.countdown.feierabend": {
@@ -280,7 +284,7 @@
 	},
 	"com.lazydeck.plugin.reminder": {
 		"Name": "알림",
-		"Tooltip": "물 마시기나 움직이기를 정기적으로 알려줘요. 누르면 완료예요."
+		"Tooltip": "물 마시기나 몸 움직이기를 주기적으로 알려 줍니다. 누르면 완료됩니다."
 	},
 	"com.lazydeck.plugin.reminder.water": {
 		"Name": "물 마시기",
@@ -289,6 +293,10 @@
 	"com.lazydeck.plugin.reminder.move": {
 		"Name": "움직이기",
 		"Tooltip": "45분마다 움직이라고 알려줘요. 누르면 완료."
+	},
+	"com.lazydeck.plugin.status": {
+		"Name": "상태",
+		"Tooltip": "PC 상태를 실시간으로 보여 줍니다: 인터넷, Wi-Fi, 배터리 또는 CPU와 메모리."
 	},
 	"com.lazydeck.plugin.internet": {
 		"Name": "인터넷",
@@ -303,8 +311,8 @@
 		"Tooltip": "배터리 잔량과 충전 여부 (노트북). 데스크톱에서는 전원 연결."
 	},
 	"com.lazydeck.plugin.apps": {
-		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
+		"Name": "앱 실행",
+		"Tooltip": "한 번에 앱 실행: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, 카카오톡, Teams, OBS, 탐색기, 터미널, 메모장."
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "Spotify 실행",
@@ -359,8 +367,8 @@
 		"Tooltip": "한 번 눌러 카카오톡을 실행해요."
 	},
 	"com.lazydeck.plugin.website": {
-		"Name": "Webseite",
-		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+		"Name": "웹사이트",
+		"Tooltip": "브라우저에서 사이트 열기: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google 지도, DeepL."
 	},
 	"com.lazydeck.plugin.website.youtube": {
 		"Name": "YouTube 열기",
@@ -419,8 +427,8 @@
 		"Tooltip": "브라우저에서 Telegram Web을 열어요."
 	},
 	"com.lazydeck.plugin.folder": {
-		"Name": "Ordner",
-		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+		"Name": "폴더",
+		"Tooltip": "다운로드, 문서, 사진, 바탕 화면, 음악, 동영상 또는 사용자 폴더를 엽니다."
 	},
 	"com.lazydeck.plugin.folder.downloads": {
 		"Name": "다운로드 폴더",
@@ -451,8 +459,8 @@
 		"Tooltip": "사용자 폴더를 열어요."
 	},
 	"com.lazydeck.plugin.tools": {
-		"Name": "Werkzeuge",
-		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+		"Name": "도구",
+		"Tooltip": "클립보드 기록, 이모지, 알림, 계산기, 오늘 날짜 붙여넣기, 안전한 비밀번호."
 	},
 	"com.lazydeck.plugin.tools.clipboard": {
 		"Name": "클립보드 기록",
@@ -479,8 +487,8 @@
 		"Tooltip": "비밀번호를 만들어 클립보드에 복사해요."
 	},
 	"com.lazydeck.plugin.chance": {
-		"Name": "Münze & Würfel",
-		"Tooltip": "동전 던지기 (앞면은 Sam) 또는 주사위. 직접 정하기 싫은 모든 결정에 써요."
+		"Name": "동전과 주사위",
+		"Tooltip": "동전 던지기(앞면은 Sam) 또는 주사위. 직접 정하기 싫은 모든 결정에."
 	},
 	"com.lazydeck.plugin.chance.coin": {
 		"Name": "동전 던지기",
@@ -500,7 +508,7 @@
 	},
 	"com.lazydeck.plugin.github": {
 		"Name": "GitHub",
-		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+		"Tooltip": "읽지 않은 알림이나 나를 기다리는 리뷰. 이미 로그인한 gh CLI를 사용합니다. 새 리뷰 요청이 오면 알람이 울립니다."
 	},
 	"com.lazydeck.plugin.github.notifications": {
 		"Name": "GitHub 알림",
@@ -539,6 +547,7 @@
 		"Ablage": "클립보드",
 		"Akku": "배터리",
 		"Akku lädt": "충전 중",
+		"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "배터리 잔량과 충전 여부(노트북). 데스크톱에서는 전원 연결.",
 		"Aktion": "동작",
 		"Alarm aus jedem Skript auslösen:": "어떤 스크립트에서든 알림 보내기:",
 		"Alle": "간격",
@@ -579,6 +588,9 @@
 		"Chillout (Antenne)": "Chillout (Antenne)",
 		"Claude": "Claude",
 		"Clip!": "클립!",
+		"Countdown": "카운트다운",
+		"CPU & Arbeitsspeicher": "CPU와 메모리",
+		"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU와 메모리. 누르면 작업 관리자가 열립니다.",
 		"Dann": "그다음",
 		"Dark Mode umschalten": "다크 모드 전환",
 		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "나무늘보는 조용할 때 잠을 자요. 알림이 오면 깨어나서 두근두근 빛나요. 대기 알림은 2분 뒤에, 오류는 바로 덱 전체를 차지해요. 누르면 알림을 바로 덱에 띄워요.",
@@ -611,6 +623,7 @@
 		"Downloads": "다운로드",
 		"drücken = an": "누르면 켜짐",
 		"drücken = los": "누르면 시작",
+		"Drücken startet/stoppt, halten setzt zurück.": "누르면 시작/정지, 길게 누르면 초기화.",
 		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "시스템 미디어 키를 눌러요. Spotify, YouTube, 브라우저와 대부분의 플레이어가 반응해요.",
 		"du bist live": "방송 중이에요",
 		"Dunkel": "어둡게",
@@ -836,6 +849,7 @@
 		"Test: Fehler": "테스트: 오류",
 		"Test: Warten": "테스트: 대기",
 		"Timer": "타이머",
+		"Timer (Eieruhr)": "타이머",
 		"Timer läuft": "타이머 작동",
 		"Timer pausiert": "타이머 멈춤",
 		"Ton aus": "소리 끔",
@@ -868,6 +882,7 @@
 		"Windows-Mitteilungen (Infocenter)": "Windows 알림 (알림 센터)",
 		"wird geladen": "불러오는 중",
 		"WLAN": "Wi-Fi",
+		"WLAN-Name und Signalstärke.": "Wi-Fi 이름과 신호 세기.",
 		"Wochenende (Freitag)": "주말 (금요일)",
 		"Wochenende!": "주말이다!",
 		"Wolkig": "흐림",
@@ -877,6 +892,7 @@
 		"YouTube": "YouTube",
 		"Zahl": "뒷면",
 		"Zeigt": "표시",
+		"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "인터넷 응답 속도를 보여 줍니다. 30초 동안 끊기면 Sam이 알려 줍니다.",
 		"Zeit zu trinken": "물 마실 시간",
 		"Zoom": "Zoom",
 		"Zuletzt gespielt starten": "최근 플레이 게임 시작",

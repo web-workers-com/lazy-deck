@@ -370,5 +370,13 @@
 	"Zwischenablage-Verlauf": "Historial del portapapeles",
 	"WeChat": "WeChat",
 	"LINE": "LINE",
-	"KakaoTalk": "KakaoTalk"
+	"KakaoTalk": "KakaoTalk",
+	"Countdown": "Cuenta atrás",
+	"Timer (Eieruhr)": "Temporizador",
+	"CPU & Arbeitsspeicher": "CPU y memoria",
+	"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU y memoria. Al pulsar se abre el Administrador de tareas.",
+	"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "Nivel de batería y si se está cargando (portátiles). En un PC de sobremesa: corriente.",
+	"Drücken startet/stoppt, halten setzt zurück.": "Pulsa para iniciar/parar, mantén para reiniciar.",
+	"WLAN-Name und Signalstärke.": "Nombre de la Wi-Fi e intensidad de la señal.",
+	"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "Muestra lo rápido que responde internet. Si se cae 30 segundos, Sam te avisa."
 }

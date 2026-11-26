@@ -370,5 +370,13 @@
 	"Zwischenablage-Verlauf": "클립보드 기록",
 	"WeChat": "WeChat",
 	"LINE": "LINE",
-	"KakaoTalk": "카카오톡"
+	"KakaoTalk": "카카오톡",
+	"Countdown": "카운트다운",
+	"Timer (Eieruhr)": "타이머",
+	"CPU & Arbeitsspeicher": "CPU와 메모리",
+	"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU와 메모리. 누르면 작업 관리자가 열립니다.",
+	"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "배터리 잔량과 충전 여부(노트북). 데스크톱에서는 전원 연결.",
+	"Drücken startet/stoppt, halten setzt zurück.": "누르면 시작/정지, 길게 누르면 초기화.",
+	"WLAN-Name und Signalstärke.": "Wi-Fi 이름과 신호 세기.",
+	"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "인터넷 응답 속도를 보여 줍니다. 30초 동안 끊기면 Sam이 알려 줍니다."
 }

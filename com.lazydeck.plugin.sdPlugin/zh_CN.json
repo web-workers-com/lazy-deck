@@ -24,7 +24,7 @@
 	},
 	"com.lazydeck.plugin.media": {
 		"Name": "音乐",
-		"Tooltip": "Play/Pause, Weiter, Zurück, Lautstärke. Funktioniert mit Spotify, YouTube, dem Browser und den meisten Playern."
+		"Tooltip": "播放/暂停、下一首、上一首、音量。适用于 Spotify、YouTube、浏览器和大多数播放器。"
 	},
 	"com.lazydeck.plugin.media.playpause": {
 		"Name": "播放 / 暂停",
@@ -92,7 +92,7 @@
 	},
 	"com.lazydeck.plugin.discord": {
 		"Name": "Discord",
-		"Tooltip": "Mikro stumm, taub schalten oder Discord öffnen. Schaltet nur Discord stumm, egal welches Mikro dort gewählt ist."
+		"Tooltip": "麦克风静音、闭麦闭耳或打开 Discord。只静音 Discord，无论那里选的是哪个麦克风。"
 	},
 	"com.lazydeck.plugin.discord.mute": {
 		"Name": "Discord 麦克风",
@@ -108,7 +108,7 @@
 	},
 	"com.lazydeck.plugin.steam": {
 		"Name": "Steam",
-		"Tooltip": "Startet dein zuletzt gespieltes Spiel, oder öffnet Bibliothek, Freunde oder Big Picture."
+		"Tooltip": "启动你最近玩的游戏，或打开库、好友、商店或大屏幕模式。"
 	},
 	"com.lazydeck.plugin.steam.last": {
 		"Name": "最近玩过",
@@ -135,8 +135,8 @@
 		"Tooltip": "Steam 下载到哪儿了。大文件下完时，Sam 会告诉你，没有这个按键也一样。"
 	},
 	"com.lazydeck.plugin.gamebar": {
-		"Name": "Gaming",
-		"Tooltip": "Xbox Game Bar: die letzten 30 Sekunden speichern, Aufnahme starten/stoppen, Spiel-Screenshot, Game Bar öffnen."
+		"Name": "游戏",
+		"Tooltip": "Xbox Game Bar：保存最近 30 秒、开始/停止录制、游戏截图、打开 Game Bar。"
 	},
 	"com.lazydeck.plugin.gamebar.clip": {
 		"Name": "保存最后 30 秒",
@@ -168,7 +168,7 @@
 	},
 	"com.lazydeck.plugin.windows": {
 		"Name": "Windows",
-		"Tooltip": "Sperren, Bildschirm aus, Energiesparen, Dark Mode, Papierkorb, Screenshot, Desktop, Einstellungen, Task-Manager."
+		"Tooltip": "锁定、关闭屏幕、睡眠、深色模式、回收站、截图、桌面、设置、任务管理器。"
 	},
 	"com.lazydeck.plugin.windows.screenshot": {
 		"Name": "截图（区域）",
@@ -207,8 +207,8 @@
 		"Tooltip": "打开任务管理器。"
 	},
 	"com.lazydeck.plugin.window": {
-		"Name": "Fenster",
-		"Tooltip": "Fenster andocken, maximieren, minimieren, virtuelle Desktops, Aufgabenansicht, Projizieren."
+		"Name": "窗口",
+		"Tooltip": "贴靠、最大化、最小化窗口，虚拟桌面，任务视图，投影。"
 	},
 	"com.lazydeck.plugin.window.snapleft": {
 		"Name": "靠左贴靠",
@@ -258,6 +258,10 @@
 		"Name": "天气",
 		"Tooltip": "你所在地的天气，无需设置。位置来自你的 IP 地址（ipwho.is），天气来自 Open-Meteo。"
 	},
+	"com.lazydeck.plugin.timers": {
+		"Name": "计时器",
+		"Tooltip": "倒计时器、秒表，或距离下班和周末的倒计时。"
+	},
 	"com.lazydeck.plugin.timer": {
 		"Name": "计时器",
 		"Tooltip": "厨房计时器：按一下开始/暂停，长按重置。时间到了，Sam 会来叫你。"
@@ -267,7 +271,7 @@
 		"Tooltip": "按一下开始/停止，长按重置。"
 	},
 	"com.lazydeck.plugin.countdown": {
-		"Name": "Countdown",
+		"Name": "倒计时",
 		"Tooltip": "距离下班或周末还有多久。"
 	},
 	"com.lazydeck.plugin.countdown.feierabend": {
@@ -280,7 +284,7 @@
 	},
 	"com.lazydeck.plugin.reminder": {
 		"Name": "提醒",
-		"Tooltip": "定时提醒你喝水或活动一下。按一下就算完成。"
+		"Tooltip": "定时提醒你喝水或活动一下。按下表示已完成。"
 	},
 	"com.lazydeck.plugin.reminder.water": {
 		"Name": "喝水",
@@ -289,6 +293,10 @@
 	"com.lazydeck.plugin.reminder.move": {
 		"Name": "活动一下",
 		"Tooltip": "每 45 分钟提醒你起来动一动。按一下表示已完成。"
+	},
+	"com.lazydeck.plugin.status": {
+		"Name": "状态",
+		"Tooltip": "实时显示电脑状态：网络、Wi-Fi、电池，或 CPU 和内存。"
 	},
 	"com.lazydeck.plugin.internet": {
 		"Name": "网络",
@@ -303,8 +311,8 @@
 		"Tooltip": "电量以及是否在充电（笔记本）。台式机上：显示接通电源。"
 	},
 	"com.lazydeck.plugin.apps": {
-		"Name": "App starten",
-		"Tooltip": "Startet eine App mit einem Druck: Spotify, Discord, Steam, WhatsApp, Telegram, WeChat, LINE, KakaoTalk, Teams, OBS, Explorer, Terminal, Editor."
+		"Name": "启动应用",
+		"Tooltip": "一键启动应用：Spotify、Discord、Steam、WhatsApp、Telegram、微信、LINE、KakaoTalk、Teams、OBS、资源管理器、终端、记事本。"
 	},
 	"com.lazydeck.plugin.apps.spotify": {
 		"Name": "启动 Spotify",
@@ -359,8 +367,8 @@
 		"Tooltip": "一键启动 KakaoTalk。"
 	},
 	"com.lazydeck.plugin.website": {
-		"Name": "Webseite",
-		"Tooltip": "Öffnet eine Seite im Browser: YouTube, Netflix, Twitch, Gmail, WhatsApp Web, Telegram Web, Prime Video, Disney+, Claude, ChatGPT, Gemini, Grok, Google Maps, DeepL."
+		"Name": "网站",
+		"Tooltip": "在浏览器中打开网站：YouTube、Netflix、Twitch、Gmail、WhatsApp Web、Telegram Web、Prime Video、Disney+、Claude、ChatGPT、Gemini、Grok、Google 地图、DeepL。"
 	},
 	"com.lazydeck.plugin.website.youtube": {
 		"Name": "打开 YouTube",
@@ -419,8 +427,8 @@
 		"Tooltip": "在浏览器中打开 Telegram Web。"
 	},
 	"com.lazydeck.plugin.folder": {
-		"Name": "Ordner",
-		"Tooltip": "Öffnet Downloads, Dokumente, Bilder, Desktop, Musik, Videos oder deinen Benutzerordner."
+		"Name": "文件夹",
+		"Tooltip": "打开下载、文档、图片、桌面、音乐、视频或你的用户文件夹。"
 	},
 	"com.lazydeck.plugin.folder.downloads": {
 		"Name": "下载文件夹",
@@ -451,8 +459,8 @@
 		"Tooltip": "打开你的用户文件夹。"
 	},
 	"com.lazydeck.plugin.tools": {
-		"Name": "Werkzeuge",
-		"Tooltip": "Zwischenablage, Emoji, Mitteilungen, Rechner, Datum einfügen, sicheres Passwort."
+		"Name": "工具",
+		"Tooltip": "剪贴板历史、表情符号、通知、计算器、粘贴今天日期、安全密码。"
 	},
 	"com.lazydeck.plugin.tools.clipboard": {
 		"Name": "剪贴板历史",
@@ -479,8 +487,8 @@
 		"Tooltip": "生成一个密码并放进剪贴板。"
 	},
 	"com.lazydeck.plugin.chance": {
-		"Name": "Münze & Würfel",
-		"Tooltip": "抛硬币（正面是 Sam）或掷骰子。专治所有不想自己做的决定。"
+		"Name": "硬币和骰子",
+		"Tooltip": "抛硬币（正面是 Sam）或掷骰子。用于所有不想自己做的决定。"
 	},
 	"com.lazydeck.plugin.chance.coin": {
 		"Name": "抛硬币",
@@ -500,7 +508,7 @@
 	},
 	"com.lazydeck.plugin.github": {
 		"Name": "GitHub",
-		"Tooltip": "Ungelesene Mitteilungen oder Reviews, die auf dich warten. Nutzt die gh-CLI, mit der du schon angemeldet bist. Neue Review-Anfragen lösen einen Alarm aus."
+		"Tooltip": "未读通知或等你处理的评审。使用你已登录的 gh CLI。新的评审请求会触发警报。"
 	},
 	"com.lazydeck.plugin.github.notifications": {
 		"Name": "GitHub 通知",
@@ -539,6 +547,7 @@
 		"Ablage": "剪贴板",
 		"Akku": "电池",
 		"Akku lädt": "充电中",
+		"Akkustand und ob geladen wird (Laptops). Am PC: Netzstrom.": "电池电量及是否在充电（笔记本）。台式机：交流电源。",
 		"Aktion": "操作",
 		"Alarm aus jedem Skript auslösen:": "从任意脚本触发提醒：",
 		"Alle": "每隔",
@@ -579,6 +588,9 @@
 		"Chillout (Antenne)": "Chillout (Antenne)",
 		"Claude": "Claude",
 		"Clip!": "剪辑！",
+		"Countdown": "倒计时",
+		"CPU & Arbeitsspeicher": "CPU 和内存",
+		"CPU und Arbeitsspeicher. Drücken öffnet den Task-Manager.": "CPU 和内存。按下打开任务管理器。",
 		"Dann": "然后",
 		"Dark Mode umschalten": "切换深色模式",
 		"Das Faultier schläft, solange alles ruhig ist. Kommt ein Alarm, wacht es auf und pulsiert. Wartende Alarme übernehmen nach 2 Minuten das ganze Deck, Fehler sofort. Drücken holt den Alarm sofort aufs Deck.": "一切安静时，树懒就睡觉。有提醒来了，它会醒来并闪动。待处理的提醒 2 分钟后铺满整个 Deck，错误则立刻铺满。按一下马上把提醒铺到 Deck 上。",
@@ -611,6 +623,7 @@
 		"Downloads": "下载",
 		"drücken = an": "按下 = 开",
 		"drücken = los": "按下 = 开始",
+		"Drücken startet/stoppt, halten setzt zurück.": "按下开始/停止，长按重置。",
 		"Drückt die Medientasten deines Systems: Spotify, YouTube, Browser und die meisten Player hören darauf.": "按下系统的媒体键：Spotify、YouTube、浏览器和大多数播放器都会响应。",
 		"du bist live": "你在直播",
 		"Dunkel": "深色",
@@ -836,6 +849,7 @@
 		"Test: Fehler": "测试：错误",
 		"Test: Warten": "测试：等待",
 		"Timer": "计时器",
+		"Timer (Eieruhr)": "计时器",
 		"Timer läuft": "计时中",
 		"Timer pausiert": "计时已暂停",
 		"Ton aus": "静音",
@@ -868,6 +882,7 @@
 		"Windows-Mitteilungen (Infocenter)": "Windows 通知（通知中心）",
 		"wird geladen": "加载中",
 		"WLAN": "Wi-Fi",
+		"WLAN-Name und Signalstärke.": "Wi-Fi 名称和信号强度。",
 		"Wochenende (Freitag)": "周末（星期五）",
 		"Wochenende!": "周末啦！",
 		"Wolkig": "多云",
@@ -877,6 +892,7 @@
 		"YouTube": "YouTube",
 		"Zahl": "反面",
 		"Zeigt": "显示",
+		"Zeigt, wie schnell das Internet antwortet. Ist es 30 Sekunden weg, meldet sich Sam.": "显示网络响应速度。断网 30 秒时 Sam 会提醒你。",
 		"Zeit zu trinken": "该喝水了",
 		"Zoom": "Zoom",
 		"Zuletzt gespielt starten": "启动最近玩过的",

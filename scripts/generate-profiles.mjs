@@ -9,23 +9,16 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { makeZip } from "./lib/zip.mjs";
-import { VARIANTS, variantUuid } from "../.build/catalog.js";
 
 const PLUGIN = "com.lazydeck.plugin";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const outDir = join(root, `${PLUGIN}.sdPlugin`);
 
 /**
- * A key for the profile. When a standalone key exists for this action and
- * these settings (catalog VARIANTS), the profile uses that one, so the key
- * shows up under its own name in Stream Deck.
+ * A key for the profile: the grouped action with its settings, so the
+ * option can be changed right there in the settings page.
  */
 function key(uuid, name, settings = {}) {
-	const v = VARIANTS.find((x) => x.base === uuid && Object.entries(x.settings).every(([k, value]) => settings[k] === value));
-	if (v) {
-		uuid = variantUuid(v).replace(`${PLUGIN}.`, "");
-		name = v.name;
-	}
 	return {
 		Name: name,
 		Settings: settings,
@@ -43,7 +36,7 @@ const WEATHER = key("weather", "Wetter");
 const MIC = key("mic", "Mikrofon");
 const OUTPUT = key("output", "Ausgabe wechseln");
 const VOLUME = key("media", "Musik", { key: "mute" });
-const TIMER = key("timer", "Timer", { minutes: "10" });
+const TIMER = key("timers", "Timer & Countdown", { kind: "timer", minutes: "10" });
 const STEAM_DL = key("steamdownloads", "Steam-Downloads");
 const NOW = key("nowplaying", "Jetzt läuft");
 const PREV = key("media", "Musik", { key: "previous" });
@@ -117,7 +110,7 @@ const DEVICES = [
 	{ suffix: " Studio", type: 10, model: "20GBO9901", size: [16, 2], layout: [[...XL[0], ...XL[1]], [...XL[2], ...XL[3]]], dials: [DIAL_MASTER, DIAL_GAME] },
 	{ suffix: " Virtual", type: 11, model: "UI Stream Deck", size: [8, 8], layout: XL },
 	{ suffix: " Galleon", type: 12, model: "GRETSCH", size: [3, 4], layout: [[SLOTH, CLOCK, MIC], [PREV, PLAY, NEXT], [OUTPUT, DISCORD_MIC, DISCORD_DEAF], [GAME, CLIP, LOCK]], dials: [DIAL_MASTER, DIAL_GAME] },
-	{ suffix: " Plus XL", type: 13, model: "20GBX9901", size: [9, 4], layout: [[...XL[0], key("internet", "Internet")], [...XL[1], key("windows", "Windows", { mode: "desktop" })], [...XL[2], key("website", "Webseite", { site: "netflix" })], [...XL[3], key("tools", "Werkzeuge", { mode: "calculator" })]], dials: [DIAL_MASTER, DIAL_GAME, DIAL_DISCORD, DIAL_SCREEN, key("appvolume", "App-Lautstärke", { app: "spotify" }), key("appvolume", "App-Lautstärke", { app: "browser" })] },
+	{ suffix: " Plus XL", type: 13, model: "20GBX9901", size: [9, 4], layout: [[...XL[0], key("status", "Status", { show: "internet" })], [...XL[1], key("windows", "Windows", { mode: "desktop" })], [...XL[2], key("website", "Webseite", { site: "netflix" })], [...XL[3], key("tools", "Werkzeuge", { mode: "calculator" })]], dials: [DIAL_MASTER, DIAL_GAME, DIAL_DISCORD, DIAL_SCREEN, key("appvolume", "App-Lautstärke", { app: "spotify" }), key("appvolume", "App-Lautstärke", { app: "browser" })] },
 ];
 
 const profiles = DEVICES.flatMap((d) => {

@@ -6,6 +6,7 @@ import { GitHubAction, MicAction, NowPlayingAction, PomodoroAction, SystemAction
 import { EVERYDAY_ACTIONS } from "./actions/everyday.js";
 import { HOME_ACTIONS } from "./actions/home.js";
 import { GROUP_ACTIONS } from "./actions/table.js";
+import { routerActions } from "./actions/router.js";
 import { variantActions } from "./actions/variants.js";
 import { center, github, pomodoro } from "./runtime.js";
 import { startServer } from "./server.js";
@@ -42,8 +43,9 @@ const bases = [
 	...EVERYDAY_ACTIONS,
 	new GitHubAction(),
 ];
-// Every command also as its own key in the action list (catalog VARIANTS).
-for (const a of [...bases, ...variantActions(bases)]) {
+// Every command also as its own (hidden) key for profiles (catalog VARIANTS),
+// and the combined actions that pick one of the live keys (catalog ROUTERS).
+for (const a of [...bases, ...variantActions(bases), ...routerActions(bases)]) {
 	streamDeck.actions.registerAction(a);
 }
 
